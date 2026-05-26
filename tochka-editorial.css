@@ -55,6 +55,22 @@
   margin-top: -0.75rem;
 }
 
+/* Chapter marker — bigger, italic Roman numeral */
+.editorial-page .ed-label--chapter {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.1rem, 0.9rem + 0.6vw, 1.45rem);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--ed-gold);
+  margin-bottom: 1.75rem;
+}
+
+.editorial-page .ed-label--chapter::first-letter {
+  font-style: normal;
+}
+
 /* Display type */
 .editorial-page h1 {
   font-size: var(--ed-display);
@@ -490,22 +506,56 @@
   padding: 1.75rem 0;
 }
 
+/* Method — asymmetric editorial pillars (no card grid) */
 .editorial-page .method-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: 0;
   border-top: 1px solid var(--ed-line);
+  margin-top: 3rem;
 }
 
+.editorial-page .method-card {
+  padding: 2rem 0 !important;
+  border-bottom: 1px solid var(--ed-line);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  align-items: baseline;
+  background: none;
+}
+
+.editorial-page .method-card:nth-child(1) { grid-column: 1 / span 7; }
+.editorial-page .method-card:nth-child(2) { grid-column: 6 / span 7; padding-left: 2rem !important; border-left: 1px solid var(--ed-line); }
+.editorial-page .method-card:nth-child(3) { grid-column: 1 / span 7; }
+.editorial-page .method-card:nth-child(4) { grid-column: 6 / span 7; padding-left: 2rem !important; border-left: 1px solid var(--ed-line); }
+
 .editorial-page .method-card span {
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
   color: var(--ed-gold);
 }
 
+.editorial-page .method-card h3 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.45rem, 1rem + 1.2vw, 2rem);
+  margin: 0 0 0.5rem;
+}
+
 .editorial-page .method-card p {
-  font-size: var(--text-sm);
-  max-width: 32ch;
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 0.85rem + 0.4vw, 1.2rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ed-ink-soft);
+  margin: 0;
+  max-width: 36ch;
 }
 
 .editorial-page .positioning-strip {
@@ -657,11 +707,51 @@
   font-size: clamp(1.25rem, 1rem + 0.8vw, 1.65rem);
 }
 
-/* Forms — keep usable */
-.editorial-page .course-form,
-.editorial-page .quiz-field {
+/* Forms — premium minimal */
+.editorial-page .course-form {
   border: 1px solid var(--ed-line) !important;
-  padding: 2rem !important;
+  padding: clamp(2rem, 4vw, 3.5rem) !important;
+  background: transparent;
+}
+
+.editorial-page .ed-form-lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.1rem, 0.9rem + 0.5vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--ed-ink);
+  margin: 0 0 2rem;
+  max-width: 38ch;
+}
+
+.editorial-page .course-form label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ed-ink-soft);
+  margin-bottom: 1.75rem;
+}
+
+.editorial-page .course-form label.consent {
+  display: flex;
+  gap: 0.65rem;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--ed-ink-soft);
+  align-items: flex-start;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.editorial-page .course-form .form-note {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ed-ink-soft);
+  margin-top: 1.75rem;
 }
 
 .editorial-page .course-form input,
@@ -671,7 +761,35 @@
   border-bottom: 1px solid var(--ed-line);
   border-radius: 0;
   background: transparent;
-  padding-left: 0;
+  padding: 0.85rem 0;
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--ed-ink);
+  letter-spacing: 0.01em;
+  text-transform: none;
+  transition: border-color 0.4s ease;
+  width: 100%;
+}
+
+.editorial-page .course-form input:focus,
+.editorial-page .course-form textarea:focus,
+.editorial-page .course-form select:focus {
+  outline: none;
+  border-bottom-color: var(--ed-ink);
+}
+
+.editorial-page .course-form input::placeholder {
+  color: rgba(38, 38, 38, 0.32);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.editorial-page .course-form .consent input {
+  width: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .editorial-page .apply-grid {
@@ -923,38 +1041,38 @@ html {
   color: rgba(243, 239, 233, 0.65);
 }
 
+/* Stages — asymmetric staircase, not equal columns */
 .editorial-page .ed-stages {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: 0;
-  margin-top: 4rem;
+  margin-top: 5rem;
   border-top: 1px solid rgba(243, 239, 233, 0.18);
-  border-bottom: 1px solid rgba(243, 239, 233, 0.18);
 }
 
 .editorial-page .ed-stage {
-  padding: 2.5rem 2rem 2.5rem 0;
-  border-right: 1px solid rgba(243, 239, 233, 0.12);
+  padding: 3rem 2rem 3rem 0;
+  border-bottom: 1px solid rgba(243, 239, 233, 0.12);
   position: relative;
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 2.5rem;
+  align-items: baseline;
 }
 
-.editorial-page .ed-stage:last-child {
-  border-right: 0;
-}
-
-.editorial-page .ed-stage:nth-child(n + 2) {
-  padding-left: 2rem;
-}
+.editorial-page .ed-stage:nth-child(1) { grid-column: 1 / span 9; }
+.editorial-page .ed-stage:nth-child(2) { grid-column: 4 / span 9; }
+.editorial-page .ed-stage:nth-child(3) { grid-column: 2 / span 11; }
 
 .editorial-page .ed-stage-num {
   display: block;
   font-family: var(--font-display);
-  font-size: 4rem;
+  font-size: clamp(3rem, 2rem + 4vw, 5.5rem);
   font-weight: 300;
   font-style: italic;
   line-height: 1;
   color: rgba(243, 239, 233, 0.35);
-  margin-bottom: 1.5rem;
+  margin: 0;
 }
 
 .editorial-page .ed-stage-time {
@@ -962,16 +1080,24 @@ html {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(243, 239, 233, 0.6);
-  margin: 0 0 1rem;
+  margin: 0 0 0.85rem;
+  grid-column: 2;
 }
 
 .editorial-page .ed-stage-text {
   font-family: var(--font-display);
-  font-size: clamp(1.1rem, 0.9rem + 0.5vw, 1.35rem);
+  font-size: clamp(1.2rem, 0.95rem + 0.8vw, 1.65rem);
   font-weight: 300;
-  line-height: 1.45;
+  font-style: italic;
+  line-height: 1.4;
   margin: 0;
-  max-width: 22ch;
+  max-width: 28ch;
+  grid-column: 2;
+  color: rgba(243, 239, 233, 0.92);
+}
+
+.editorial-page .ed-stage-num {
+  grid-row: 1 / span 2;
 }
 
 .editorial-page .ed-outcomes {
@@ -1212,30 +1338,59 @@ html {
   color: var(--ed-ink);
 }
 
-/* Pricing — editorial 3-tier hairline table */
+/* Pricing — asymmetric editorial layout (1 : 1.2 : 1) */
 .editorial-page .ed-tiers {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 0;
   margin-top: 4rem;
-  border: 1px solid var(--ed-line);
+}
+
+@media (min-width: 901px) {
+  .editorial-page .ed-tiers {
+    grid-template-columns: 1fr 1.25fr 1fr;
+    align-items: stretch;
+  }
 }
 
 .editorial-page .ed-tier {
-  padding: 3rem 2.25rem;
-  border-right: 1px solid var(--ed-line);
+  padding: clamp(2.5rem, 4vw, 4rem) clamp(1.75rem, 3vw, 3rem);
+  border: 1px solid var(--ed-line);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   background: transparent;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.5s ease,
+    background 0.5s ease;
 }
 
-.editorial-page .ed-tier:last-child {
-  border-right: 0;
+@media (min-width: 901px) {
+  .editorial-page .ed-tier:nth-child(2) {
+    border-left: 0;
+    border-right: 0;
+  }
 }
 
 .editorial-page .ed-tier--featured {
-  background: rgba(166, 139, 91, 0.06);
+  background: rgba(166, 139, 91, 0.04);
+  border-color: rgba(166, 139, 91, 0.35) !important;
+}
+
+@media (min-width: 901px) {
+  .editorial-page .ed-tier--featured {
+    padding-block: clamp(3.5rem, 6vw, 5.5rem);
+    margin-block: -1.25rem;
+  }
+}
+
+.editorial-page .ed-tier:hover {
+  border-color: rgba(38, 38, 38, 0.2);
+}
+
+.editorial-page .ed-tier--featured:hover {
+  border-color: var(--ed-gold) !important;
 }
 
 .editorial-page .ed-tier-label {
@@ -1405,6 +1560,32 @@ html {
   max-width: 52ch;
 }
 
+/* Welcome video — editorial split */
+.editorial-page .video-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: end;
+}
+
+.editorial-page .video-intro-copy {
+  grid-column: 1 / span 5;
+}
+
+.editorial-page .video-embed {
+  grid-column: 7 / span 6;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--ed-line);
+  background: var(--ed-clay);
+}
+
+@media (max-width: 900px) {
+  .editorial-page .video-intro-copy,
+  .editorial-page .video-embed {
+    grid-column: 1 / -1;
+  }
+}
+
 /* Section head adjustments */
 .editorial-page .section-head p.ed-aside-note {
   max-width: 38ch;
@@ -1485,9 +1666,19 @@ html {
   }
 
   .editorial-page .ed-stage {
-    border-right: 0;
-    border-bottom: 1px solid rgba(243, 239, 233, 0.12);
+    grid-column: 1 / -1 !important;
+    grid-template-columns: 3.5rem 1fr;
+    gap: 1.5rem;
     padding: 2rem 0 !important;
+    border-bottom: 1px solid rgba(243, 239, 233, 0.12);
+  }
+
+  .editorial-page .ed-stage:nth-child(2) {
+    padding-left: 3rem !important;
+  }
+
+  .editorial-page .ed-stage:nth-child(3) {
+    padding-left: 1.5rem !important;
   }
 
   .editorial-page .ed-stage:last-child {
@@ -1552,5 +1743,43 @@ html {
   .editorial-page .ed-pull blockquote,
   .editorial-page .ed-pull figcaption {
     grid-column: 1 / -1;
+  }
+
+  /* Mobile method cards — restore single column with offset */
+  .editorial-page .method-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-page .method-card {
+    grid-column: 1 / -1 !important;
+    grid-template-columns: 2.5rem 1fr;
+    border-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .editorial-page .method-card:nth-child(even) {
+    padding-left: 2rem !important;
+  }
+
+  /* Mobile audience — offset indent */
+  .editorial-page .ed-audience li:nth-child(even) {
+    padding-left: 2rem;
+  }
+
+  .editorial-page .ed-voices > li:nth-child(even) {
+    padding-left: 1.5rem;
+  }
+
+  .editorial-page .ed-studies li:nth-child(even) {
+    padding-left: 1.5rem;
+  }
+
+  .editorial-page .ed-skills li:nth-child(even) {
+    padding-left: 1.5rem;
+  }
+
+  .editorial-page h1,
+  .editorial-page h2 {
+    text-wrap: balance;
   }
 }
