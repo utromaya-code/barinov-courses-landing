@@ -534,10 +534,35 @@
 
     .method-aside img {
       width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
-      object-position: center 30%;
+      object-position: center 20%;
       border-radius: var(--radius-lg);
+    }
+
+    .practice-gallery {
+      margin-top: var(--space-6);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-3);
+    }
+
+    .practice-gallery img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      filter: grayscale(0.08);
+    }
+
+    .author-photos {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .author-photo--secondary {
+      max-height: 280px;
+      object-position: center 15%;
     }
 
     /* Science */
@@ -1163,10 +1188,18 @@
           </blockquote>
         </div>
         <div class="method-aside" data-reveal>
-          <img src="assets/yoga/practice-side-plank.png" alt="Илья Баринов — боковая планка, динамика практики" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="assets/yoga/practice-balance.png" alt="Илья Баринов — баланс и опора в практике" width="900" height="1200" loading="lazy" decoding="async">
           <p style="color: var(--color-text-muted); font-size: var(--text-sm); max-width: 40ch;">
             Курс записан для домашнего формата: вам нужен коврик, немного пространства и готовность заниматься 3–4 раза в неделю по 40–50 минут.
           </p>
+        </div>
+        <div class="practice-gallery" data-reveal aria-label="Фрагменты практики на курсе">
+          <img src="assets/yoga/practice-triangle.png" alt="Триконасана — работа с опорой" width="900" height="1200" loading="lazy" decoding="async">
+          <img src="assets/yoga/practice-twist.png" alt="Скручивание — мобильность позвоночника" width="900" height="1200" loading="lazy" decoding="async">
+          <img src="assets/yoga/practice-crow.png" alt="Бакасана — сила кистей и центра" width="900" height="1200" loading="lazy" decoding="async">
+          <img src="assets/yoga/practice-side-plank.png" alt="Боковая планка" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="assets/yoga/practice-headstand.png" alt="Перевёрнутые позы — контроль и дыхание" width="900" height="1200" loading="lazy" decoding="async">
+          <img src="assets/yoga/practice-seated.png" alt="Восстановительная практика" width="900" height="1200" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -1373,7 +1406,10 @@
           <h2>Илья Баринов</h2>
         </div>
         <div class="author-grid">
-          <img class="author-photo" src="assets/yoga/author-portrait.png" alt="Илья Баринов — преподаватель йоги" width="800" height="1000" loading="lazy" decoding="async">
+          <div class="author-photos">
+            <img class="author-photo" src="assets/yoga/author-portrait.png" alt="Илья Баринов — преподаватель йоги" width="800" height="1000" loading="lazy" decoding="async">
+            <img class="author-photo author-photo--secondary" src="assets/yoga/author-closeup.png" alt="Илья Баринов" width="800" height="1000" loading="lazy" decoding="async">
+          </div>
           <div class="author-copy" data-reveal>
             <p>Преподаватель йоги, цигун и телесных практик. Ведёт онлайн-группы и интенсивы, работает с вниманием к опоре, дыханию и безопасной механике движения — без «героического» фитнес-подхода и без эзотерических клише.</p>
             <p>Обучение и практика — в традициях, которые проверяются телом: что вы чувствуете в стопе, тазе, дыхании, а не только «как выглядит поза сбоку».</p>
