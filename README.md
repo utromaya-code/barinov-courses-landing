@@ -1,5 +1,7 @@
 # Онлайн-курсы Ильи Баринова
 
+Единый стиль BarinovDao: [`barinov-brand.css`](barinov-brand.css) — Cream, Navy `#002B49`, Teal `#00A3AD`, Playfair Display + Montserrat.
+
 Отдельный репозиторий для лендингов **онлайн-курсов** (йога, «Точка опоры»).  
 Ретриты и Дахаб — в [qigong-retreat-landing](https://github.com/utromaya-code/qigong-retreat-landing).
 
