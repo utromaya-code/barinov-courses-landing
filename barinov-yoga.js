@@ -81,6 +81,16 @@ document.querySelectorAll(".faq-question").forEach((button) => {
   });
 });
 
+if (document.documentElement.classList.contains("luxury-page") && window.matchMedia("(min-width: 769px)").matches) {
+  document.querySelectorAll(".program-panel").forEach((panel) => {
+    panel.hidden = false;
+    panel.style.maxHeight = "none";
+  });
+  document.querySelectorAll(".program-trigger").forEach((button) => {
+    button.setAttribute("aria-expanded", "true");
+  });
+}
+
 document.querySelectorAll(".program-trigger").forEach((button) => {
   button.addEventListener("click", () => {
     const expanded = button.getAttribute("aria-expanded") === "true";
