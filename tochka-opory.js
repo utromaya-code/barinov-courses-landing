@@ -103,12 +103,60 @@ if (welcomeSection && welcomeEmbed && config.welcomeVideoId) {
   welcomeEmbed.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${config.welcomeVideoId}?rel=0" title="Видео-приветствие Ильи Баринова" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
 }
 
+const bodyQuiz = document.getElementById("body-quiz");
+const quizResult = document.getElementById("quiz-result");
+const quizResultText = document.getElementById("quiz-result-text");
+
+const quizMessages = {
+  q1: {
+    knees: "Тянущие ощущения под коленями часто связаны с перегрузкой задней поверхности — на модуле 2 разберём опору в стопе и тазе.",
+    back: "Округление поясницы в наклоне — типичная компенсация. На модуле 2 научимся держать ось без «ломания» спины.",
+    ok: "Даже при комфорте полезно проверить, откуда берётся движение — модуль 2 даст телесную карту опоры."
+  },
+  q2: {
+    hold: "Задержка дыхания в стрессе — сигнал перегруза нервной системы. Модуль 4 — про мягкую регуляцию без форсирования.",
+    chest: "Поверхностное грудное дыхание часто держит тело в тонусе. На модуле 4 соберём ритм, который успокаивает.",
+    notice: "Замечать дыхание — уже шаг. Модуль 4 переведёт наблюдение в управляемый инструмент."
+  },
+  q3: {
+    copy: "Повторять без понимания — главная ловушка YouTube-практики. Курс даёт логику каждого движения.",
+    chaos: "Разрозненные уроки редко дают систему. «Точка опоры» выстроена как последовательный маршрут.",
+    rare: "Без опоры регулярность не держится. Курс помогает встроить короткую практику в реальный график."
+  }
+};
+
+if (bodyQuiz && quizResult) {
+  bodyQuiz.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(bodyQuiz);
+    const parts = [
+      quizMessages.q1[data.get("q1")] || "",
+      quizMessages.q2[data.get("q2")] || "",
+      quizMessages.q3[data.get("q3")] || ""
+    ].filter(Boolean);
+
+    if (quizResultText) {
+      quizResultText.textContent = parts.join(" ");
+    }
+
+    quizResult.hidden = false;
+    quizResult.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+}
+
 const form = document.getElementById("course-form");
 const formSuccess = document.getElementById("form-success");
 const submitBtn = document.getElementById("form-submit-btn");
 
+function getQuizSummary() {
+  if (!bodyQuiz) return "";
+  const qd = new FormData(bodyQuiz);
+  if (!qd.get("q1")) return "";
+  return `Мини-тест: наклон=${qd.get("q1")}, дыхание=${qd.get("q2")}, практика=${qd.get("q3")}`;
+}
+
 function buildMessage(data) {
-  return [
+  const lines = [
     "Заявка на курс «Точка опоры»",
     `Имя: ${data.get("name") || ""}`,
     `Контакт: ${data.get("contact") || ""}`,
@@ -116,7 +164,10 @@ function buildMessage(data) {
     `Формат: ${data.get("tariff") || "-"}`,
     `Уровень: ${data.get("level") || "-"}`,
     `Запрос: ${data.get("goal") || "-"}`
-  ].join("\n");
+  ];
+  const quizLine = getQuizSummary();
+  if (quizLine) lines.push(quizLine);
+  return lines.join("\n");
 }
 
 async function submitViaWeb3Forms(data, message) {
