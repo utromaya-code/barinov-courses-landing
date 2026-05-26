@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300..600&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/yoga/hero-practice.png" as="image">
   <style>
     :root,
     [data-theme="light"] {
@@ -532,8 +533,11 @@
     }
 
     .method-aside img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center 30%;
       border-radius: var(--radius-lg);
-      filter: grayscale(0.15);
     }
 
     /* Science */
@@ -1112,7 +1116,7 @@
             <circle cx="100" cy="100" r="30"></circle>
             <path d="M100 10v180M10 100h180M35 35l130 130M165 35L35 165"></path>
           </svg>
-          <img class="hero-photo" src="assets/yoga/hero-practice.png" alt="Илья Баринов в практике йоги" width="900" height="1200" decoding="async">
+          <img class="hero-photo" src="assets/yoga/hero-practice.png" alt="Илья Баринов в позе на опоре — практика баланса" width="900" height="1200" fetchpriority="high" decoding="async">
         </div>
       </div>
     </section>
@@ -1159,7 +1163,7 @@
           </blockquote>
         </div>
         <div class="method-aside" data-reveal>
-          <img src="assets/yoga/practice-balance.png" alt="Практика баланса на курсе" width="800" height="1000" loading="lazy" decoding="async">
+          <img src="assets/yoga/practice-side-plank.png" alt="Илья Баринов — боковая планка, динамика практики" width="1200" height="800" loading="lazy" decoding="async">
           <p style="color: var(--color-text-muted); font-size: var(--text-sm); max-width: 40ch;">
             Курс записан для домашнего формата: вам нужен коврик, немного пространства и готовность заниматься 3–4 раза в неделю по 40–50 минут.
           </p>
@@ -1369,7 +1373,6 @@
           <h2>Илья Баринов</h2>
         </div>
         <div class="author-grid">
-          <!-- TODO: автор заполняет — фото; сейчас assets/yoga/author-portrait.png -->
           <img class="author-photo" src="assets/yoga/author-portrait.png" alt="Илья Баринов — преподаватель йоги" width="800" height="1000" loading="lazy" decoding="async">
           <div class="author-copy" data-reveal>
             <p>Преподаватель йоги, цигун и телесных практик. Ведёт онлайн-группы и интенсивы, работает с вниманием к опоре, дыханию и безопасной механике движения — без «героического» фитнес-подхода и без эзотерических клише.</p>
