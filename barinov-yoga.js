@@ -72,7 +72,10 @@ document.querySelectorAll(".faq-question").forEach((button) => {
   });
 });
 
-if (document.documentElement.classList.contains("luxury-page") && window.matchMedia("(min-width: 769px)").matches) {
+if (
+  document.documentElement.classList.contains("luxury-page") &&
+  window.matchMedia("(min-width: 901px)").matches
+) {
   document.querySelectorAll(".program-panel").forEach((panel) => {
     panel.hidden = false;
     panel.style.maxHeight = "none";

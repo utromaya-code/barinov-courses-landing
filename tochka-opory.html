@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="ru" data-theme="light" class="luxury-page">
+<html lang="ru" data-theme="light" class="luxury-page editorial-page">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Точка опоры — курс Ильи Баринова по йоге</title>
   <meta name="description" content="Авторский курс «Точка опоры»: 3 месяца, 30 онлайн-занятий, финальный ретрит. Фундаментальная йога и телесная грамотность.">
-  <meta name="theme-color" content="#f7f3ec">
+  <meta name="theme-color" content="#fbf9f6">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:title" content="Точка опоры — курс Ильи Баринова">
@@ -16,10 +16,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="barinov-brand.css">
   <link rel="stylesheet" href="barinov-yoga-extensions.css">
   <link rel="stylesheet" href="tochka-quiet-luxury.css">
+  <link rel="stylesheet" href="tochka-editorial.css">
   <link rel="preload" href="assets/yoga/hero-practice.png" as="image">
   <style>
     :root,
@@ -1095,34 +1096,31 @@
   </header>
 
   <main id="main">
-    <section class="hero" id="hero" aria-label="Первый экран">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow hero-enter">Авторский курс Ильи Баринова</p>
-          <h1 class="hero-enter">Точка опоры</h1>
-          <p class="hero-subtitle hero-enter">Фундаментальный курс по йоге, телесной грамотности и устойчивой практике.</p>
-          <p class="hero-lead hero-enter">Для тех, кто хочет не просто повторять асаны, а понимать тело, дыхание, внимание и принципы безопасности на уровне, который можно применять самостоятельно.</p>
-          <div class="hero-actions hero-enter">
-            <a class="btn btn-primary" href="#apply">Начать практику</a>
+    <section class="hero editorial-hero" id="hero" aria-label="Первый экран">
+      <div class="ed-wrap">
+        <div class="ed-hero-grid">
+          <div class="ed-hero-copy hero-copy">
+            <p class="ed-label hero-enter">00 / Пролог</p>
+            <p class="ed-label ed-label--sub hero-enter">Илья Баринов</p>
+            <h1 class="hero-enter">Точка<br>опоры</h1>
+            <p class="hero-subtitle ed-lede hero-enter">Йога как внутренняя архитектура — не форма на экране, а опора в теле.</p>
+            <div class="hero-actions hero-enter">
+              <a class="btn btn-primary" href="#apply">Войти в практику</a>
+            </div>
+            <p class="hero-secondary hero-enter">
+              <a class="btn btn--ghost" href="#lead-magnet">Практика для спины</a>
+              <span class="hero-secondary-sep" aria-hidden="true">·</span>
+              <a class="btn btn--ghost" href="#method">Метод</a>
+            </p>
+            <a class="hero-scroll hero-enter" href="#essence">Листать</a>
           </div>
-          <p class="hero-secondary hero-enter">
-            <a href="#lead-magnet">Бесплатная практика для спины</a>
-            <span class="hero-secondary-sep" aria-hidden="true">·</span>
-            <a href="#method">О методе</a>
-          </p>
-          <a class="hero-scroll hero-enter" href="#essence">Подробнее о курсе</a>
+          <figure class="ed-hero-visual hero-visual">
+            <div class="ed-figure-frame">
+              <img class="hero-photo" src="assets/yoga/hero-practice.png" alt="Илья Баринов — курс «Точка опоры»" width="900" height="1200" fetchpriority="high" decoding="async">
+            </div>
+            <figcaption class="ed-caption">Fig 0.1 — Точка опоры, внутреннее состояние</figcaption>
+          </figure>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <svg class="hero-mandala" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.6">
-            <circle cx="100" cy="100" r="90"></circle>
-            <circle cx="100" cy="100" r="60"></circle>
-            <circle cx="100" cy="100" r="30"></circle>
-            <path d="M100 10v180M10 100h180M35 35l130 130M165 35L35 165"></path>
-          </svg>
-          <img class="hero-photo" src="assets/yoga/hero-practice.png" alt="Илья Баринов — курс «Точка опоры»" width="900" height="1200" fetchpriority="high" decoding="async">
-        </div>
-      </div>
-      <div class="container">
         <dl class="hero-facts hero-enter" aria-label="Ключевые факты курса">
           <div>
             <dt>Старт</dt>
@@ -1158,41 +1156,45 @@
     <section class="section lead-magnet-section" id="lead-magnet">
       <div class="container lead-magnet-inner" data-reveal>
         <p class="section-kicker">Бесплатно</p>
-        <h2>10-минутная практика: снять усталость со спины после рабочего дня</h2>
-        <p>Короткая видео-практика в Telegram — чтобы почувствовать подход Ильи до решения о курсе.</p>
-        <a class="btn btn-ghost" id="lead-magnet-link" href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Открыть практику</a>
+        <h2>Десять минут тишины для спины</h2>
+        <p>Короткая практика в Telegram — почувствовать метод до решения.</p>
+        <a class="btn btn-primary" id="lead-magnet-link" href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Открыть практику</a>
       </div>
     </section>
 
     <section class="quote-band" aria-label="Смысл курса">
       <div class="container" data-reveal>
         <blockquote>
-          Когда внешнее рушится, единственное, на что можно опереться — то, что внутри.
+          Когда внешнее рушится — опора остаётся внутри.
         </blockquote>
         <cite>Точка опоры</cite>
       </div>
     </section>
 
-    <section class="section intro-band" id="essence">
-      <div class="container intro-grid">
-        <p class="section-kicker" data-reveal>Суть курса</p>
-        <div class="intro-copy" data-reveal>
-          <h2>Курс про опору, движение и внутреннюю регуляцию</h2>
-          <p>«Точка опоры» собирает йогу в ясную систему: как входить в асаны без лишнего риска, как слышать ограничения тела, зачем нужно дыхание, как внимание меняет качество движения и почему регулярность важнее героических рывков.</p>
+    <section class="section intro-band ed-essence" id="essence">
+      <div class="ed-wrap">
+        <div class="ed-grid" data-reveal>
+          <div class="ed-span-5">
+            <p class="ed-label">01 / Суть</p>
+            <p class="ed-statement">Опора — это не поза. Это способ оставаться собой, когда мир шумит.</p>
+          </div>
+          <div class="ed-span-6-end">
+            <div class="ed-pillars">
+              <div class="ed-pillar"><strong>Тело</strong><span>Ось, суставы, позвоночник</span></div>
+              <div class="ed-pillar"><strong>Дыхание</strong><span>Ритм, пауза, тишина</span></div>
+              <div class="ed-pillar"><strong>Внимание</strong><span>Наблюдение без насилия</span></div>
+              <div class="ed-pillar"><strong>Ритм</strong><span>Регулярность вместо рывка</span></div>
+            </div>
+          </div>
         </div>
-        <ul class="signal-list" data-reveal>
-          <li>Тело: ось, опора, суставы, позвоночник</li>
-          <li>Дыхание: ритм, пауза, восстановление</li>
-          <li>Внимание: устойчивость, наблюдение, регулярность</li>
-        </ul>
       </div>
     </section>
 
     <section class="section section--surface" id="for-whom">
       <div class="container">
         <div class="section-head" data-reveal>
-          <p class="section-kicker">Для кого</p>
-          <h2>Узнаёте себя — без списка диагнозов и красных крестиков</h2>
+          <p class="ed-label">02 / Для кого</p>
+          <h2>Узнавание<br>без диагнозов</h2>
         </div>
         <div class="audience-quotes">
           <figure class="audience-quote" data-reveal>
@@ -1217,10 +1219,14 @@
 
     <section class="section section--surface" id="compare">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="section-kicker">Отличие</p>
-          <h2>Почему это не очередная йога по видео</h2>
-          <p>На рынке обычно три крайности: эзотерическая йога, сухая анатомия для профи или «умный фитнес» без внимания и дыхания. «Точка опоры» собирает другое.</p>
+        <div class="section-head ed-grid" data-reveal>
+          <div class="ed-span-6">
+            <p class="ed-label">03 / Отличие</p>
+            <h2>Не очередная<br>йога по видео</h2>
+          </div>
+          <div class="ed-span-5-end">
+            <p class="ed-aside-note" style="margin:0">Три крайности рынка — эзотерика, сухая теория, фитнес без внимания. Здесь — четвёртый путь.</p>
+          </div>
         </div>
         <div class="compare-grid">
           <article class="compare-card" data-reveal>
@@ -1268,15 +1274,17 @@
 
     <section class="section section--surface" id="method">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="section-kicker">Метод</p>
-          <h2>Традиционные практики, собранные через современное понимание движения</h2>
-          <p>Подход Ильи соединяет йогу, цигун, тайцзицюань, дыхательные техники, медитацию и опыт реабилитационной работы. Это гибрид, которого почти нет на рынке: элитарное питерское искусство движения (Академия Вагановой), спортивная наука (Лесгафт, реабилитация ФК «Зенит») и мастерство восточных практик (чемпион Европы по тайцзицюань).</p>
+        <div class="section-head ed-grid" data-reveal>
+          <div class="ed-span-7">
+            <p class="ed-label">04 / Метод</p>
+            <h2>Традиция,<br>проверенная телом</h2>
+            <p class="ed-aside-note" style="margin-top:1.5rem">Йога, цигун, сценическое движение, реабилитология — один язык, без эклектики ради красоты.</p>
+          </div>
         </div>
         <ul class="positioning-strip" data-reveal aria-label="Чем курс отличается от рынка">
-          <li><strong>Не эзотерика:</strong> не «открываем чакры», а настраиваем биомеханику и нервную систему через понятные тесты.</li>
-          <li><strong>Не марафон:</strong> без надрыва — бережная регулярность на годы, а не травма через месяц.</li>
-          <li><strong>Не слепое копирование:</strong> вы понимаете логику движения, а не повторяете картинку с экрана.</li>
+          <li><strong>Не эзотерика:</strong> биомеханика вместо мистики и нервную систему через понятные тесты.</li>
+          <li><strong>Не марафон:</strong> бережная регулярность на годы.</li>
+          <li><strong>Не слепое копирование:</strong> логика движения вместо копирования экрана.</li>
         </ul>
         <div class="method-grid" data-reveal>
           <article class="method-card">
@@ -1306,9 +1314,12 @@
           </blockquote>
         </div>
         <div class="method-aside" data-reveal>
-          <img src="assets/yoga/practice-balance.png" alt="Илья Баринов — баланс и опора в практике" width="900" height="1200" loading="lazy" decoding="async">
-          <p style="color: var(--color-text-muted); font-size: var(--text-sm); max-width: 40ch;">
-            Курс записан для домашнего формата: вам нужен коврик, немного пространства и готовность заниматься 3–4 раза в неделю по 40–50 минут.
+          <div class="ed-figure-frame">
+            <img src="assets/yoga/practice-balance.png" alt="Илья Баринов — баланс и опора в практике" width="900" height="1200" loading="lazy" decoding="async">
+          </div>
+          <p class="ed-caption" style="grid-column: 2 / span 5; margin-top: 0.75rem;">Fig 4.1 — Опора в движении</p>
+          <p class="ed-aside-note">
+            Коврик, пространство, три занятия в неделю — домашний формат без театра студии.
           </p>
         </div>
         <div class="practice-gallery" data-reveal aria-label="Фрагменты практики на курсе">
@@ -1325,9 +1336,9 @@
     <section class="section section--offset" id="science">
       <div class="container">
         <div class="section-head" data-reveal>
-          <p class="section-kicker">Научная опора</p>
-          <h2>Практика без обещаний чудес: только то, что можно объяснить и проверить</h2>
-          <p>Курс не подменяет медицину и не обещает вылечить заболевания. Его фокус — грамотное движение, дыхание, внимание и регулярность: направления, которые изучаются в современной доказательной базе как часть немедикаментозной поддержки здоровья и качества жизни.</p>
+          <p class="ed-label">05 / Наука</p>
+          <h2>Без обещаний<br>чудес</h2>
+          <p>Не медицина — грамотное движение, дыхание, внимание. Только то, что можно объяснить.</p>
         </div>
         <div class="science-grid">
           <article class="science-card" data-reveal>
@@ -1364,9 +1375,9 @@
     <section class="section" id="program">
       <div class="container">
         <div class="section-head" data-reveal>
-          <p class="section-kicker">Программа</p>
-          <h2>Маршрут от базовой безопасности к самостоятельной практике</h2>
-          <p>Программа построена как фундамент: сначала безопасность и телесная логика, затем дыхание, внимание, медитация и интеграция в собственный ритм.</p>
+          <p class="ed-label">06 / Программа</p>
+          <h2>Шесть модулей<br>к самостоятельности</h2>
+          <p>От безопасности — к личной практике без подсказок с экрана.</p>
         </div>
         <ul class="program-list">
           <li class="program-item" data-reveal>
@@ -1525,8 +1536,8 @@
         </figure>
         <div class="story-copy" data-reveal>
           <p class="section-kicker">Формат</p>
-          <h2>Живой учебный процесс, а не библиотека видео</h2>
-          <p>Участники проходят темы вместе: практика, разбор, вопросы, домашние ориентиры и постепенное усложнение. Так знания не остаются конспектом, а превращаются в телесный навык.</p>
+          <h2>Живой процесс,<br>не архив видео</h2>
+          <p>Практика вместе — разбор, вопросы, домашние ориентиры. Знание становится телом.</p>
           <div class="format-list">
             <div>
               <strong>30 занятий</strong>
@@ -1701,7 +1712,7 @@
     <section class="section early-section" id="early">
       <div class="container early-inner" data-reveal>
         <p class="section-kicker">Ранняя регистрация</p>
-        <h2>Спокойно зафиксировать участие в потоке</h2>
+        <h2>Участие<br>в потоке</h2>
         <p>Оставьте контакт — пришлём даты, формат, стоимость и условия ретрита. Без давления: сначала условия, потом решение.</p>
         <a class="btn btn-primary" href="#apply">Узнать условия</a>
       </div>
@@ -1768,7 +1779,7 @@
             <label><input type="radio" name="q3" value="chaos"> Разные уроки без системы</label>
             <label><input type="radio" name="q3" value="rare"> Занимаюсь редко</label>
           </fieldset>
-          <button class="btn btn-primary" type="submit">Показать результат</button>
+          <button class="btn btn-primary" type="submit">Увидеть ответ</button>
         </form>
         <div class="quiz-result" id="quiz-result" hidden>
           <h3>Это частая компенсация — и она разбирается на курсе</h3>
@@ -1781,9 +1792,9 @@
     <section class="section apply-section" id="apply">
       <div class="container apply-grid">
         <div class="apply-copy" data-reveal>
-          <p class="section-kicker">Заявка</p>
-          <h2>Напишите, с каким запросом вы хотите прийти</h2>
-          <p>Заполните форму на сайте — заявка придёт на почту. Мы ответим в Telegram, WhatsApp или email — как вам удобнее. Telegram остаётся как дополнительный канал.</p>
+          <p class="ed-label">Заявка</p>
+          <h2>Начать<br>диалог</h2>
+          <p>Оставьте контакт — ответим в удобном канале. Без обязательств.</p>
           <ul class="apply-summary">
             <li>Старт: 20 сентября</li>
             <li>Формат: 3 месяца онлайн</li>
