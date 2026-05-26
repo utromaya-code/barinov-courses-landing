@@ -1,0 +1,1366 @@
+/* =============================================================
+   MINERAL SANCTUARY — Dark Architectural Minimalism
+   Overlays and overrides the editorial layer. Keeps all grid
+   structure from tochka-editorial.css, replaces palette,
+   typography mood, and visual treatment.
+   ============================================================= */
+
+html.mineral-page {
+  --bg-main: #121212;
+  --bg-surface: #1a1a1a;
+  --text-primary: #eaeaea;
+  --text-muted: #8e8e93;
+  --accent-mineral: #8a9a86;
+  --accent-dim: #3a3a3c;
+  --line-hairline: rgba(234, 234, 234, 0.08);
+  --line-hairline-strong: rgba(234, 234, 234, 0.16);
+
+  --font-serif: "Prata", "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --container-w: min(1280px, calc(100% - clamp(2rem, 6vw, 5rem)));
+  --section-pad: clamp(6rem, 15vh, 12rem);
+
+  /* Override legacy tokens */
+  --bg: var(--bg-main);
+  --color-bg: var(--bg-main);
+  --color-surface: var(--bg-surface);
+  --color-surface-2: var(--bg-surface);
+  --color-text: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-muted);
+  --color-border: var(--line-hairline);
+  --color-accent: var(--accent-mineral);
+  --color-accent-soft: var(--accent-mineral);
+  --brand-accent: var(--accent-mineral);
+  --brand-accent-soft: var(--accent-mineral);
+  --font-body: var(--font-sans);
+  --font-display: var(--font-serif);
+  --ed-cream: var(--bg-main);
+  --ed-clay: var(--bg-main);
+  --ed-stone: var(--bg-surface);
+  --ed-ink: var(--text-primary);
+  --ed-ink-soft: var(--text-muted);
+  --ed-line: var(--line-hairline);
+  --ed-gold: var(--accent-mineral);
+
+  background: var(--bg-main);
+  color: var(--text-primary);
+  color-scheme: dark;
+}
+
+html.mineral-page body {
+  background: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+/* ===========================================================
+   TYPOGRAPHY
+   =========================================================== */
+
+html.mineral-page h1,
+html.mineral-page h2,
+html.mineral-page h3,
+html.mineral-page h4,
+html.mineral-page h5,
+html.mineral-page h6 {
+  font-family: var(--font-serif) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.05 !important;
+  color: var(--text-primary) !important;
+  font-style: normal !important;
+}
+
+html.mineral-page p,
+html.mineral-page li,
+html.mineral-page dd,
+html.mineral-page span,
+html.mineral-page label,
+html.mineral-page blockquote {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+html.mineral-page a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/* Labels — clean uppercase, sage accent */
+html.mineral-page .ed-label,
+html.mineral-page .section-kicker,
+html.mineral-page .eyebrow {
+  font-family: var(--font-sans) !important;
+  font-style: normal !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: var(--accent-mineral) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+html.mineral-page .ed-label--chapter {
+  font-family: var(--font-sans) !important;
+  font-style: normal !important;
+  font-size: 10px !important;
+  letter-spacing: 0.3em !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  color: var(--accent-mineral) !important;
+}
+
+html.mineral-page .ed-label--sub {
+  color: var(--text-muted) !important;
+}
+
+/* Statement / lede */
+html.mineral-page .ed-statement {
+  font-family: var(--font-serif) !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  color: var(--text-primary) !important;
+  font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.015em !important;
+}
+
+html.mineral-page .ed-lede,
+html.mineral-page .hero-subtitle,
+html.mineral-page .ed-aside-note,
+html.mineral-page .ed-form-lede {
+  font-family: var(--font-sans) !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  color: var(--text-muted) !important;
+  line-height: 1.6 !important;
+}
+
+html.mineral-page .ed-caption {
+  font-family: var(--font-sans) !important;
+  font-style: normal !important;
+  font-size: 10px !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+  font-weight: 400 !important;
+}
+
+/* ===========================================================
+   SECTIONS / PACING
+   =========================================================== */
+
+html.mineral-page .section,
+html.mineral-page .hero,
+html.mineral-page .editorial-hero,
+html.mineral-page .quote-band,
+html.mineral-page .video-intro,
+html.mineral-page .lead-magnet-section,
+html.mineral-page .apply-section,
+html.mineral-page .early-section,
+html.mineral-page #science,
+html.mineral-page #for-whom,
+html.mineral-page #method,
+html.mineral-page #retreat,
+html.mineral-page #results,
+html.mineral-page #format,
+html.mineral-page #skills,
+html.mineral-page #author,
+html.mineral-page #reviews,
+html.mineral-page #pricing,
+html.mineral-page #faq,
+html.mineral-page #apply,
+html.mineral-page #welcome-video,
+html.mineral-page .section-ink {
+  background: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  padding: var(--section-pad) 0 !important;
+  border: none !important;
+}
+
+html.mineral-page .quote-band {
+  padding: clamp(5rem, 12vh, 9rem) 0 !important;
+  border-block: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .editorial-hero {
+  min-height: 100svh;
+  padding-top: clamp(8rem, 14vh, 12rem) !important;
+  padding-bottom: clamp(3rem, 8vh, 5rem) !important;
+}
+
+/* Hairline rules between sections */
+html.mineral-page .section + .section,
+html.mineral-page .editorial-hero + .section,
+html.mineral-page .quote-band + .section,
+html.mineral-page .section + .quote-band {
+  border-top: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .container,
+html.mineral-page .ed-wrap {
+  width: var(--container-w);
+  margin-inline: auto;
+}
+
+/* ===========================================================
+   NO CARDS — FLATTEN EVERY BOX
+   =========================================================== */
+
+html.mineral-page .method-card,
+html.mineral-page .audience-quote,
+html.mineral-page .science-card,
+html.mineral-page .pricing-card,
+html.mineral-page .review-case,
+html.mineral-page .credentials-panel,
+html.mineral-page .credential-card,
+html.mineral-page .quiz-field,
+html.mineral-page .compare-card,
+html.mineral-page .faq-item,
+html.mineral-page .program-item,
+html.mineral-page .ed-tier,
+html.mineral-page .ed-pillar {
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ===========================================================
+   HEADER
+   =========================================================== */
+
+html.mineral-page .site-header {
+  background: rgba(18, 18, 18, 0.85) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line-hairline) !important;
+  height: auto;
+  min-height: 72px;
+}
+
+html.mineral-page .brand,
+html.mineral-page .brand:hover {
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .brand-name {
+  font-family: var(--font-sans) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.3em !important;
+  text-transform: uppercase !important;
+  color: var(--text-primary) !important;
+  font-weight: 400 !important;
+}
+
+html.mineral-page .brand svg path,
+html.mineral-page .brand svg circle {
+  stroke: var(--text-primary) !important;
+}
+
+html.mineral-page .site-nav a {
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+  font-weight: 400 !important;
+  transition: color 0.4s ease !important;
+  border: none !important;
+}
+
+html.mineral-page .site-nav a:hover {
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .theme-toggle {
+  display: none !important;
+}
+
+html.mineral-page .nav-toggle span {
+  background: var(--text-primary) !important;
+}
+
+/* ===========================================================
+   BUTTONS — Interactive Hairline Triggers
+   =========================================================== */
+
+html.mineral-page .btn,
+html.mineral-page button.btn,
+html.mineral-page a.btn,
+html.mineral-page .btn-primary,
+html.mineral-page .btn-ghost {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  padding: 1.05rem 2.25rem !important;
+  background: transparent !important;
+  border: 1px solid var(--text-primary) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  animation: none !important;
+  min-height: auto !important;
+  transition:
+    background 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.5s ease !important;
+  cursor: pointer;
+}
+
+html.mineral-page .btn::after,
+html.mineral-page .btn::before {
+  content: none !important;
+}
+
+html.mineral-page .btn:hover,
+html.mineral-page .btn:focus-visible {
+  background: var(--text-primary) !important;
+  color: var(--bg-main) !important;
+  border-color: var(--text-primary) !important;
+}
+
+html.mineral-page .header-cta.btn {
+  padding: 0.7rem 1.5rem !important;
+  font-size: 10px !important;
+}
+
+/* Hero secondary inline text links */
+html.mineral-page .hero-secondary a,
+html.mineral-page .hero-secondary .btn--ghost {
+  display: inline !important;
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+}
+
+html.mineral-page .hero-secondary a:hover,
+html.mineral-page .hero-secondary .btn--ghost:hover {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .hero-scroll {
+  color: var(--text-muted) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.3em !important;
+  text-transform: uppercase !important;
+}
+
+/* ===========================================================
+   FORMS
+   =========================================================== */
+
+html.mineral-page .course-form {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+html.mineral-page .course-form label,
+html.mineral-page .quiz-field legend {
+  display: block !important;
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: var(--accent-mineral) !important;
+  margin-bottom: 2rem !important;
+}
+
+html.mineral-page .course-form input[type="text"],
+html.mineral-page .course-form input[type="email"],
+html.mineral-page .course-form input[type="tel"],
+html.mineral-page .course-form select,
+html.mineral-page .course-form textarea {
+  display: block !important;
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--line-hairline) !important;
+  border-radius: 0 !important;
+  padding: 0.95rem 0 !important;
+  margin-top: 0.85rem !important;
+  font-family: var(--font-serif) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: 1.2rem !important;
+  color: var(--text-primary) !important;
+  letter-spacing: 0.005em !important;
+  text-transform: none !important;
+  transition: border-color 0.5s ease !important;
+  box-shadow: none !important;
+}
+
+html.mineral-page .course-form input:focus,
+html.mineral-page .course-form select:focus,
+html.mineral-page .course-form textarea:focus {
+  outline: none !important;
+  border-bottom-color: var(--accent-mineral) !important;
+}
+
+html.mineral-page .course-form input::placeholder,
+html.mineral-page .course-form textarea::placeholder {
+  color: var(--accent-dim) !important;
+  font-family: var(--font-serif) !important;
+  font-style: italic;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+html.mineral-page .course-form .consent {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+  margin: 2rem 0 1.5rem !important;
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
+  font-size: 11px !important;
+  color: var(--text-muted) !important;
+  font-family: var(--font-sans) !important;
+}
+
+html.mineral-page .course-form .consent input {
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  accent-color: var(--accent-mineral);
+}
+
+html.mineral-page .course-form .consent a {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--line-hairline);
+}
+
+html.mineral-page .form-note {
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+  margin-top: 2rem !important;
+}
+
+html.mineral-page .form-note a {
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .form-success {
+  background: transparent !important;
+  border: 1px solid var(--line-hairline) !important;
+  padding: 2.5rem !important;
+  color: var(--text-primary);
+}
+
+html.mineral-page .form-success h3 {
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .form-success p {
+  color: var(--text-muted) !important;
+}
+
+/* ===========================================================
+   IMAGES — Cinematic monochrome
+   =========================================================== */
+
+html.mineral-page img,
+html.mineral-page picture img,
+html.mineral-page .hero-photo,
+html.mineral-page .ed-figure-frame img,
+html.mineral-page .practice-gallery img,
+html.mineral-page .author-photo,
+html.mineral-page .retreat-media img,
+html.mineral-page .story-media img {
+  filter: grayscale(1) contrast(1.1) brightness(0.9) !important;
+  transition:
+    filter 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+html.mineral-page figure:hover img,
+html.mineral-page .ed-figure-frame:hover img,
+html.mineral-page .practice-gallery img:hover,
+html.mineral-page .author-photo:hover {
+  filter: grayscale(0) contrast(1.05) brightness(1) !important;
+}
+
+html.mineral-page .ed-figure-frame {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--line-hairline) !important;
+  border-radius: 0 !important;
+}
+
+html.mineral-page .retreat-media,
+html.mineral-page .story-media {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--line-hairline) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+html.mineral-page .practice-gallery img {
+  border: 1px solid var(--line-hairline) !important;
+  background: var(--bg-surface);
+}
+
+html.mineral-page .credential-placeholder {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--line-hairline) !important;
+  color: var(--text-muted) !important;
+}
+
+/* Video embed (hidden, but style it for safety) */
+html.mineral-page .video-embed {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--line-hairline) !important;
+}
+
+/* ===========================================================
+   HERO
+   =========================================================== */
+
+html.mineral-page .ed-hero-grid {
+  display: grid !important;
+  grid-template-columns: repeat(12, 1fr) !important;
+  gap: clamp(1.5rem, 3vw, 3rem) !important;
+  align-items: end !important;
+}
+
+html.mineral-page .ed-hero-copy {
+  grid-column: 1 / span 6 !important;
+}
+
+html.mineral-page .ed-hero-visual {
+  grid-column: 8 / span 5 !important;
+}
+
+html.mineral-page .editorial-hero h1,
+html.mineral-page .hero h1 {
+  font-size: clamp(4rem, 3rem + 7vw, 10rem) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 0.9 !important;
+  color: var(--text-primary) !important;
+  margin: 0 0 1.5rem !important;
+}
+
+/* Hero facts — datasheet */
+html.mineral-page .hero-facts {
+  grid-column: 1 / -1 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0 !important;
+  margin-top: clamp(4rem, 8vw, 6rem) !important;
+  border-top: 1px solid var(--line-hairline) !important;
+  border-bottom: 1px solid var(--line-hairline) !important;
+  background: transparent !important;
+}
+
+html.mineral-page .hero-facts > div {
+  padding: 1.5rem 0 1.5rem 0 !important;
+  border-right: 1px solid var(--line-hairline) !important;
+  background: transparent !important;
+}
+
+html.mineral-page .hero-facts > div:not(:first-child) {
+  padding-left: 2rem !important;
+}
+
+html.mineral-page .hero-facts > div:last-child {
+  border-right: 0 !important;
+}
+
+html.mineral-page .hero-facts dt {
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: var(--accent-mineral) !important;
+  margin: 0 0 0.85rem !important;
+}
+
+html.mineral-page .hero-facts dd {
+  font-family: var(--font-serif) !important;
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+  color: var(--text-primary) !important;
+  margin: 0 !important;
+}
+
+/* ===========================================================
+   PILLARS — flat typography grid, no boxes
+   =========================================================== */
+
+html.mineral-page .ed-pillars {
+  counter-reset: pillar;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0 !important;
+  border: none !important;
+  border-top: 1px solid var(--line-hairline) !important;
+  border-bottom: 1px solid var(--line-hairline) !important;
+  background: transparent !important;
+}
+
+html.mineral-page .ed-pillar {
+  border: none !important;
+  border-right: 1px solid var(--line-hairline) !important;
+  padding: 3rem 1.75rem 3.5rem 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.85rem !important;
+  position: relative;
+  counter-increment: pillar;
+}
+
+html.mineral-page .ed-pillar:not(:first-child) {
+  padding-left: 2rem !important;
+}
+
+html.mineral-page .ed-pillar:last-child {
+  border-right: 0 !important;
+}
+
+html.mineral-page .ed-pillar::before {
+  content: counter(pillar, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: var(--accent-dim);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+html.mineral-page .ed-pillar strong {
+  display: block !important;
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+  color: var(--accent-mineral) !important;
+  margin: 0 !important;
+}
+
+html.mineral-page .ed-pillar span {
+  font-family: var(--font-sans) !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  color: var(--text-muted) !important;
+  line-height: 1.6 !important;
+}
+
+/* ===========================================================
+   PROGRAM — Architectural Blueprint accordion
+   =========================================================== */
+
+html.mineral-page .program-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 4rem 0 0 !important;
+  border-top: 1px solid var(--line-hairline) !important;
+  background: transparent !important;
+  display: block !important;
+}
+
+html.mineral-page .program-item {
+  border-bottom: 1px solid var(--line-hairline) !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+html.mineral-page .program-trigger {
+  display: grid !important;
+  grid-template-columns: 6rem 1fr 3rem !important;
+  gap: 2.5rem !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 2.5rem 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: var(--text-primary) !important;
+  text-align: left !important;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: padding 0.4s ease;
+}
+
+html.mineral-page .program-trigger:hover {
+  padding-left: 0.5rem !important;
+}
+
+html.mineral-page .program-week {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2.5rem, 2rem + 1.5vw, 3.5rem) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--text-muted) !important;
+  opacity: 1 !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+html.mineral-page .program-trigger h3 {
+  font-family: var(--font-serif) !important;
+  font-weight: 300 !important;
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem) !important;
+  color: var(--text-primary) !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.015em !important;
+}
+
+html.mineral-page .program-trigger h3 strong {
+  display: block;
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: var(--accent-mineral) !important;
+  margin-bottom: 0.65rem;
+}
+
+html.mineral-page .program-chevron {
+  width: 36px;
+  height: 1px;
+  background: var(--text-muted);
+  position: relative;
+  justify-self: end;
+  transition: background 0.4s ease;
+}
+
+html.mineral-page .program-chevron::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 36px;
+  background: var(--text-muted);
+  top: -17.5px;
+  left: 17.5px;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.4s ease;
+}
+
+html.mineral-page .program-trigger:hover .program-chevron,
+html.mineral-page .program-trigger:hover .program-chevron::after {
+  background: var(--text-primary);
+}
+
+html.mineral-page .program-trigger[aria-expanded="true"] .program-chevron::after {
+  transform: scaleY(0);
+}
+
+html.mineral-page .program-panel-inner {
+  padding: 0 0 3rem 8.5rem !important;
+  max-width: 60ch !important;
+}
+
+html.mineral-page .program-line {
+  font-family: var(--font-sans) !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  color: var(--text-muted) !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0.005em !important;
+}
+
+/* ===========================================================
+   PRICING — Raw typographic rows
+   =========================================================== */
+
+html.mineral-page .ed-tiers {
+  display: block !important;
+  margin-top: 4rem !important;
+  border: none !important;
+  border-top: 1px solid var(--line-hairline) !important;
+  grid-template-columns: none !important;
+}
+
+html.mineral-page .ed-tier {
+  display: grid !important;
+  grid-template-columns: 1.2fr 2fr 1.2fr !important;
+  gap: 3rem !important;
+  align-items: start !important;
+  padding: 3rem 0 !important;
+  border: none !important;
+  border-bottom: 1px solid var(--line-hairline) !important;
+  background: transparent !important;
+  margin-block: 0 !important;
+  transition: padding 0.4s ease;
+}
+
+html.mineral-page .ed-tier:hover {
+  padding-left: 0.5rem !important;
+}
+
+html.mineral-page .ed-tier--featured {
+  background: transparent !important;
+  border-color: var(--line-hairline) !important;
+  padding-block: 3rem !important;
+  margin-block: 0 !important;
+}
+
+html.mineral-page .ed-tier > * {
+  margin: 0 !important;
+}
+
+html.mineral-page .ed-tier-label {
+  font-family: var(--font-sans) !important;
+  font-style: normal !important;
+  font-size: 10px !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+  color: var(--accent-mineral) !important;
+  align-self: start;
+  padding-top: 0.5rem;
+}
+
+html.mineral-page .ed-tier h3 {
+  font-family: var(--font-serif) !important;
+  font-weight: 300 !important;
+  font-size: clamp(1.65rem, 1.2rem + 1.5vw, 2.35rem) !important;
+  color: var(--text-primary) !important;
+  margin: 0 0 0.75rem !important;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+html.mineral-page .ed-tier-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0.75rem 0 0 !important;
+  border: none !important;
+  display: flex !important;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+html.mineral-page .ed-tier-list li {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: var(--font-sans) !important;
+  font-size: 13px !important;
+  font-weight: 300 !important;
+  color: var(--text-muted) !important;
+  line-height: 1.55 !important;
+  display: flex;
+  gap: 0.65rem;
+  letter-spacing: 0.01em;
+}
+
+html.mineral-page .ed-tier-list li::before {
+  content: "—";
+  color: var(--accent-dim);
+  flex-shrink: 0;
+}
+
+html.mineral-page .ed-tier-note {
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+  margin: 0 0 1.25rem !important;
+}
+
+html.mineral-page .ed-tier .btn {
+  align-self: start !important;
+  justify-self: end !important;
+}
+
+/* ===========================================================
+   ESSENCE / OTHER EDITORIAL PRIMITIVES
+   =========================================================== */
+
+html.mineral-page .ed-audience {
+  border-top: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .ed-audience li {
+  border-bottom: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .ed-audience-num,
+html.mineral-page .ed-voice-num,
+html.mineral-page .ed-study-num {
+  font-family: var(--font-serif) !important;
+  font-style: normal !important;
+  color: var(--accent-mineral) !important;
+}
+
+html.mineral-page .ed-audience-line,
+html.mineral-page .ed-voices blockquote,
+html.mineral-page .ed-studies p {
+  font-family: var(--font-serif) !important;
+  font-style: normal !important;
+  color: var(--text-primary) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.005em;
+}
+
+html.mineral-page .ed-audience-note,
+html.mineral-page .ed-study-src,
+html.mineral-page .ed-voices footer {
+  color: var(--text-muted) !important;
+}
+
+html.mineral-page .ed-voices footer span:first-child {
+  color: var(--text-primary) !important;
+}
+
+/* Method */
+html.mineral-page .positioning-strip {
+  border-top: 1px solid var(--line-hairline) !important;
+  background: transparent !important;
+}
+
+html.mineral-page .positioning-strip li {
+  background: transparent !important;
+  border-bottom: 1px solid var(--line-hairline) !important;
+  font-family: var(--font-serif) !important;
+  font-style: normal !important;
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .positioning-strip strong {
+  font-family: var(--font-sans) !important;
+  color: var(--accent-mineral) !important;
+}
+
+html.mineral-page .method-grid {
+  border-top: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .method-card {
+  border-bottom: 1px solid var(--line-hairline) !important;
+  border-left: 1px solid transparent !important;
+}
+
+html.mineral-page .method-card:nth-child(2),
+html.mineral-page .method-card:nth-child(4) {
+  border-left: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .method-card span {
+  font-family: var(--font-serif) !important;
+  font-style: normal !important;
+  color: var(--accent-mineral) !important;
+}
+
+html.mineral-page .method-card h3 {
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .method-card p {
+  font-family: var(--font-sans) !important;
+  font-style: normal !important;
+  color: var(--text-muted) !important;
+}
+
+/* Pull quote */
+html.mineral-page .ed-pull {
+  border-block: 1px solid var(--line-hairline) !important;
+  background: transparent !important;
+}
+
+html.mineral-page .ed-pull blockquote {
+  font-family: var(--font-serif) !important;
+  font-style: normal !important;
+  color: var(--text-primary) !important;
+  font-weight: 300 !important;
+}
+
+html.mineral-page .ed-pull figcaption {
+  color: var(--accent-mineral) !important;
+}
+
+/* Studies */
+html.mineral-page .ed-studies {
+  border-top: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .ed-studies li {
+  border-bottom: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .ed-studies a {
+  border-bottom: 1px solid var(--line-hairline) !important;
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .ed-studies a:hover {
+  border-bottom-color: var(--text-primary) !important;
+}
+
+html.mineral-page .science-disclaimer {
+  color: var(--text-muted) !important;
+}
+
+/* Results / stages */
+html.mineral-page .section-ink {
+  --line-hairline: rgba(234, 234, 234, 0.08);
+}
+
+html.mineral-page .ed-stages {
+  border-top: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .ed-stage {
+  border-bottom: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .ed-stage-num {
+  color: rgba(234, 234, 234, 0.16) !important;
+  font-family: var(--font-serif) !important;
+  font-style: normal !important;
+}
+
+html.mineral-page .ed-stage-time {
+  color: var(--accent-mineral) !important;
+}
+
+html.mineral-page .ed-stage-text {
+  font-family: var(--font-serif) !important;
+  font-style: normal !important;
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .ed-outcomes {
+  color: var(--text-muted) !important;
+}
+
+html.mineral-page .ed-outcomes span:first-child {
+  color: var(--text-primary);
+}
+
+/* Format & skills */
+html.mineral-page .ed-format-list,
+html.mineral-page .ed-skills,
+html.mineral-page .ed-author-facts,
+html.mineral-page .ed-apply-summary {
+  border-top: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .ed-format-list > div,
+html.mineral-page .ed-skills li,
+html.mineral-page .ed-author-facts > div,
+html.mineral-page .ed-apply-summary > div {
+  border-bottom: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .ed-format-list dt,
+html.mineral-page .ed-author-facts dt,
+html.mineral-page .ed-apply-summary dd {
+  font-family: var(--font-serif) !important;
+  font-style: normal !important;
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .ed-format-list dd,
+html.mineral-page .ed-apply-summary dt,
+html.mineral-page .ed-skills span,
+html.mineral-page .ed-skills em {
+  color: var(--accent-mineral) !important;
+}
+
+html.mineral-page .ed-skills strong,
+html.mineral-page .ed-author-facts dd {
+  font-family: var(--font-serif) !important;
+  color: var(--text-primary) !important;
+  font-style: normal !important;
+}
+
+html.mineral-page .ed-author-link a {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--line-hairline) !important;
+}
+
+html.mineral-page .ed-author-link a:hover {
+  border-bottom-color: var(--text-primary) !important;
+}
+
+/* ===========================================================
+   QUOTE BAND
+   =========================================================== */
+
+html.mineral-page .quote-band blockquote {
+  font-family: var(--font-serif) !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  color: var(--text-primary) !important;
+  font-size: clamp(2rem, 1.2rem + 4vw, 4.5rem) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.025em !important;
+}
+
+html.mineral-page .quote-band cite {
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  font-style: normal !important;
+  letter-spacing: 0.3em !important;
+  text-transform: uppercase !important;
+  color: var(--accent-mineral) !important;
+}
+
+/* ===========================================================
+   FAQ
+   =========================================================== */
+
+html.mineral-page .faq-list {
+  border-top: 1px solid var(--line-hairline) !important;
+  background: transparent !important;
+}
+
+html.mineral-page .faq-item {
+  border-bottom: 1px solid var(--line-hairline) !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  overflow: visible;
+}
+
+html.mineral-page .faq-question {
+  font-family: var(--font-serif) !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  color: var(--text-primary) !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 2rem 0 !important;
+  letter-spacing: -0.01em !important;
+}
+
+html.mineral-page .faq-question::after {
+  color: var(--text-muted) !important;
+}
+
+html.mineral-page .faq-answer p {
+  font-family: var(--font-sans) !important;
+  color: var(--text-muted) !important;
+}
+
+/* ===========================================================
+   FOOTER
+   =========================================================== */
+
+html.mineral-page .site-footer {
+  background: var(--bg-main) !important;
+  border-top: 1px solid var(--line-hairline) !important;
+  padding: 5rem 0 3rem !important;
+  color: var(--text-muted);
+}
+
+html.mineral-page .site-footer p,
+html.mineral-page .site-footer span {
+  color: var(--text-muted) !important;
+}
+
+html.mineral-page .site-footer strong {
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+html.mineral-page .site-footer a {
+  color: var(--text-muted) !important;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+html.mineral-page .site-footer a:hover {
+  color: var(--text-primary) !important;
+}
+
+html.mineral-page .footer-legal p {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-dim) !important;
+}
+
+/* ===========================================================
+   APPLY
+   =========================================================== */
+
+html.mineral-page .apply-grid {
+  border-top: 1px solid var(--line-hairline);
+  padding-top: 4rem;
+}
+
+/* Welcome video editorial layout */
+html.mineral-page .video-embed {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--line-hairline) !important;
+  aspect-ratio: 16 / 10;
+}
+
+/* ===========================================================
+   REVEAL — smoother, deeper
+   =========================================================== */
+
+html.mineral-page [data-reveal] {
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.mineral-page [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.mineral-page [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ===========================================================
+   MOBILE
+   =========================================================== */
+
+@media (max-width: 900px) {
+  html.mineral-page {
+    --section-pad: clamp(4rem, 10vh, 7rem);
+  }
+
+  html.mineral-page .ed-hero-copy,
+  html.mineral-page .ed-hero-visual {
+    grid-column: 1 / -1 !important;
+  }
+
+  html.mineral-page .ed-pillars {
+    grid-template-columns: 1fr !important;
+    border-bottom: none !important;
+  }
+
+  html.mineral-page .ed-pillar {
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--line-hairline) !important;
+    padding: 2.5rem 0 !important;
+  }
+
+  html.mineral-page .ed-pillar:not(:first-child) {
+    padding-left: 0 !important;
+  }
+
+  html.mineral-page .ed-pillar:last-child {
+    border-bottom: 1px solid var(--line-hairline) !important;
+  }
+
+  html.mineral-page .hero-facts {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  html.mineral-page .hero-facts > div:nth-child(2) {
+    border-right: 0 !important;
+  }
+
+  html.mineral-page .hero-facts > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line-hairline);
+  }
+
+  html.mineral-page .ed-tier {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    padding: 2.5rem 0 !important;
+  }
+
+  html.mineral-page .ed-tier .btn {
+    justify-self: start !important;
+  }
+
+  html.mineral-page .program-trigger {
+    grid-template-columns: 4rem 1fr 2.5rem !important;
+    gap: 1.25rem !important;
+    padding: 2rem 0 !important;
+  }
+
+  html.mineral-page .program-week {
+    font-size: 2rem !important;
+  }
+
+  html.mineral-page .program-chevron,
+  html.mineral-page .program-chevron::after {
+    width: 24px;
+  }
+
+  html.mineral-page .program-chevron::after {
+    height: 24px;
+    top: -11.5px;
+    left: 11.5px;
+  }
+
+  html.mineral-page .program-panel-inner {
+    padding-left: 5.25rem !important;
+  }
+}
+
+/* ===========================================================
+   Scrollbar
+   =========================================================== */
+
+html.mineral-page ::-webkit-scrollbar {
+  width: 8px;
+}
+
+html.mineral-page ::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+html.mineral-page ::-webkit-scrollbar-thumb {
+  background: var(--accent-dim);
+  border-radius: 0;
+}
+
+html.mineral-page ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+html.mineral-page {
+  scrollbar-color: var(--accent-dim) var(--bg-main);
+}
+
+/* Selection */
+html.mineral-page ::selection {
+  background: var(--accent-mineral);
+  color: var(--bg-main);
+}
