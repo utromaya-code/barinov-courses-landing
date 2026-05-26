@@ -4,17 +4,8 @@ const navToggle = document.getElementById("nav-toggle");
 const siteNav = document.getElementById("site-nav");
 const hero = document.getElementById("hero");
 const applySection = document.getElementById("apply");
-const mobileSticky = document.getElementById("mobile-sticky");
-
 function onScrollHeader() {
   if (header) header.classList.toggle("is-scrolled", window.scrollY > 20);
-
-  if (mobileSticky && hero) {
-    const pastHero = window.scrollY > hero.offsetHeight * 0.65;
-    const beforeForm = !applySection || window.scrollY < applySection.offsetTop - window.innerHeight * 0.45;
-    mobileSticky.classList.toggle("is-visible", pastHero && beforeForm);
-    mobileSticky.setAttribute("aria-hidden", pastHero && beforeForm ? "false" : "true");
-  }
 }
 
 window.addEventListener("scroll", onScrollHeader, { passive: true });
