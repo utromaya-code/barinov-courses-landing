@@ -1,0 +1,1592 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Йога онлайн — курс Ильи Баринова</title>
+  <meta name="description" content="Онлайн-курс по йоге Ильи Баринова. 8 недель, 24 урока, Telegram-чат. Йога как система, а не набор поз.">
+  <meta name="theme-color" content="#f5f3ef">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Йога онлайн — курс Ильи Баринова">
+  <meta property="og:description" content="Онлайн-курс по йоге: 8 недель, 24 урока, Telegram-чат. Йога как система движения, дыхания и внимания.">
+  <meta property="og:image" content="https://utromaya-code.github.io/barinov-courses-landing/assets/yoga/hero-practice.png">
+  <meta property="og:url" content="https://utromaya-code.github.io/barinov-courses-landing/barinov-yoga.html">
+  <link rel="canonical" href="https://utromaya-code.github.io/barinov-courses-landing/barinov-yoga.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300..600&display=swap" rel="stylesheet">
+  <style>
+    :root,
+    [data-theme="light"] {
+      --color-bg: #f5f3ef;
+      --color-surface: #eeece7;
+      --color-surface-2: #e8e4de;
+      --color-surface-offset: #e2ddd6;
+      --color-border: #d9d4cb;
+      --color-text: #2a2520;
+      --color-text-muted: #7a7068;
+      --color-text-faint: #b5aea6;
+      --color-primary: #8b4a2f;
+      --color-primary-hover: #6e3520;
+      --color-primary-active: #4e2415;
+      --color-primary-highlight: #e8d5cc;
+      --color-accent-warm: #c4834a;
+      --color-on-primary: #fffaf7;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body: "Work Sans", "Helvetica Neue", sans-serif;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --text-hero: clamp(3rem, 0.5rem + 7vw, 8rem);
+      --space-1: 0.5rem;
+      --space-2: 0.75rem;
+      --space-3: 1rem;
+      --space-4: 1.5rem;
+      --space-5: 2rem;
+      --space-6: 3rem;
+      --space-7: 4.5rem;
+      --space-8: 6rem;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --container: 1120px;
+      --header-h: 72px;
+      --shadow-soft: 0 16px 40px rgba(42, 37, 32, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #1a1714;
+      --color-surface: #211e1b;
+      --color-surface-2: #272320;
+      --color-surface-offset: #2d2926;
+      --color-border: #3a3530;
+      --color-text: #d4cec6;
+      --color-text-muted: #7a746c;
+      --color-text-faint: #5a5450;
+      --color-primary: #c4834a;
+      --color-primary-hover: #e09a5f;
+      --color-primary-active: #f5b07a;
+      --color-primary-highlight: #3d2e24;
+      --color-accent-warm: #e09a5f;
+      --color-on-primary: #1a1714;
+      --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.65;
+      color: var(--color-text);
+      background: var(--color-bg);
+      overflow-x: hidden;
+    }
+
+    body.nav-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 8px;
+      z-index: 3000;
+      background: var(--color-surface);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .skip-link:focus {
+      left: 8px;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 2rem));
+      margin-inline: auto;
+    }
+
+  section {
+      scroll-margin-top: calc(var(--header-h) + 12px);
+    }
+
+    .section {
+      padding: clamp(4rem, 8vw, 6.5rem) 0;
+    }
+
+    .section--tight {
+      padding-top: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .section--surface {
+      background: var(--color-surface);
+    }
+
+    .section--offset {
+      background: var(--color-surface-2);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      line-height: 1.12;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: var(--text-hero);
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: var(--text-2xl);
+      max-width: 18ch;
+    }
+
+    h3 {
+      font-size: var(--text-xl);
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .eyebrow {
+      font-size: var(--text-xs);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-3);
+    }
+
+    .section-head {
+      margin-bottom: var(--space-6);
+      max-width: 42rem;
+    }
+
+    .section-head p {
+      margin-top: var(--space-3);
+      color: var(--color-text-muted);
+      font-size: var(--text-lg);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 44px;
+      padding: 0.85rem 1.35rem;
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: var(--color-on-primary);
+      animation: cta-glow 3.2s ease-in-out infinite;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-hover);
+    }
+
+    .btn-primary:active {
+      background: var(--color-primary-active);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--color-text);
+      border-color: var(--color-border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    @keyframes cta-glow {
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 oklch(from var(--color-primary) l c h / 0);
+      }
+      50% {
+        box-shadow: 0 0 0 6px oklch(from var(--color-primary) l c h / 0.12);
+      }
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      border-bottom: 1px solid transparent;
+      transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .site-header.is-scrolled {
+      background: oklch(from var(--color-bg) l c h / 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom-color: var(--color-border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      height: 100%;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      text-decoration: none;
+      margin-right: auto;
+    }
+
+    .brand svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      letter-spacing: 0.02em;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(1rem, 2vw, 1.75rem);
+    }
+
+    .site-nav a {
+      font-size: var(--text-sm);
+      text-decoration: none;
+      color: var(--color-text-muted);
+    }
+
+    .site-nav a:hover {
+      color: var(--color-text);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+      color: var(--color-text);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+
+    .theme-toggle .icon-moon {
+      display: none;
+    }
+
+    [data-theme="dark"] .theme-toggle .icon-sun {
+      display: none;
+    }
+
+    [data-theme="dark"] .theme-toggle .icon-moon {
+      display: block;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 4px auto;
+      background: var(--color-text);
+    }
+
+    .header-cta {
+      white-space: nowrap;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: calc(var(--header-h) + 2rem) 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-6);
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 38rem;
+    }
+
+    .hero h1 {
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-4);
+    }
+
+    .hero-subtitle {
+      font-size: var(--text-lg);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-5);
+      max-width: 34ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      align-items: center;
+      margin-bottom: var(--space-4);
+    }
+
+    .hero-scroll {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      text-decoration: none;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 320px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-mandala {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: min(420px, 90%);
+      opacity: 0.14;
+      color: var(--color-primary);
+    }
+
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      max-height: min(72vh, 640px);
+      width: auto;
+      margin-inline: auto;
+      object-fit: cover;
+    }
+
+    .hero-enter {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: hero-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-enter:nth-child(1) { animation-delay: 0ms; }
+    .hero-enter:nth-child(2) { animation-delay: 150ms; }
+    .hero-enter:nth-child(3) { animation-delay: 300ms; }
+    .hero-enter:nth-child(4) { animation-delay: 450ms; }
+    .hero-enter:nth-child(5) { animation-delay: 600ms; }
+
+    @keyframes hero-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Pain grid */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      grid-template-rows: auto auto;
+      gap: var(--space-4);
+    }
+
+    .pain-card {
+      position: relative;
+      padding: var(--space-5);
+      background: var(--color-surface-2);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .pain-card--lead {
+      grid-row: span 2;
+    }
+
+    .pain-number {
+      position: absolute;
+      top: var(--space-3);
+      right: var(--space-4);
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      line-height: 1;
+      opacity: 0.12;
+    }
+
+    .pain-card h3 {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-3);
+      max-width: 20ch;
+    }
+
+    .pain-card p {
+      color: var(--color-text-muted);
+    }
+
+    /* Method narrative */
+    .method-wrap {
+      max-width: 65ch;
+    }
+
+    .method-wrap .drop-cap::first-letter {
+      float: left;
+      font-family: var(--font-display);
+      font-size: 4.2rem;
+      line-height: 0.85;
+      padding-right: 0.12em;
+      color: var(--color-primary);
+    }
+
+    .method-wrap p + p {
+      margin-top: var(--space-4);
+    }
+
+    .method-quote {
+      margin: var(--space-5) 0 0;
+      padding-left: var(--space-4);
+      border-left: 3px solid var(--color-primary);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: var(--text-xl);
+      color: var(--color-text-muted);
+    }
+
+  .method-aside {
+      margin-top: var(--space-6);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: var(--space-5);
+      align-items: end;
+    }
+
+    .method-aside img {
+      border-radius: var(--radius-lg);
+      filter: grayscale(0.15);
+    }
+
+    /* Science */
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+
+    .science-card {
+      padding: var(--space-4);
+      background: var(--color-surface-offset);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      border-radius: var(--radius-md);
+    }
+
+    .science-card p {
+      margin-top: var(--space-2);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    .science-card a {
+      color: var(--color-primary);
+      font-size: var(--text-sm);
+    }
+
+    .science-disclaimer {
+      margin-top: var(--space-5);
+      font-size: var(--text-sm);
+      color: var(--color-text-faint);
+      font-style: italic;
+      max-width: 65ch;
+    }
+
+    .refs-list {
+      margin-top: var(--space-4);
+      padding-left: 1.2rem;
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+
+    .refs-list a {
+      color: var(--color-primary);
+    }
+
+    /* Program accordion */
+    .program-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .program-item {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .program-trigger {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: var(--space-4);
+      align-items: center;
+      padding: var(--space-4) 0;
+      background: none;
+      border: 0;
+      text-align: left;
+      cursor: pointer;
+      color: var(--color-text);
+      font: inherit;
+      min-height: 44px;
+    }
+
+    .program-week {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      color: var(--color-primary);
+      opacity: 0.2;
+      line-height: 1;
+      min-width: 2.5ch;
+    }
+
+    .program-trigger h3 {
+      font-size: var(--text-lg);
+      font-family: var(--font-body);
+      font-weight: 500;
+    }
+
+    .program-chevron {
+      width: 12px;
+      height: 12px;
+      border-right: 2px solid var(--color-text-muted);
+      border-bottom: 2px solid var(--color-text-muted);
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+
+    .program-trigger[aria-expanded="true"] .program-chevron {
+      transform: rotate(-135deg);
+    }
+
+    .program-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .program-panel-inner {
+      padding: 0 0 var(--space-4) calc(2.5ch + var(--space-4));
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    .program-panel-inner strong {
+      display: block;
+      margin-top: var(--space-2);
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    /* Metrics */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--color-surface);
+    }
+
+    .metric-cell {
+      padding: var(--space-5) var(--space-4);
+      border-right: 1px solid var(--color-border);
+    }
+
+    .metric-cell:last-child {
+      border-right: 0;
+    }
+
+    .metric-value {
+      display: block;
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+
+    .metric-label {
+      display: block;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.4;
+    }
+
+    /* Author */
+    .author-grid {
+      display: grid;
+      grid-template-columns: minmax(240px, 360px) 1fr;
+      gap: var(--space-6);
+      align-items: start;
+    }
+
+    .author-photo {
+      border-radius: var(--radius-lg);
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .author-copy p + p {
+      margin-top: var(--space-3);
+      color: var(--color-text-muted);
+    }
+
+    .author-links {
+      margin-top: var(--space-4);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+    }
+
+    .author-links a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Reviews */
+    .reviews-scroll {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: var(--space-4);
+      padding-bottom: var(--space-2);
+      scrollbar-width: none;
+    }
+
+    .reviews-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review-card {
+      scroll-snap-align: start;
+      flex: 0 0 min(320px, 85vw);
+      padding: var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+    }
+
+    .review-head {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-3);
+    }
+
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--color-surface-offset);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .review-meta {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+
+    .review-card p {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    .review-date {
+      margin-top: var(--space-3);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+      max-width: 820px;
+    }
+
+    .price-card {
+      padding: var(--space-5);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .price-card--featured {
+      border-color: var(--color-primary);
+    }
+
+    .price-badge {
+      font-size: var(--text-xs);
+      color: var(--color-primary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .price-card ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    .price-value {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+    }
+
+    .price-note {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-top: auto;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: var(--space-6) 0 var(--space-5);
+      border-top: 1px solid var(--color-border);
+      background: var(--color-surface);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--space-5);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+    }
+
+    .footer-links a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-legal {
+      margin-top: var(--space-5);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+    }
+
+    /* Reveal */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile sticky */
+    .mobile-sticky {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 90;
+      padding: var(--space-3);
+      background: oklch(from var(--color-bg) l c h / 0.94);
+      border-top: 1px solid var(--color-border);
+      backdrop-filter: blur(8px);
+      transform: translateY(110%);
+      transition: transform 0.35s ease;
+    }
+
+    .mobile-sticky.is-visible {
+      transform: translateY(0);
+    }
+
+    .mobile-sticky .btn {
+      width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        order: -1;
+        min-height: 240px;
+      }
+
+      .hero-photo {
+        max-height: 42vh;
+      }
+
+      .method-aside {
+        grid-template-columns: 1fr;
+      }
+
+      .author-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .science-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        position: fixed;
+        inset: var(--header-h) 0 0 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--space-5);
+        background: var(--color-bg);
+        border-top: 1px solid var(--color-border);
+        transform: translateX(100%);
+        transition: transform 0.35s ease;
+      }
+
+      .site-nav.is-open {
+        transform: translateX(0);
+      }
+
+      .site-nav a {
+        padding: var(--space-3) 0;
+        font-size: var(--text-base);
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-desktop-only {
+        display: none;
+      }
+
+      .header-cta--desktop {
+        display: none;
+      }
+
+      .pain-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pain-card--lead {
+        grid-row: auto;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .metric-cell {
+        border-right: 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .metric-cell:nth-child(odd) {
+        border-right: 1px solid var(--color-border);
+      }
+
+      .metric-cell:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .nav-mobile-only {
+        display: none;
+      }
+
+      .mobile-sticky {
+        display: none;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero h1 {
+        font-size: clamp(2.2rem, 9vw, 3rem);
+      }
+
+      .hero {
+        padding-bottom: 2rem;
+      }
+
+      .hero-copy {
+        max-height: 80vh;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-cell,
+      .metric-cell:nth-child(odd) {
+        border-right: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+      }
+
+      .hero-enter {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero" aria-label="Илья Баринов — йога онлайн">
+        <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="16" cy="16" r="13"></circle>
+          <path d="M16 6v20M10 10c3-2 9-2 12 0M10 22c3 2 9 2 12 0M6 16h20"></path>
+        </svg>
+        <span class="brand-name">Илья Баринов</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Навигация">
+        <a class="nav-desktop-only" href="#practice">О практике</a>
+        <a class="nav-desktop-only" href="#program">Программа</a>
+        <a class="nav-desktop-only" href="#author">Автор</a>
+        <a class="nav-mobile-only" href="#program">Программа</a>
+        <a href="#signup">Записаться</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тему">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"></path>
+          </svg>
+        </button>
+        <a class="btn btn-primary header-cta header-cta--desktop" href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Записаться</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="hero" aria-label="Первый экран">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow hero-enter">Йога как метод</p>
+          <h1 class="hero-enter">Онлайн-курс Ильи Баринова для тех, кто хочет не просто растянуться, а понять тело</h1>
+          <!-- TODO: автор заполняет — оффер и подзаголовок hero -->
+          <p class="hero-subtitle hero-enter">Восемь недель последовательной практики: движение, дыхание и внимание — в одной системе, которую можно продолжать самостоятельно.</p>
+          <div class="hero-actions hero-enter">
+            <a class="btn btn-primary" href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Записаться в Telegram</a>
+          </div>
+          <a class="hero-scroll hero-enter" href="#pain">Узнать подробности ↓</a>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <svg class="hero-mandala" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.6">
+            <circle cx="100" cy="100" r="90"></circle>
+            <circle cx="100" cy="100" r="60"></circle>
+            <circle cx="100" cy="100" r="30"></circle>
+            <path d="M100 10v180M10 100h180M35 35l130 130M165 35L35 165"></path>
+          </svg>
+          <img class="hero-photo" src="assets/yoga/hero-practice.png" alt="Илья Баринов в практике йоги" width="900" height="1200" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" id="pain">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Что мешает практике стать своей</h2>
+        </div>
+        <div class="pain-grid">
+          <article class="pain-card pain-card--lead" data-reveal>
+            <span class="pain-number" aria-hidden="true">01</span>
+            <h3>Занятия в зале — дорого, расписание, чужой темп</h3>
+            <p>Групповой формат редко даёт время разобрать именно вашу механику: вы повторяете форму, но не всегда понимаете, зачем она устроена так и как её адаптировать.</p>
+          </article>
+          <article class="pain-card" data-reveal>
+            <span class="pain-number" aria-hidden="true">02</span>
+            <h3>Видео из YouTube — непоследовательно</h3>
+            <p>Разные стили, разный темп, нет логики прогрессии. Сложно удержать регулярность, когда каждый урок — отдельная вселенная.</p>
+          </article>
+          <article class="pain-card" data-reveal>
+            <span class="pain-number" aria-hidden="true">03</span>
+            <h3>Нет ощущения, что что-то меняется</h3>
+            <p>Месяц занятий — а ясности в теле, дыхании и опоре не прибавилось. Без системы практика легко превращается в ритуал «для галочки».</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="practice">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Йога как система, а не набор поз</h2>
+        </div>
+        <div class="method-wrap" data-reveal>
+          <p class="drop-cap"><!-- TODO: автор заполняет — нарратив метода (300–400 слов) -->
+            Я веду йогу как последовательную работу с опорой, дыханием и вниманием — не как набор красивых форм. На курсе мы собираем практику по неделям: от базовых асан и дыхательного ритма к более сложным связкам и индивидуальной последовательности, которую вы сможете повторять без «внешнего тренера в голове».
+          </p>
+          <p>
+            Если вы знакомы с курсом «Точка опоры» по цигун — это следующий слой той же логики: та же внимательность к телу, но язык йоги — асаны, виньясы, работа с балансом и восстановлением. Студийный формат «повтори за наставником» здесь сознательно заменён объяснением: что вы делаете, зачем и как почувствовать результат в обычном дне.
+          </p>
+          <blockquote class="method-quote">
+            «Практика работает, когда вы понимаете опору — в стопе, в тазе, в дыхании. Тогда поза перестаёт быть картинкой и становится опытом.»
+          </blockquote>
+        </div>
+        <div class="method-aside" data-reveal>
+          <img src="assets/yoga/practice-balance.png" alt="Практика баланса на курсе" width="800" height="1000" loading="lazy" decoding="async">
+          <p style="color: var(--color-text-muted); font-size: var(--text-sm); max-width: 40ch;">
+            Курс записан для домашнего формата: вам нужен коврик, немного пространства и готовность заниматься 3–4 раза в неделю по 40–50 минут.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--offset" id="science">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Почему это работает — данные, не убеждение</h2>
+        </div>
+        <div class="science-grid">
+          <article class="science-card" data-reveal>
+            <h3>Стресс и кортизол</h3>
+            <p>Регулярная практика йоги ассоциируется со снижением маркеров стресса в исследованиях с контролируемым режимом занятий.<sup><a href="#ref-1">1</a></sup></p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/28645922/" target="_blank" rel="noopener noreferrer">PubMed — обзор по йоге и стрессу</a>
+          </article>
+          <article class="science-card" data-reveal>
+            <h3>Вариабельность сердечного ритма</h3>
+            <p>Дыхательные и мягкие телесные практики могут влиять на ВСР как показатель баланса нервной системы.<sup><a href="#ref-2">2</a></sup></p>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6189422/" target="_blank" rel="noopener noreferrer">PMC — йога и ВСР</a>
+          </article>
+          <article class="science-card" data-reveal>
+            <h3>Осознанное движение и мозг</h3>
+            <p>Тренировки внимания и координации связаны с изменениями в сетях, отвечающих за телесную схему и саморегуляцию.<sup><a href="#ref-3">3</a></sup></p>
+            <a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00369/full" target="_blank" rel="noopener noreferrer">Frontiers — mindful movement</a>
+          </article>
+          <article class="science-card" data-reveal>
+            <h3>Дыхание и парасимпатика</h3>
+            <p>Медленное ритмичное дыхание поддерживает восстановление и снижение возбуждения.<sup><a href="#ref-4">4</a></sup></p>
+            <a href="https://www.who.int/publications/i/item/9789240081789" target="_blank" rel="noopener noreferrer">WHO — physical activity guidelines</a>
+          </article>
+        </div>
+        <p class="science-disclaimer" data-reveal>
+          Данные приведены в ознакомительных целях — это не медицинская рекомендация и не замена консультации специалиста.
+        </p>
+        <ol class="refs-list" data-reveal>
+          <li id="ref-1"><!-- TODO: автор заполняет — финальные ссылки на источники -->
+            <a href="https://pubmed.ncbi.nlm.nih.gov/28645922/" target="_blank" rel="noopener noreferrer">PubMed 28645922</a>
+          </li>
+          <li id="ref-2">
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6189422/" target="_blank" rel="noopener noreferrer">PMC6189422</a>
+          </li>
+          <li id="ref-3">
+            <a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00369/full" target="_blank" rel="noopener noreferrer">Frontiers Hum Neurosci 2018</a>
+          </li>
+          <li id="ref-4">
+            <a href="https://www.who.int/publications/i/item/9789240081789" target="_blank" rel="noopener noreferrer">WHO 9789240081789</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="program">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Что вас ждёт</h2>
+          <p>Восемь недель — от базы к самостоятельной последовательности. Каждый модуль раскрывается по клику.</p>
+        </div>
+        <ul class="program-list">
+          <li class="program-item" data-reveal>
+            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="week-1">
+              <span class="program-week">1</span>
+              <span><h3>Основы: дыхание и базовые асаны</h3></span>
+              <span class="program-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="program-panel" id="week-1" role="region" hidden>
+              <div class="program-panel-inner">
+                Настраиваем ритм дыхания, учимся входить в стоячие и сидячие формы без перегруза.
+                <strong>Итог:</strong> короткая базовая последовательность на 25–30 минут.
+              </div>
+            </div>
+          </li>
+          <li class="program-item" data-reveal>
+            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="week-2">
+              <span class="program-week">2</span>
+              <span><h3>Работа с позвоночником</h3></span>
+              <span class="program-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="program-panel" id="week-2" role="region" hidden>
+              <div class="program-panel-inner">
+                Прогибы, наклоны, скручивания — через опору и длину, а не через «глубину любой ценой».
+                <strong>Итог:</strong> понимание, как защищать поясницу и шею в асанах.
+              </div>
+            </div>
+          </li>
+          <li class="program-item" data-reveal>
+            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="week-3">
+              <span class="program-week">3</span>
+              <span><h3>Тазобедренный пояс и равновесие</h3></span>
+              <span class="program-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="program-panel" id="week-3" role="region" hidden>
+              <div class="program-panel-inner">
+                Раскрытие таза, устойчивость на одной ноге, связь стопы и центра тяжести.
+                <strong>Итог:</strong> уверенность в балансовых асанах без «дрожи и зажима».
+              </div>
+            </div>
+          </li>
+          <li class="program-item" data-reveal>
+            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="week-4">
+              <span class="program-week">4</span>
+              <span><h3>Динамические связки (виньясы)</h3></span>
+              <span class="program-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="program-panel" id="week-4" role="region" hidden>
+              <div class="program-panel-inner">
+                Переходы между формами на дыхании: темп, пауза, контроль усилия.
+                <strong>Итог:</strong> короткая виньяса, которую можно повторять самостоятельно.
+              </div>
+            </div>
+          </li>
+          <li class="program-item" data-reveal>
+            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="week-5">
+              <span class="program-week">5</span>
+              <span><h3>Восстановительные практики</h3></span>
+              <span class="program-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="program-panel" id="week-5" role="region" hidden>
+              <div class="program-panel-inner">
+                Мягкие позы, длительное удержание, работа с тонусом и отдыхом нервной системы.
+                <strong>Итог:</strong> набор для дней усталости и восстановления после нагрузки.
+              </div>
+            </div>
+          </li>
+          <li class="program-item" data-reveal>
+            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="week-6">
+              <span class="program-week">6</span>
+              <span><h3>Работа с вниманием (дхарана)</h3></span>
+              <span class="program-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="program-panel" id="week-6" role="region" hidden>
+              <div class="program-panel-inner">
+                Точка фокуса в асане: куда смотреть, что отслеживать, как не «улетать» в мысли.
+                <strong>Итог:</strong> практика, в которой внимание удерживает форму, а не наоборот.
+              </div>
+            </div>
+          </li>
+          <li class="program-item" data-reveal>
+            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="week-7">
+              <span class="program-week">7</span>
+              <span><h3>Интеграция: индивидуальная практика</h3></span>
+              <span class="program-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="program-panel" id="week-7" role="region" hidden>
+              <div class="program-panel-inner">
+                Собираем личный маршрут под ваш график: короткий / средний / полный день.
+                <strong>Итог:</strong> план на 4 недели после окончания курса.
+              </div>
+            </div>
+          </li>
+          <li class="program-item" data-reveal>
+            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="week-8">
+              <span class="program-week">8</span>
+              <span><h3>Финальная последовательность</h3></span>
+              <span class="program-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="program-panel" id="week-8" role="region" hidden>
+              <div class="program-panel-inner">
+                Полная практика, объединяющая все блоки курса — с разбором и вариантами адаптации.
+                <strong>Итог:</strong> ваша «опорная» последовательность на 45–50 минут.
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--surface section--tight" id="format">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Формат</h2>
+        </div>
+        <div class="metrics-grid" data-reveal>
+          <div class="metric-cell">
+            <span class="metric-value">8</span>
+            <span class="metric-label">недель</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-value">24</span>
+            <span class="metric-label">урока</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-value">~45</span>
+            <span class="metric-label">минут на урок</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-value">Онлайн</span>
+            <span class="metric-label">запись доступна</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-value">Telegram</span>
+            <span class="metric-label">чат участников</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-value"><!-- TODO: автор заполняет — дата старта -->TBD</span>
+            <span class="metric-label">старт курса</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="author">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Илья Баринов</h2>
+        </div>
+        <div class="author-grid">
+          <!-- TODO: автор заполняет — фото; сейчас assets/yoga/author-portrait.png -->
+          <img class="author-photo" src="assets/yoga/author-portrait.png" alt="Илья Баринов — преподаватель йоги" width="800" height="1000" loading="lazy" decoding="async">
+          <div class="author-copy" data-reveal>
+            <p>Преподаватель йоги, цигун и телесных практик. Ведёт онлайн-группы и интенсивы, работает с вниманием к опоре, дыханию и безопасной механике движения — без «героического» фитнес-подхода и без эзотерических клише.</p>
+            <p>Обучение и практика — в традициях, которые проверяются телом: что вы чувствуете в стопе, тазе, дыхании, а не только «как выглядит поза сбоку».</p>
+            <div class="author-links">
+              <a href="./tochka-opory.html">Также веду курс по цигун — «Точка опоры»</a>
+              <a href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Telegram @vsemaya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--offset" id="reviews">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Что говорят ученики</h2>
+        </div>
+        <div class="reviews-scroll" data-reveal>
+          <article class="review-card">
+            <div class="review-head">
+              <div class="review-avatar" aria-hidden="true">АК</div>
+              <div>
+                <strong>Анна К.</strong>
+                <div class="review-meta">Москва</div>
+              </div>
+            </div>
+            <p><!-- TODO: реальный отзыв -->Практика перестала быть «набором упражнений» — появилось понимание, зачем я делаю каждое движение и как дышать в асане.</p>
+            <div class="review-date">2025</div>
+          </article>
+          <article class="review-card">
+            <div class="review-head">
+              <div class="review-avatar" aria-hidden="true">ДМ</div>
+              <div>
+                <strong>Дмитрий М.</strong>
+                <div class="review-meta">Санкт-Петербург</div>
+              </div>
+            </div>
+            <p><!-- TODO: реальный отзыв -->После нескольких недель стало проще держать регулярность: короткие уроки, понятная логика и живой чат вместо формальной поддержки.</p>
+            <div class="review-date">2025</div>
+          </article>
+          <article class="review-card">
+            <div class="review-head">
+              <div class="review-avatar" aria-hidden="true">ЕС</div>
+              <div>
+                <strong>Елена С.</strong>
+                <div class="review-meta">Казань</div>
+              </div>
+            </div>
+            <p><!-- TODO: реальный отзыв -->Наконец разобралась с балансом и опорой в стопе — раньше в студии просто повторяла за группой.</p>
+            <div class="review-date">2024</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="signup">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Записаться на курс</h2>
+          <p>Выберите формат участия. <!-- TODO: автор заполняет — цены -->Цены уточняются при записи.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card" data-reveal>
+            <h3>Базовый</h3>
+            <ul>
+              <li>Все уроки курса</li>
+              <li>Telegram-чат участников</li>
+              <li>Запись доступна на период курса</li>
+            </ul>
+            <p class="price-value"><!-- TODO: X ₽ -->по запросу</p>
+            <a class="btn btn-primary" href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+            <p class="price-note">Ответим в течение нескольких часов</p>
+          </article>
+          <article class="price-card price-card--featured" data-reveal>
+            <p class="price-badge">Популярный выбор</p>
+            <h3>С обратной связью</h3>
+            <ul>
+              <li>Всё из базового тарифа</li>
+              <li>Ответы Ильи на вопросы в чате</li>
+              <li>Разбор вашей практики (1 раз)</li>
+            </ul>
+            <p class="price-value"><!-- TODO: Y ₽ -->по запросу</p>
+            <a class="btn btn-primary" href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+            <p class="price-note">Ответим в течение нескольких часов</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p><strong>Илья Баринов</strong></p>
+        <p style="margin-top: var(--space-2); color: var(--color-text-muted); font-size: var(--text-sm);">
+          Онлайн-курс по йоге — движение, дыхание, внимание.
+        </p>
+        <p style="margin-top: var(--space-3); font-size: var(--text-sm);">
+          <a href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Telegram</a>
+          · <a href="mailto:info@barinovdao.ru">info@barinovdao.ru</a>
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="./tochka-opory.html">Курс по цигун: «Точка опоры»</a>
+        <a href="https://utromaya-code.github.io/qigong-retreat-landing/index.html" target="_blank" rel="noopener noreferrer">Ретрит в Дахабе</a>
+        <a href="https://utromaya-code.github.io/qigong-retreat-landing/dahab-yoga-camp.html" target="_blank" rel="noopener noreferrer">Дахаб — йога-кэмп</a>
+      </div>
+    </div>
+    <div class="container footer-legal">
+      <p>Не является медицинской услугой. © <span id="year"></span> Илья Баринов.</p>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky" id="mobile-sticky" aria-hidden="true">
+    <a class="btn btn-primary" href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Записаться в Telegram</a>
+  </div>
+
+  <script>
+    (function () {
+      var TELEGRAM_URL = "https://t.me/vsemaya"; // TODO: автор заполняет — ссылка Telegram
+
+      var header = document.getElementById("header");
+      var navToggle = document.getElementById("nav-toggle");
+      var siteNav = document.getElementById("site-nav");
+      var themeToggle = document.getElementById("theme-toggle");
+      var hero = document.getElementById("hero");
+      var signup = document.getElementById("signup");
+      var mobileSticky = document.getElementById("mobile-sticky");
+      var yearEl = document.getElementById("year");
+
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+      function onScroll() {
+        if (header) header.classList.toggle("is-scrolled", window.scrollY > 20);
+        if (mobileSticky && hero) {
+          var pastHero = window.scrollY > hero.offsetHeight * 0.65;
+          var beforeSignup = !signup || window.scrollY < signup.offsetTop - window.innerHeight * 0.5;
+          var show = pastHero && beforeSignup;
+          mobileSticky.classList.toggle("is-visible", show);
+          mobileSticky.setAttribute("aria-hidden", show ? "false" : "true");
+        }
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      if (navToggle && siteNav) {
+        function closeNav() {
+          navToggle.setAttribute("aria-expanded", "false");
+          siteNav.classList.remove("is-open");
+          document.body.classList.remove("nav-open");
+        }
+
+        navToggle.addEventListener("click", function () {
+          var open = navToggle.getAttribute("aria-expanded") === "true";
+          navToggle.setAttribute("aria-expanded", open ? "false" : "true");
+          siteNav.classList.toggle("is-open", !open);
+          document.body.classList.toggle("nav-open", !open);
+        });
+
+        siteNav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", closeNav);
+        });
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", function () {
+          var root = document.documentElement;
+          var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+        });
+      }
+
+      if ("IntersectionObserver" in window) {
+        var revealObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry, i) {
+              if (entry.isIntersecting) {
+                window.setTimeout(function () {
+                  entry.target.classList.add("is-visible");
+                }, i * 100);
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        document.querySelectorAll("[data-reveal]").forEach(function (el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        document.querySelectorAll("[data-reveal]").forEach(function (el) {
+          el.classList.add("is-visible");
+        });
+      }
+
+      document.querySelectorAll(".program-trigger").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var expanded = button.getAttribute("aria-expanded") === "true";
+          var panel = document.getElementById(button.getAttribute("aria-controls"));
+          button.setAttribute("aria-expanded", expanded ? "false" : "true");
+          if (!panel) return;
+          if (expanded) {
+            panel.style.maxHeight = "0px";
+            panel.hidden = true;
+          } else {
+            panel.hidden = false;
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      });
+
+      document.querySelectorAll('a[href^="https://t.me/"]').forEach(function (link) {
+        if (!link.href) link.href = TELEGRAM_URL;
+      });
+    })();
+  </script>
+</body>
+</html>

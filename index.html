@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Онлайн-курсы Ильи Баринова</title>
+  <meta name="description" content="Йога и цигун онлайн — авторские курсы Ильи Баринова.">
+  <link rel="canonical" href="https://utromaya-code.github.io/barinov-courses-landing/">
+  <style>
+    :root {
+      --bg: #f5f3ef;
+      --text: #2a2520;
+      --muted: #7a7068;
+      --primary: #8b4a2f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      font-family: "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem;
+    }
+    main {
+      width: min(520px, 100%);
+    }
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 500;
+      margin: 0 0 0.5rem;
+    }
+    p { color: var(--muted); margin: 0 0 2rem; line-height: 1.6; }
+  ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+    a {
+      display: block;
+      padding: 1rem 1.25rem;
+      border: 1px solid #d9d4cb;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      background: #eeece7;
+      transition: border-color 0.2s ease;
+    }
+    a:hover { border-color: var(--primary); }
+    a strong { display: block; margin-bottom: 0.25rem; }
+    a span { font-size: 0.9rem; color: var(--muted); }
+    .external { margin-top: 2rem; font-size: 0.9rem; }
+    .external a {
+      display: inline;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Илья Баринов</h1>
+    <p>Онлайн-курсы: йога и цигун. Единый авторский подход — опора, дыхание, внимание.</p>
+    <ul>
+      <li>
+        <a href="barinov-yoga.html">
+          <strong>Йога онлайн</strong>
+          <span>8 недель, 24 урока, Telegram-чат</span>
+        </a>
+      </li>
+      <li>
+        <a href="tochka-opory.html">
+          <strong>Точка опоры</strong>
+          <span>Фундаментальный курс по йоге и телесной грамотности</span>
+        </a>
+      </li>
+    </ul>
+    <p class="external">Ретриты и выездные программы — <a href="https://utromaya-code.github.io/qigong-retreat-landing/" target="_blank" rel="noopener noreferrer">отдельный сайт</a>.</p>
+  </main>
+</body>
+</html>
