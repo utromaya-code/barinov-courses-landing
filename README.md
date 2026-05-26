@@ -10,6 +10,7 @@
 | [index.html](index.html) | Хаб со ссылками на курсы |
 | [barinov-yoga.html](barinov-yoga.html) | Йога онлайн |
 | [tochka-opory.html](tochka-opory.html) | Курс «Точка опоры» |
+| [docs/barinovdao-visual-strategy.html](docs/barinovdao-visual-strategy.html) | Презентация: стратегия единого стиля для barinovdao.ru |
 
 ### Настройка заявок и лид-магнита
 

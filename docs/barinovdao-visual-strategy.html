@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarinovDao — стратегия визуального единства</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background-color: #f1f5f9;
+            display: grid;
+            gap: 25px;
+            grid-template-columns: 1fr;
+            margin: 0;
+            min-height: 100vh;
+            padding: 40px 0;
+            place-items: center;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #FDFBF7;
+            color: #1e293b;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .slide-container::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 43, 73, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .slide-container::after {
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            left: 60px;
+            width: 100px;
+            height: 4px;
+            background-color: #00A3AD;
+            z-index: 0;
+        }
+
+        .slide-container > * { position: relative; z-index: 1; }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #002B49; margin: 0; }
+        h1 { font-size: 64px; line-height: 1.1; margin-bottom: 20px; }
+        .slide-title {
+            font-size: 42px;
+            margin-bottom: 40px;
+            border-left: 5px solid #00A3AD;
+            padding-left: 20px;
+            width: 100%;
+            text-align: left;
+        }
+        p, li { font-size: 20px; line-height: 1.6; color: #334155; }
+
+        .content-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .title-layout { text-align: center; justify-content: center; height: 100%; }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; width: 100%; }
+        .tiled-content { display: flex; gap: 30px; width: 100%; }
+        .tile {
+            flex: 1;
+            background: #fff;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .tile .icon { font-size: 45px; color: #00A3AD; margin-bottom: 20px; }
+        .tile h3 { font-size: 24px; margin-bottom: 15px; }
+
+        .image-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            border: 1px solid #e2e8f0;
+        }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; }
+        th, td { padding: 20px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        th {
+            background: #002B49;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .highlight-numbers-layout { display: flex; align-items: center; gap: 50px; }
+        .number {
+            font-size: 160px;
+            font-weight: 700;
+            color: #00A3AD;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .timeline-layout { display: flex; justify-content: space-between; position: relative; margin-top: 50px; }
+        .timeline-line {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: 0;
+        }
+        .timeline-item { width: 22%; text-align: center; position: relative; z-index: 1; }
+        .timeline-item::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: #00A3AD;
+            border-radius: 50%;
+            display: block;
+            margin: 13px auto;
+        }
+
+        .quote-layout blockquote {
+            font-size: 36px;
+            font-style: italic;
+            color: #002B49;
+            border: none;
+            padding: 0 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        .slide-container.bleed-image-layout {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 0;
+            align-items: start;
+        }
+        .bleed-image-layout .content-container {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .bleed-image-layout .image-container { height: 100%; overflow: hidden; }
+        .bleed-image-side { width: 100%; height: 720px; object-fit: cover; }
+
+        .bullet-list ul { list-style: none; padding: 0; }
+        .bullet-list li { margin-bottom: 20px; padding-left: 45px; position: relative; }
+        .bullet-list li i { position: absolute; left: 0; top: 5px; color: #00A3AD; font-size: 24px; }
+
+        .qa-layout { text-align: center; }
+        .qa-layout h2 { font-size: 80px; color: #002B49; }
+
+        .slide-note {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 12px;
+        }
+
+        @media print {
+            body { background: #fff; padding: 0; }
+            .slide-container { box-shadow: none; page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container" id="slide1">
+    <div class="title-layout">
+        <h1>Стратегия визуального единства</h1>
+        <p style="font-size: 28px; color: #64748b;">Масштабирование стиля «Точка опоры» на основной портал BarinovDao</p>
+        <p class="slide-note">Лендинги курсов сейчас: Manrope + Prata, тёплая земляная палитра. Эта презентация — целевой UI для barinovdao.ru (Navy + Teal).</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">Текущее состояние vs Цель</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h3>BarinovDao.ru (Сейчас)</h3>
+                <p>Разнородные шрифты, избыток тёмных плашек, нет сквозной научной иерархии, как на лендинге курса.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-circle-check"></i></div>
+                <h3>Целевой стиль (Эталон)</h3>
+                <p>Светлая палитра, «воздух», экспертные блоки с логотипами ВОЗ/Cochrane, типографика Playfair Display.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">Эталон: чистота и экспертность</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <p>Переносим атмосферу <strong>Premium Yoga &amp; Science</strong>. Портал — не каталог услуг, а интеллектуальная база знаний.</p>
+                <div class="bullet-list" style="margin-top: 30px;">
+                    <ul>
+                        <li><i class="fa-solid fa-leaf"></i> Минимализм в деталях</li>
+                        <li><i class="fa-solid fa-microscope"></i> Научный подход как фундамент</li>
+                        <li><i class="fa-solid fa-person-rays"></i> Эстетика человеческого тела</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="../assets/images/tochka-opory/practice-1.webp" alt="Практика с Ильёй Бариновым">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">Научный фундамент (E-E-A-T)</h2>
+    <div class="content-area">
+        <div class="highlight-numbers-layout">
+            <div class="number">100%</div>
+            <div>
+                <h3>Доказательный подход</h3>
+                <p>Сквозной блок «Научная опора» на каждой странице услуг. Ссылки на PubMed, Cochrane, ВОЗ — как на <a href="../tochka-opory.html">tochka-opory.html</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">Визуальные константы</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-palette"></i></div>
+                <h3>Палитра</h3>
+                <p>Cream (#FDFBF7), Navy (#002B49), акцент Teal (#00A3AD). Без чистого чёрного.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-font"></i></div>
+                <h3>Шрифты</h3>
+                <p>Playfair Display — заголовки. Montserrat — текст.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-border-none"></i></div>
+                <h3>Сетка</h3>
+                <p>Много воздуха. Текстовые колонки до ~600px.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">Этапы редизайна</h2>
+    <div class="content-area">
+        <div class="timeline-layout">
+            <div class="timeline-line"></div>
+            <div class="timeline-item">
+                <h3>Этап 1</h3>
+                <p>UI-кит и цветовая схема всего сайта.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Этап 2</h3>
+                <p>Блок «Об авторе»: кейсы и дипломы.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Этап 3</h3>
+                <p>Модуль «Научная опора» в услугах.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Этап 4</h3>
+                <p>Формы захвата (FormSubmit / Telegram).</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">Илья Баринов: перезагрузка образа</h2>
+    <div class="content-area">
+        <div class="two-column" style="align-items: center;">
+            <div style="text-align: center;">
+                <div style="width: 350px; height: 350px; border-radius: 50%; overflow: hidden; margin: 0 auto; border: 5px solid #00A3AD;">
+                    <img src="../assets/images/tochka-opory/author-ilya.webp" alt="Илья Баринов" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+            <div>
+                <h3>Смена фокуса в описании</h3>
+                <p>Акцент на методологии, а не на списке заслуг. Студийные фото на светлом фоне. Логотипы «Зенита» и Академии Вагановой как триггеры доверия.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide8">
+    <h2 class="slide-title">Артефакты доверия</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div style="flex: 1; height: 300px;" class="image-wrapper">
+                <img src="../assets/yoga/practice-twist.png" alt="Практика — мобильность">
+            </div>
+            <div style="flex: 1; height: 300px;" class="image-wrapper">
+                <img src="../assets/yoga/practice-crow.png" alt="Практика — сила и баланс">
+            </div>
+            <div style="flex: 1; height: 300px;" class="image-wrapper">
+                <img src="../assets/yoga/author-portrait.png" alt="Портрет автора">
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-style: italic;">Реальные фото практики и сканы дипломов вместо стоков.</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide9">
+    <h2 class="slide-title">Структура услуг (экосистема)</h2>
+    <div class="content-area">
+        <table>
+            <thead>
+                <tr>
+                    <th>Тип продукта</th>
+                    <th>Целевая аудитория</th>
+                    <th>Визуальный акцент</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="../tochka-opory.html">Курс «Точка опоры»</a></td>
+                    <td>Массовый рынок, ЗОЖ</td>
+                    <td>Lifestyle + наука</td>
+                </tr>
+                <tr>
+                    <td><a href="../barinov-yoga.html">Йога онлайн</a></td>
+                    <td>Практикующие дома</td>
+                    <td>Тёплая земляная палитра</td>
+                </tr>
+                <tr>
+                    <td><a href="https://utromaya-code.github.io/qigong-retreat-landing/">Ретриты</a></td>
+                    <td>Ученики со стажем</td>
+                    <td>Природа, мягкие тона</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="slide-container" id="slide10">
+    <h2 class="slide-title">Взаимодействие (конверсия)</h2>
+    <div class="content-area">
+        <div class="bullet-list">
+            <ul>
+                <li><i class="fa-solid fa-paper-plane"></i> <strong>Умные формы:</strong> FormSubmit / Web3Forms вместо принудительного открытия Telegram.</li>
+                <li><i class="fa-solid fa-mobile-screen"></i> <strong>Mobile first:</strong> крупные зоны нажатия, навигация в один тап.</li>
+                <li><i class="fa-solid fa-bolt"></i> <strong>Скорость:</strong> WebP на GitHub Pages.</li>
+                <li><i class="fa-solid fa-chart-line"></i> <strong>SEO:</strong> Open Graph для каждой услуги.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container bleed-image-layout" id="slide11">
+    <div class="content-container">
+        <h2 class="slide-title">Новый стандарт</h2>
+        <p>BarinovDao — эталонный медиа-ресурс в нише осознанного движения. Единый стиль даёт узнаваемость и снижает стоимость прогрева перед покупкой курса.</p>
+    </div>
+    <div class="image-container">
+        <img src="../assets/images/tochka-opory/hero-ilya.webp" alt="Илья Баринов — практика" class="bleed-image-side">
+    </div>
+</div>
+
+<div class="slide-container" id="slide12">
+    <div class="qa-layout">
+        <h2>Вопросы?</h2>
+        <p style="font-size: 24px;">Готовы приступить к трансформации BarinovDao</p>
+        <div style="margin-top: 50px; opacity: 0.8;">
+            <div class="image-wrapper" style="width: 300px; height: 150px; margin: 0 auto; border: none;">
+                <img src="../assets/yoga/practice-seated.png" alt="Практика" style="object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
