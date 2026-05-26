@@ -206,7 +206,7 @@ if (form) {
 
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Отправить заявку";
+      submitBtn.textContent = "Оставить заявку";
     }
 
     const fallback = `https://t.me/vsemaya?text=${encodeURIComponent(message)}`;

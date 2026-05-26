@@ -1254,6 +1254,148 @@ html.mineral-page [data-reveal].is-visible {
 }
 
 /* ===========================================================
+   CONTENT BLOCKS (TZ copy structure)
+   =========================================================== */
+
+html.mineral-page .ed-audience-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 5rem);
+  margin-top: 4rem;
+  border-top: 1px solid var(--line-hairline);
+  padding-top: 3rem;
+}
+
+html.mineral-page .ed-audience-col-label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-mineral);
+  margin: 0 0 1.5rem;
+}
+
+html.mineral-page .ed-audience-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html.mineral-page .ed-audience-col li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line-hairline);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+html.mineral-page .ed-essence-list,
+html.mineral-page .ed-about-list,
+html.mineral-page .ed-author-points {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  border-top: 1px solid var(--line-hairline);
+}
+
+html.mineral-page .ed-essence-list li,
+html.mineral-page .ed-about-list li,
+html.mineral-page .ed-author-points li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line-hairline);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+html.mineral-page .ed-pillars--three {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+html.mineral-page .ed-pillars--three .ed-pillar::before {
+  content: none;
+}
+
+html.mineral-page .ed-pillars--three .ed-pillar strong::before {
+  content: counter(pillar, decimal-leading-zero) " ";
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--accent-dim);
+  margin-right: 0.25rem;
+}
+
+html.mineral-page .ed-pillars--three {
+  counter-reset: pillar;
+}
+
+html.mineral-page .ed-pillars--three .ed-pillar {
+  counter-increment: pillar;
+}
+
+html.mineral-page .ed-requests,
+html.mineral-page .ed-results-list,
+html.mineral-page .ed-difference-list {
+  list-style: none;
+  padding: 0;
+  margin: 4rem 0 0;
+  border-top: 1px solid var(--line-hairline);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 4rem;
+}
+
+html.mineral-page .ed-requests li,
+html.mineral-page .ed-results-list li,
+html.mineral-page .ed-difference-list li {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line-hairline);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-muted);
+  display: flex;
+  gap: 0.75rem;
+}
+
+html.mineral-page .ed-requests li::before,
+html.mineral-page .ed-results-list li::before,
+html.mineral-page .ed-difference-list li::before {
+  content: "—";
+  color: var(--accent-mineral);
+  flex-shrink: 0;
+}
+
+html.mineral-page .program-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html.mineral-page .program-bullets li {
+  padding: 0.35rem 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.65;
+  display: flex;
+  gap: 0.65rem;
+}
+
+html.mineral-page .program-bullets li::before {
+  content: "—";
+  color: var(--accent-dim);
+  flex-shrink: 0;
+}
+
+html.mineral-page #about .ed-lede {
+  font-size: clamp(1.15rem, 1rem + 0.5vw, 1.35rem) !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 1.5rem;
+}
+
+/* ===========================================================
    MOBILE
    =========================================================== */
 
@@ -1331,6 +1473,20 @@ html.mineral-page [data-reveal].is-visible {
 
   html.mineral-page .program-panel-inner {
     padding-left: 5.25rem !important;
+  }
+
+  html.mineral-page .ed-audience-cols,
+  html.mineral-page .ed-pillars--three,
+  html.mineral-page .ed-requests,
+  html.mineral-page .ed-results-list,
+  html.mineral-page .ed-difference-list {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  html.mineral-page .ed-pillars--three .ed-pillar {
+    border-right: 0 !important;
+    padding-left: 0 !important;
   }
 }
 
