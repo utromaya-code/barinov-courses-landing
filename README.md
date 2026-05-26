@@ -11,6 +11,15 @@
 | [barinov-yoga.html](barinov-yoga.html) | Йога онлайн |
 | [tochka-opory.html](tochka-opory.html) | Курс «Точка опоры» |
 
+### Настройка заявок и лид-магнита
+
+Файл `tochka-opory-config.js`:
+
+- `formSubmitEmail` — почта для FormSubmit (заявки с формы на сайте).
+- `web3formsAccessKey` — опционально, ключ с [web3forms.com](https://web3forms.com).
+- `leadMagnetUrl` — ссылка на бесплатную практику / Telegram-бот.
+- `welcomeVideoId` — ID ролика YouTube для блока приветствия.
+
 ## GitHub Pages
 
 После push: **Settings → Pages → Deploy from branch `main` / root**.
