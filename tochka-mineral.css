@@ -1395,6 +1395,43 @@ html.mineral-page #about .ed-lede {
   margin-bottom: 1.5rem;
 }
 
+html.mineral-page .ed-about-grid {
+  align-items: start;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+html.mineral-page .ed-about-figure {
+  margin: 0;
+}
+
+html.mineral-page .ed-about-figure .ed-figure-frame {
+  aspect-ratio: 4 / 5;
+}
+
+html.mineral-page .ed-about-copy h2 {
+  margin-top: 0.5rem;
+}
+
+html.mineral-page .ed-author-photos {
+  display: grid;
+  gap: 1.25rem;
+}
+
+html.mineral-page .ed-author-photos .ed-figure-frame {
+  aspect-ratio: 4 / 5;
+}
+
+html.mineral-page .ed-figure-frame--secondary {
+  width: 72%;
+  margin-left: auto;
+  margin-top: -2.5rem;
+}
+
+html.mineral-page #method .practice-gallery {
+  display: grid;
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
 /* ===========================================================
    MOBILE
    =========================================================== */
@@ -1487,6 +1524,16 @@ html.mineral-page #about .ed-lede {
   html.mineral-page .ed-pillars--three .ed-pillar {
     border-right: 0 !important;
     padding-left: 0 !important;
+  }
+
+  html.mineral-page .ed-figure-frame--secondary {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  html.mineral-page .ed-about-figure,
+  html.mineral-page .ed-about-copy {
+    grid-column: 1 / -1 !important;
   }
 }
 
