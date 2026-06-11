@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="ru" data-theme="dark" class="luxury-page editorial-page mineral-page">
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Точка опоры — курс Ильи Баринова по йоге</title>
   <meta name="description" content="Авторский курс «Точка опоры»: 3 месяца, 30 онлайн-занятий, финальный ретрит. Фундаментальная йога и телесная грамотность.">
-  <meta name="theme-color" content="#121212">
+  <meta name="theme-color" content="#F6F0E4">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:title" content="Точка опоры — курс Ильи Баринова">
@@ -16,40 +16,37 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400&family=Prata&family=Plus+Jakarta+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="barinov-brand.css">
-  <link rel="stylesheet" href="barinov-yoga-extensions.css">
-  <link rel="stylesheet" href="tochka-quiet-luxury.css">
-  <link rel="stylesheet" href="tochka-editorial.css">
-  <link rel="stylesheet" href="tochka-mineral.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=PT+Mono&display=swap" rel="stylesheet">
   <link rel="preload" href="assets/images/tochka-opory/editorial/ilya-portrait-tang.jpg" as="image">
   <style>
-    :root,
-    [data-theme="light"] {
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
-      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
-      --text-hero: clamp(3rem, 0.5rem + 7vw, 8rem);
-      --space-1: 0.5rem;
-      --space-2: 0.75rem;
-      --space-3: 1rem;
-      --space-4: 1.5rem;
-      --space-5: 2rem;
-      --space-6: 3rem;
-      --space-7: 4.5rem;
-      --space-8: 6rem;
-      --radius-sm: 6px;
-      --radius-md: 10px;
-      --radius-lg: 16px;
-      --container: 1120px;
-      --header-h: 72px;
-      --shadow-soft: 0 16px 40px rgba(0, 43, 73, 0.08);
+    /* =====================================================
+       ТОЧКА ОПОРЫ — тёплая «рисовая» тема школы Баринова
+       Палитра и мотивы синхронизированы с barinovdao.ru
+       ===================================================== */
+
+    :root {
+      --paper:    #F6F0E4;
+      --paper-2:  #EFE6D4;
+      --ink:      #2B2722;
+      --ink-soft: rgba(43, 39, 34, 0.68);
+      --cinnabar: #C2462E;
+      --cinnabar-deep: #B33D27; /* для мелкого текста: контраст ≥4.5:1 на --paper */
+      --ochre:    #B98A4B;
+      --ochre-deep: #8A6534;    /* для мелкого текста: контраст ≥4.5:1 на --paper */
+      --moss:     #5E6B4F;
+      --line:     rgba(43, 39, 34, 0.14);
+      --line-soft: rgba(43, 39, 34, 0.08);
+
+      --font-display: "Playfair Display", Georgia, serif;
+      --font-body: "Inter", system-ui, -apple-system, sans-serif;
+      --font-mono: "PT Mono", ui-monospace, monospace;
+
+      --container: 1140px;
+      --header-h: 68px;
+      --radius: 7px;
     }
 
+    *,
     *::before,
     *::after {
       box-sizing: border-box;
@@ -63,10 +60,10 @@
     body {
       margin: 0;
       font-family: var(--font-body);
-      font-size: var(--text-base);
-      line-height: 1.65;
-      color: var(--color-text);
-      background: var(--color-bg);
+      font-size: clamp(1.0625rem, 1rem + 0.2vw, 1.125rem); /* 17–18px */
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
       overflow-x: hidden;
     }
 
@@ -84,48 +81,11 @@
       color: inherit;
     }
 
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 8px;
-      z-index: 3000;
-      background: var(--color-surface);
-      padding: 8px 12px;
-      border-radius: var(--radius-sm);
+    p {
+      margin: 0;
     }
 
-    .skip-link:focus {
-      left: 8px;
-    }
-
-    .container {
-      width: min(var(--container), calc(100% - 2rem));
-      margin-inline: auto;
-    }
-
-  section {
-      scroll-margin-top: calc(var(--header-h) + 12px);
-    }
-
-    .section {
-      padding: clamp(4rem, 8vw, 6.5rem) 0;
-    }
-
-    .section--tight {
-      padding-top: clamp(2.5rem, 5vw, 4rem);
-    }
-
-    .section--surface {
-      background: var(--color-surface);
-    }
-
-    .section--offset {
-      background: var(--color-surface-2);
-    }
-
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       font-family: var(--font-display);
       font-weight: 500;
       line-height: 1.12;
@@ -133,135 +93,205 @@
     }
 
     h1 {
-      font-size: var(--text-hero);
-      letter-spacing: -0.02em;
+      font-size: clamp(2.8rem, 1.6rem + 5.5vw, 5.5rem);
+      letter-spacing: -0.015em;
     }
 
     h2 {
-      font-size: var(--text-2xl);
-      max-width: 18ch;
+      font-size: clamp(1.9rem, 1.3rem + 2.6vw, 3.25rem);
+      letter-spacing: -0.01em;
     }
 
     h3 {
-      font-size: var(--text-xl);
+      font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.65rem);
     }
 
-    p {
-      margin: 0;
+    :focus-visible {
+      outline: 2px solid var(--cinnabar);
+      outline-offset: 3px;
+      border-radius: 2px;
     }
 
-    .eyebrow {
-      font-size: var(--text-xs);
-      letter-spacing: 0.14em;
+    ::selection {
+      background: var(--cinnabar);
+      color: var(--paper);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 8px;
+      z-index: 3000;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .skip-link:focus {
+      left: 8px;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - clamp(2rem, 6vw, 4rem)));
+      margin-inline: auto;
+    }
+
+    section {
+      scroll-margin-top: calc(var(--header-h) + 12px);
+    }
+
+    .section {
+      padding: clamp(4rem, 9vw, 7.5rem) 0;
+    }
+
+    .section--alt {
+      background: var(--paper-2);
+    }
+
+    /* Утилитарные подписи: мото-каллиграфия школы — мона + охра */
+    .label {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-3);
+      color: var(--ochre-deep);
+      margin: 0 0 1.25rem;
+    }
+
+    .label--chapter {
+      color: var(--ochre-deep);
+    }
+
+    .label--chapter .num {
+      color: var(--cinnabar-deep);
+    }
+
+    .fig-caption {
+      margin-top: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.06em;
+      color: var(--ochre-deep);
+    }
+
+    .lede {
+      font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+
+    .aside-note {
+      color: var(--ink-soft);
+      max-width: 44ch;
     }
 
     .section-head {
-      margin-bottom: var(--space-6);
-      max-width: 42rem;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
     }
 
-    .section-head p {
-      margin-top: var(--space-3);
-      color: var(--color-text-muted);
-      font-size: var(--text-lg);
+    .section-head .aside-note {
+      margin-top: 1.25rem;
     }
 
+    /* Двухколоночная шапка секции */
+    .head-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: clamp(1.5rem, 4vw, 4rem);
+      align-items: end;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .head-grid .aside-note {
+      margin: 0;
+      justify-self: end;
+    }
+
+    /* Кнопки: все CTA — киноварь */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 44px;
-      min-width: 44px;
-      padding: 0.85rem 1.35rem;
-      border-radius: var(--radius-md);
+      gap: 0.55rem;
+      min-height: 48px;
+      padding: 0.85rem 1.75rem;
       border: 1px solid transparent;
+      border-radius: var(--radius);
       font-family: var(--font-body);
-      font-size: var(--text-sm);
-      font-weight: 500;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
       text-decoration: none;
       cursor: pointer;
-      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
     }
 
     .btn-primary {
-      background: var(--color-primary);
-      color: var(--color-on-primary);
-      animation: cta-glow 3.2s ease-in-out infinite;
+      background: var(--cinnabar);
+      color: #fff;
     }
 
     .btn-primary:hover {
-      background: var(--color-primary-hover);
-    }
-
-    .btn-primary:active {
-      background: var(--color-primary-active);
+      background: var(--cinnabar-deep);
     }
 
     .btn-ghost {
       background: transparent;
-      color: var(--color-text);
-      border-color: var(--color-border);
+      color: var(--ink);
+      border-color: var(--line);
     }
 
     .btn-ghost:hover {
-      border-color: var(--color-primary);
-      color: var(--color-primary);
+      border-color: var(--moss);
+      color: var(--moss);
     }
 
-    @keyframes cta-glow {
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 oklch(from var(--color-primary) l c h / 0);
-      }
-      50% {
-        box-shadow: 0 0 0 6px oklch(from var(--color-primary) l c h / 0.12);
-      }
-    }
-
-    /* Header */
+    /* =================== ШАПКА =================== */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      height: var(--header-h);
+      min-height: var(--header-h);
+      background: var(--paper);
       border-bottom: 1px solid transparent;
-      transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .site-header.is-scrolled {
-      background: oklch(from var(--color-bg) l c h / 0.88);
-      backdrop-filter: blur(8px);
-      border-bottom-color: var(--color-border);
+      border-bottom-color: var(--line-soft);
+      box-shadow: 0 8px 24px rgba(43, 39, 34, 0.06);
     }
 
     .header-inner {
       display: flex;
       align-items: center;
-      gap: var(--space-4);
-      height: 100%;
+      gap: 1rem;
+      min-height: var(--header-h);
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: var(--space-2);
+      gap: 0.6rem;
       text-decoration: none;
       margin-right: auto;
     }
 
-    .brand svg {
-      width: 28px;
-      height: 28px;
+    .brand-seal {
+      width: 30px;
+      height: 30px;
+      color: var(--cinnabar);
       flex-shrink: 0;
     }
 
     .brand-name {
-      font-family: var(--font-display);
-      font-size: var(--text-lg);
-      letter-spacing: 0.02em;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
     }
 
     .site-nav {
@@ -271,52 +301,25 @@
     }
 
     .site-nav a {
-      font-size: var(--text-sm);
+      font-size: 0.875rem;
+      font-weight: 500;
       text-decoration: none;
-      color: var(--color-text-muted);
+      color: var(--ink-soft);
+      transition: color 0.2s ease;
+      padding: 0.35rem 0;
     }
 
     .site-nav a:hover {
-      color: var(--color-text);
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-    }
-
-    .theme-toggle {
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      background: var(--color-surface);
-      color: var(--color-text);
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-    }
-
-    .theme-toggle .icon-moon {
-      display: none;
-    }
-
-    [data-theme="dark"] .theme-toggle .icon-sun {
-      display: none;
-    }
-
-    [data-theme="dark"] .theme-toggle .icon-moon {
-      display: block;
+      color: var(--moss);
     }
 
     .nav-toggle {
       display: none;
       width: 44px;
       height: 44px;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      background: var(--color-surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
       cursor: pointer;
       padding: 0;
     }
@@ -326,98 +329,168 @@
       width: 18px;
       height: 2px;
       margin: 4px auto;
-      background: var(--color-text);
+      background: var(--ink);
     }
 
     .header-cta {
       white-space: nowrap;
+      min-height: 42px;
+      padding: 0.6rem 1.3rem;
     }
 
-    /* Hero */
+    /* =================== HERO =================== */
     .hero {
-      min-height: 100dvh;
-      display: flex;
-      align-items: center;
       position: relative;
       overflow: hidden;
-      padding: calc(var(--header-h) + 2rem) 0 4rem;
+      padding: clamp(2.5rem, 6vh, 5rem) 0 clamp(3rem, 7vw, 5.5rem);
+    }
+
+    .hero-watermark {
+      position: absolute;
+      top: 4%;
+      right: -6%;
+      width: min(560px, 70vw);
+      height: auto;
+      color: var(--ochre);
+      opacity: 0.09;
+      pointer-events: none;
     }
 
     .hero-grid {
+      position: relative;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: var(--space-6);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: clamp(2rem, 4vw, 4rem);
       align-items: center;
     }
 
-    .hero-copy {
-      max-width: 38rem;
+    .hero h1 {
+      margin: 0 0 1.5rem;
     }
 
-    .hero h1 {
-      font-size: var(--text-3xl);
-      margin-bottom: var(--space-4);
+    /* Сигнатура: киноварная печать-кружок над «о» в слове «опоры» */
+    .h1-seal {
+      position: relative;
+      display: inline-block;
+    }
+
+    .h1-seal::before {
+      content: "";
+      position: absolute;
+      top: -0.06em;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0.14em;
+      height: 0.14em;
+      border-radius: 50%;
+      background: var(--cinnabar);
     }
 
     .hero-subtitle {
-      font-size: var(--text-lg);
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-5);
-      max-width: 34ch;
+      font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
+      color: var(--ink-soft);
+      max-width: 40ch;
+      margin-bottom: 2rem;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--space-3);
+      gap: 0.85rem;
       align-items: center;
-      margin-bottom: var(--space-4);
+      margin-bottom: 1.5rem;
     }
 
-    .hero-scroll {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
+    .hero-secondary {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-secondary a {
+      display: inline-block;
+      padding: 0.5rem 0;
+      color: var(--ochre-deep);
       text-decoration: none;
     }
 
-    .hero-visual {
-      position: relative;
-      min-height: 320px;
-      display: grid;
-      place-items: center;
+    .hero-secondary a:hover {
+      color: var(--cinnabar-deep);
     }
 
-    .hero-mandala {
-      position: absolute;
-      inset: 0;
-      margin: auto;
-      width: min(420px, 90%);
-      opacity: 0.14;
-      color: var(--color-primary);
+    .hero-secondary-sep {
+      color: var(--ochre);
+      margin: 0 0.5rem;
     }
 
-    .hero-photo {
-      position: relative;
-      z-index: 1;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      max-height: min(72vh, 640px);
-      width: auto;
-      margin-inline: auto;
+    .photo-frame {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--paper-2);
+      box-shadow: 0 20px 50px rgba(43, 39, 34, 0.10);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      filter: sepia(0.14) saturate(1.05) contrast(1.01); /* тёплая обработка */
+    }
+
+    .hero-visual .photo-frame {
+      aspect-ratio: 4 / 5;
+      max-height: min(72vh, 620px);
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+      border-block: 1px solid var(--line);
+    }
+
+    .hero-facts > div {
+      padding: 1.4rem 1.5rem 1.4rem 0;
+      border-right: 1px solid var(--line-soft);
+    }
+
+    .hero-facts > div:not(:first-child) {
+      padding-left: 1.5rem;
+    }
+
+    .hero-facts > div:last-child {
+      border-right: 0;
+    }
+
+    .hero-facts dt {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ochre-deep);
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-facts dd {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      margin: 0;
     }
 
     .hero-enter {
       opacity: 0;
-      transform: translateY(20px);
-      animation: hero-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transform: translateY(16px);
+      animation: hero-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .hero-enter:nth-child(1) { animation-delay: 0ms; }
-    .hero-enter:nth-child(2) { animation-delay: 150ms; }
-    .hero-enter:nth-child(3) { animation-delay: 300ms; }
-    .hero-enter:nth-child(4) { animation-delay: 450ms; }
-    .hero-enter:nth-child(5) { animation-delay: 600ms; }
+    .hero-enter:nth-child(2) { animation-delay: 120ms; }
+    .hero-enter:nth-child(3) { animation-delay: 240ms; }
+    .hero-enter:nth-child(4) { animation-delay: 360ms; }
+    .hero-enter:nth-child(5) { animation-delay: 480ms; }
 
     @keyframes hero-in {
       to {
@@ -426,210 +499,207 @@
       }
     }
 
-    /* Pain grid */
-    .pain-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      grid-template-rows: auto auto;
-      gap: var(--space-4);
+    /* =================== ЦИТАТА (единственный тёмный блок) =================== */
+    .quote-band {
+      background: var(--ink);
+      color: var(--paper);
+      padding: clamp(4rem, 9vw, 7rem) 0;
     }
 
-    .pain-card {
-      position: relative;
-      padding: var(--space-5);
-      background: var(--color-surface-2);
-      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-
-    .pain-card--lead {
-      grid-row: span 2;
-    }
-
-    .pain-number {
-      position: absolute;
-      top: var(--space-3);
-      right: var(--space-4);
-      font-family: var(--font-display);
-      font-size: var(--text-3xl);
-      line-height: 1;
-      opacity: 0.12;
-    }
-
-    .pain-card h3 {
-      font-size: var(--text-xl);
-      margin-bottom: var(--space-3);
-      max-width: 20ch;
-    }
-
-    .pain-card p {
-      color: var(--color-text-muted);
-    }
-
-    /* Method narrative */
-    .method-wrap {
-      max-width: 65ch;
-    }
-
-    .method-wrap .drop-cap::first-letter {
-      float: left;
-      font-family: var(--font-display);
-      font-size: 4.2rem;
-      line-height: 0.85;
-      padding-right: 0.12em;
-      color: var(--color-primary);
-    }
-
-    .method-wrap p + p {
-      margin-top: var(--space-4);
-    }
-
-    .method-quote {
-      margin: var(--space-5) 0 0;
-      padding-left: var(--space-4);
-      border-left: 3px solid var(--color-primary);
+    .quote-band blockquote {
       font-family: var(--font-display);
       font-style: italic;
-      font-size: var(--text-xl);
-      color: var(--color-text-muted);
+      font-weight: 500;
+      font-size: clamp(1.7rem, 1.1rem + 3vw, 3.25rem);
+      line-height: 1.2;
+      max-width: 24ch;
+      margin: 0;
     }
 
-  .method-aside {
-      margin-top: var(--space-6);
+    .quote-band cite {
+      display: block;
+      margin-top: 1.75rem;
+      font-family: var(--font-mono);
+      font-style: normal;
+      font-size: 0.8125rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ochre);
+    }
+
+    /* =================== СПИСКИ / КОЛОНКИ =================== */
+    .audience-cols {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: var(--space-5);
-      align-items: end;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
     }
 
-    .method-aside img {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      object-position: center 20%;
-      border-radius: var(--radius-lg);
+    .audience-col-label {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cinnabar-deep);
+      margin: 0 0 1.25rem;
+    }
+
+    .list-plain {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list-lined li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--line-soft);
+      color: var(--ink-soft);
+      display: flex;
+      gap: 0.7rem;
+    }
+
+    .list-lined li::before {
+      content: "—";
+      color: var(--ochre);
+      flex-shrink: 0;
+    }
+
+    .statement {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.4rem);
+      line-height: 1.3;
+      max-width: 26ch;
+    }
+
+    .essence-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    .essence-grid .statement {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Три точки опоры */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.25rem, 2.5vw, 2rem);
+      counter-reset: pillar;
+    }
+
+    .pillar {
+      counter-increment: pillar;
+      background: var(--paper);
+      border: 1px solid var(--line-soft);
+      border-top: 3px solid var(--ochre);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+    }
+
+    .section--alt .pillar {
+      background: var(--paper);
+    }
+
+    .pillar strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .pillar strong::before {
+      content: counter(pillar, decimal-leading-zero) " · ";
+      font-family: var(--font-mono);
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: var(--cinnabar-deep);
+      letter-spacing: 0.1em;
+    }
+
+    .pillar span {
+      color: var(--ink-soft);
+      font-size: 0.9875rem;
+      line-height: 1.6;
     }
 
     .practice-gallery {
-      margin-top: var(--space-6);
+      margin-top: clamp(2.5rem, 5vw, 4rem);
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: var(--space-3);
+      grid-template-columns: repeat(5, 1fr);
+      gap: clamp(0.75rem, 1.5vw, 1.25rem);
     }
 
-    .practice-gallery img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border-radius: var(--radius-md);
-      filter: grayscale(0.08);
+    .practice-gallery .photo-frame {
+      aspect-ratio: 3 / 4;
+      box-shadow: none;
     }
 
-    .author-photos {
-      display: grid;
-      gap: var(--space-3);
+    .practice-gallery .photo-frame:nth-child(even) {
+      margin-top: 1.5rem;
     }
 
-    .author-photo--secondary {
-      max-height: 280px;
-      object-position: center 15%;
-    }
-
-    /* Science */
-    .science-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-4);
-    }
-
-    .science-card {
-      padding: var(--space-4);
-      background: var(--color-surface-offset);
-      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
-      border-radius: var(--radius-md);
-    }
-
-    .science-card p {
-      margin-top: var(--space-2);
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-    }
-
-    .science-card a {
-      color: var(--color-primary);
-      font-size: var(--text-sm);
-    }
-
-    .science-disclaimer {
-      margin-top: var(--space-5);
-      font-size: var(--text-sm);
-      color: var(--color-text-faint);
-      font-style: italic;
-      max-width: 65ch;
-    }
-
-    .refs-list {
-      margin-top: var(--space-4);
-      padding-left: 1.2rem;
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-    }
-
-    .refs-list a {
-      color: var(--color-primary);
-    }
-
-    /* Program accordion */
+    /* =================== ПРОГРАММА =================== */
     .program-list {
       list-style: none;
       padding: 0;
       margin: 0;
-      border-top: 1px solid var(--color-border);
+      border-top: 1px solid var(--line);
     }
 
     .program-item {
-      border-bottom: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--line);
     }
 
     .program-trigger {
       width: 100%;
       display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: var(--space-4);
+      grid-template-columns: 3.5rem 1fr auto;
+      gap: 1.5rem;
       align-items: center;
-      padding: var(--space-4) 0;
+      padding: 1.6rem 0;
       background: none;
       border: 0;
       text-align: left;
       cursor: pointer;
-      color: var(--color-text);
+      color: var(--ink);
       font: inherit;
       min-height: 44px;
     }
 
     .program-week {
-      font-family: var(--font-display);
-      font-size: var(--text-3xl);
-      color: var(--color-primary);
-      opacity: 0.2;
-      line-height: 1;
-      min-width: 2.5ch;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--cinnabar-deep);
+      letter-spacing: 0.08em;
     }
 
     .program-trigger h3 {
-      font-size: var(--text-lg);
-      font-family: var(--font-body);
+      font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem);
       font-weight: 500;
     }
 
+    .program-trigger h3 strong {
+      display: block;
+      font-family: var(--font-mono);
+      font-weight: 400;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ochre-deep);
+      margin-bottom: 0.4rem;
+    }
+
     .program-chevron {
-      width: 12px;
-      height: 12px;
-      border-right: 2px solid var(--color-text-muted);
-      border-bottom: 2px solid var(--color-text-muted);
+      width: 11px;
+      height: 11px;
+      border-right: 2px solid var(--ochre-deep);
+      border-bottom: 2px solid var(--ochre-deep);
       transform: rotate(45deg);
       transition: transform 0.3s ease;
+      justify-self: end;
     }
 
     .program-trigger[aria-expanded="true"] .program-chevron {
@@ -643,232 +713,750 @@
     }
 
     .program-panel-inner {
-      padding: 0 0 var(--space-4) calc(2.5ch + var(--space-4));
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
+      padding: 0 0 1.75rem calc(3.5rem + 1.5rem);
+      max-width: 60ch;
     }
 
-    .program-panel-inner strong {
-      display: block;
-      margin-top: var(--space-2);
-      color: var(--color-text);
-      font-weight: 500;
+    .program-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    /* Metrics */
-    .metrics-grid {
+    .program-bullets li {
+      padding: 0.3rem 0;
+      color: var(--ink-soft);
+      display: flex;
+      gap: 0.65rem;
+    }
+
+    .program-bullets li::before {
+      content: "—";
+      color: var(--ochre);
+      flex-shrink: 0;
+    }
+
+    /* =================== РЕТРИТ / ИСТОРИИ =================== */
+    .split-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      background: var(--color-surface);
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
     }
 
-    .metric-cell {
-      padding: var(--space-5) var(--space-4);
-      border-right: 1px solid var(--color-border);
+    .split-grid--media-first {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
     }
 
-    .metric-cell:last-child {
-      border-right: 0;
+    .split-grid figure {
+      margin: 0;
     }
 
-    .metric-value {
-      display: block;
+    .split-grid .photo-frame {
+      aspect-ratio: 3 / 2;
+    }
+
+    .split-grid .aside-note + .aside-note {
+      margin-top: 1.25rem;
+    }
+
+    /* =================== РЕЗУЛЬТАТЫ =================== */
+    .results-note {
+      font-size: 0.9375rem;
+      color: var(--moss);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .results-note svg {
+      flex-shrink: 0;
+      color: var(--moss);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 2.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .results-grid li {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--line-soft);
+      color: var(--ink-soft);
+    }
+
+    .results-grid svg {
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      color: var(--cinnabar);
+    }
+
+    /* =================== ФОРМАТ =================== */
+    .format-list {
+      margin: 1.75rem 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .format-list > div {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: 1.5rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--line-soft);
+      align-items: baseline;
+    }
+
+    .format-list dt {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ochre-deep);
+    }
+
+    .format-list dd {
+      margin: 0;
       font-family: var(--font-display);
-      font-size: var(--text-2xl);
-      line-height: 1;
-      margin-bottom: var(--space-2);
+      font-size: 1.15rem;
     }
 
-    .metric-label {
-      display: block;
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.4;
-    }
-
-    /* Author */
+    /* =================== АВТОР =================== */
     .author-grid {
       display: grid;
-      grid-template-columns: minmax(240px, 360px) 1fr;
-      gap: var(--space-6);
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: clamp(2rem, 4vw, 4rem);
       align-items: start;
     }
 
-    .author-photo {
-      border-radius: var(--radius-lg);
+    .author-figure {
+      margin: 0;
+      position: sticky;
+      top: calc(var(--header-h) + 1.5rem);
+    }
+
+    .author-figure .photo-frame {
       aspect-ratio: 4 / 5;
-      object-fit: cover;
-      width: 100%;
     }
 
-    .author-copy p + p {
-      margin-top: var(--space-3);
-      color: var(--color-text-muted);
+    .author-figure .photo-frame--secondary {
+      width: 68%;
+      margin-left: auto;
+      margin-top: -3rem;
+      aspect-ratio: 1 / 1;
+      position: relative;
     }
 
-    .author-links {
-      margin-top: var(--space-4);
+    .regalia {
+      list-style: none;
+      padding: 0;
+      margin: 1.75rem 0 0;
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .regalia li {
       display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-      font-size: var(--text-sm);
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--paper);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      color: var(--ink-soft);
     }
 
-    .author-links a {
-      color: var(--color-primary);
+    .section--alt .regalia li {
+      background: var(--paper);
+    }
+
+    .regalia svg {
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+      color: var(--cinnabar);
+    }
+
+    .author-closing {
+      margin-top: 1.75rem;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--ink-soft);
+    }
+
+    .author-link {
+      margin-top: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      letter-spacing: 0.06em;
+    }
+
+    .author-link a {
+      color: var(--cinnabar-deep);
       text-decoration: underline;
-      text-underline-offset: 3px;
+      text-underline-offset: 4px;
     }
 
-    /* Reviews */
-    .reviews-scroll {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: var(--space-4);
-      padding-bottom: var(--space-2);
-      scrollbar-width: none;
+    /* Видео-плейсхолдер */
+    .video-placeholder {
+      position: relative;
+      margin-top: 2rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      border: 1px solid var(--line);
     }
 
-    .reviews-scroll::-webkit-scrollbar {
-      display: none;
+    .video-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(0.14) saturate(1.05);
     }
 
-    .review-card {
-      scroll-snap-align: start;
-      flex: 0 0 min(320px, 85vw);
-      padding: var(--space-4);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-    }
-
-    .review-head {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      margin-bottom: var(--space-3);
-    }
-
-    .review-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
+    .video-placeholder .video-veil {
+      position: absolute;
+      inset: 0;
       display: grid;
       place-items: center;
-      background: var(--color-surface-offset);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      color: var(--color-primary);
+      background: rgba(43, 39, 34, 0.32);
     }
 
-    .review-meta {
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-    }
-
-    .review-card p {
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-    }
-
-    .review-date {
-      margin-top: var(--space-3);
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
-    }
-
-    /* Pricing */
-    .pricing-grid {
+    .video-play {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--cinnabar);
+      color: #fff;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-4);
-      max-width: 820px;
+      place-items: center;
+      box-shadow: 0 12px 30px rgba(43, 39, 34, 0.3);
     }
 
-    .price-card {
-      padding: var(--space-5);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
+    .video-caption {
+      margin-top: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.08em;
+      color: var(--ochre-deep);
+    }
+
+    /* Кросс-ссылка на школу: карточка с карпом */
+    .school-card {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      margin-top: 2rem;
+      padding: 1.1rem 1.4rem;
+      border: 1px solid var(--ochre);
+      border-radius: var(--radius);
+      background: var(--paper);
+      text-decoration: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .school-card:hover {
+      border-color: var(--cinnabar);
+      box-shadow: 0 10px 26px rgba(43, 39, 34, 0.08);
+    }
+
+    .school-card svg {
+      flex-shrink: 0;
+      color: var(--cinnabar);
+    }
+
+    .school-card .school-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ochre-deep);
+      margin-bottom: 0.25rem;
+    }
+
+    .school-card .school-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+    }
+
+    .school-card .school-arrow {
+      margin-left: auto;
+      color: var(--cinnabar-deep);
+      font-size: 1.3rem;
+    }
+
+    /* =================== ОТЗЫВЫ (заглушка) =================== */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .review-slot {
+      min-height: 220px;
+      border: 1px dashed var(--ochre);
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--ochre-deep);
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.1em;
+      background: var(--paper);
+    }
+
+    .reviews-soon {
+      margin-top: 1.5rem;
+      color: var(--ink-soft);
+      font-size: 0.9375rem;
+    }
+
+    /* =================== ТАРИФЫ =================== */
+    .tiers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.25rem, 2.5vw, 2rem);
+      align-items: stretch;
+    }
+
+    .tier {
+      position: relative;
       display: flex;
       flex-direction: column;
-      gap: var(--space-3);
+      gap: 1rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
     }
 
-    .price-card--featured {
-      border-color: var(--color-primary);
+    .tier--featured {
+      border-color: var(--cinnabar);
+      box-shadow: 0 18px 44px rgba(43, 39, 34, 0.10);
     }
 
-    .price-badge {
-      font-size: var(--text-xs);
-      color: var(--color-primary);
-      letter-spacing: 0.06em;
+    .tier-badge {
+      position: absolute;
+      top: -0.85rem;
+      left: 1.5rem;
+      background: var(--cinnabar);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
     }
 
-    .price-card ul {
+    .tier-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ochre-deep);
       margin: 0;
-      padding-left: 1.1rem;
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
     }
 
-    .price-value {
+    .tier h3 {
+      font-weight: 600;
+    }
+
+    .tier-price {
       font-family: var(--font-display);
-      font-size: var(--text-2xl);
+      font-size: 2rem;
+      line-height: 1;
     }
 
-    .price-note {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
+    .tier-installment {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      margin-top: -0.5rem;
+    }
+
+    .tier ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .tier ul li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: 0.9375rem;
+      color: var(--ink-soft);
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .tier ul li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cinnabar);
+      flex-shrink: 0;
+      margin-top: 0.55rem;
+    }
+
+    .tier-note {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
       margin-top: auto;
     }
 
-    /* Footer */
+    .tier .btn {
+      margin-top: 0.25rem;
+    }
+
+    .payment-note {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9375rem;
+      color: var(--ink-soft);
+    }
+
+    /* =================== РАННЯЯ РЕГИСТРАЦИЯ =================== */
+    .early-inner {
+      max-width: 38rem;
+    }
+
+    .early-inner .btn {
+      margin-top: 1.75rem;
+    }
+
+    .early-deadline {
+      margin-top: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      letter-spacing: 0.06em;
+      color: var(--cinnabar-deep);
+    }
+
+    .early-after {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+    }
+
+    /* =================== FAQ =================== */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: start;
+    }
+
+    .faq-grid .section-head {
+      margin-bottom: 0;
+      position: sticky;
+      top: calc(var(--header-h) + 1.5rem);
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-question {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+      font-weight: 500;
+      padding: 1.4rem 0;
+      background: none;
+      border: none;
+      text-align: left;
+      width: 100%;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-question::after {
+      content: "+";
+      font-family: var(--font-body);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cinnabar-deep);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-question[aria-expanded="true"]::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      max-width: 52ch;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      padding: 0 0 1.4rem;
+      color: var(--ink-soft);
+      font-size: 0.9875rem;
+    }
+
+    /* =================== ЗАЯВКА =================== */
+    .apply-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    .apply-summary {
+      margin: 1.75rem 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .apply-summary > div {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: 1.25rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--line-soft);
+      align-items: baseline;
+    }
+
+    .apply-summary dt {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ochre-deep);
+    }
+
+    .apply-summary dd {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+    }
+
+    .course-form {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(1.75rem, 4vw, 2.75rem);
+    }
+
+    .form-lede {
+      color: var(--ink-soft);
+      margin-bottom: 1.75rem;
+      max-width: 42ch;
+    }
+
+    .course-form label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ochre-deep);
+      margin-bottom: 1.5rem;
+    }
+
+    .course-form input[type="text"] {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      padding: 0.8rem 0;
+      margin-top: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--ink);
+      transition: border-color 0.3s ease;
+    }
+
+    .course-form input[type="text"]:focus {
+      outline: none;
+      border-bottom-color: var(--cinnabar);
+    }
+
+    .course-form input::placeholder {
+      color: rgba(43, 39, 34, 0.35);
+    }
+
+    .course-form .consent {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      color: var(--ink-soft);
+      margin: 0.5rem 0 1.25rem;
+    }
+
+    .course-form .consent input {
+      width: auto;
+      margin: 0.2rem 0 0;
+      accent-color: var(--cinnabar);
+    }
+
+    .course-form .consent a {
+      color: var(--cinnabar-deep);
+    }
+
+    .course-form .btn {
+      width: 100%;
+    }
+
+    .form-note {
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+    }
+
+    .form-note a {
+      color: var(--cinnabar-deep);
+    }
+
+    .form-honey {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .form-success {
+      background: var(--paper);
+      border: 1px solid var(--moss);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+    }
+
+    .form-success h3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .form-success p {
+      color: var(--ink-soft);
+    }
+
+    .form-success a {
+      color: var(--cinnabar-deep);
+    }
+
+    /* =================== ВИДЕО-СЕКЦИЯ (config) =================== */
+    .video-intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: end;
+    }
+
+    .video-embed {
+      aspect-ratio: 16 / 10;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--paper-2);
+    }
+
+    .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* =================== ФУТЕР =================== */
     .site-footer {
-      padding: var(--space-6) 0 var(--space-5);
-      border-top: 1px solid var(--color-border);
-      background: var(--color-surface);
+      padding: clamp(2.5rem, 6vw, 4rem) 0 2rem;
+      border-top: 1px solid var(--line);
+      background: var(--paper-2);
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
-      gap: var(--space-5);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+    }
+
+    .footer-tagline {
+      margin-top: 0.5rem;
+      color: var(--ink-soft);
+      font-size: 0.9375rem;
+    }
+
+    .footer-contacts {
+      margin-top: 1rem;
+      font-size: 0.9375rem;
+    }
+
+    .footer-contacts a {
+      color: var(--cinnabar-deep);
     }
 
     .footer-links {
       display: flex;
       flex-direction: column;
-      gap: var(--space-2);
-      font-size: var(--text-sm);
+      gap: 0.6rem;
+      font-size: 0.9375rem;
     }
 
     .footer-links a {
-      color: var(--color-primary);
+      color: var(--ink-soft);
       text-decoration: none;
+      padding: 0.15rem 0;
     }
 
     .footer-links a:hover {
+      color: var(--cinnabar-deep);
       text-decoration: underline;
     }
 
-    .footer-legal {
-      margin-top: var(--space-5);
-      font-size: var(--text-xs);
-      color: var(--color-text-faint);
+    .footer-school {
+      grid-column: 1 / -1;
     }
 
-    /* Reveal */
+    .footer-school .school-card {
+      margin-top: 0;
+      max-width: 460px;
+    }
+
+    .footer-legal {
+      margin-top: 2rem;
+      font-size: 0.8125rem;
+      color: var(--ink-soft);
+    }
+
+    /* =================== SCROLL REVEAL =================== */
     [data-reveal] {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(22px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     [data-reveal].is-visible {
@@ -876,51 +1464,63 @@
       transform: translateY(0);
     }
 
-    /* Mobile sticky */
-    .mobile-sticky {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 90;
-      padding: var(--space-3);
-      background: oklch(from var(--color-bg) l c h / 0.94);
-      border-top: 1px solid var(--color-border);
-      backdrop-filter: blur(8px);
-      transform: translateY(110%);
-      transition: transform 0.35s ease;
-    }
-
-    .mobile-sticky.is-visible {
-      transform: translateY(0);
-    }
-
-    .mobile-sticky .btn {
-      width: 100%;
-    }
-
+    /* =================== АДАПТИВ =================== */
     @media (max-width: 1024px) {
-      .hero-grid {
+      .hero-grid,
+      .essence-grid,
+      .split-grid,
+      .split-grid--media-first,
+      .author-grid,
+      .faq-grid,
+      .apply-grid,
+      .video-intro-grid {
         grid-template-columns: 1fr;
+      }
+
+      .head-grid {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .head-grid .aside-note {
+        justify-self: start;
       }
 
       .hero-visual {
-        min-height: 240px;
+        order: 1; /* текст и CTA — выше фото: оффер виден на первом экране */
       }
 
-      .hero-photo {
+      .hero-visual .photo-frame {
         max-height: none;
       }
 
-      .method-aside {
+      .author-figure,
+      .faq-grid .section-head {
+        position: static;
+      }
+
+      .pillars {
         grid-template-columns: 1fr;
       }
 
-      .author-grid {
-        grid-template-columns: 1fr;
+      .practice-gallery {
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      .science-grid {
+      .practice-gallery .photo-frame:nth-child(n + 6) {
+        display: none; /* на планшете 5 фото не делятся на 3 колонки — без дыр */
+      }
+
+      .practice-gallery .photo-frame:nth-child(even) {
+        margin-top: 0;
+      }
+
+      .tiers {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+      }
+
+      .reviews-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -928,17 +1528,18 @@
     @media (max-width: 768px) {
       .site-nav {
         position: fixed;
-        inset: var(--header-h) 0 0 0;
-        /* Шапка с backdrop-filter становится containing block для fixed-панели,
-           поэтому высоту задаём явно — иначе панель схлопывается и фон не рисуется. */
+        top: var(--header-h);
+        left: 0;
+        right: 0;
         height: calc(100dvh - var(--header-h));
         flex-direction: column;
         align-items: stretch;
-        padding: var(--space-5);
-        background: var(--color-bg);
-        border-top: 1px solid var(--color-border);
+        padding: 2rem clamp(1rem, 5vw, 2rem);
+        background: var(--paper);
+        border-top: 1px solid var(--line);
         transform: translateX(100%);
         transition: transform 0.35s ease;
+        z-index: 99;
       }
 
       .site-nav.is-open {
@@ -946,85 +1547,96 @@
       }
 
       .site-nav a {
-        padding: var(--space-3) 0;
-        font-size: var(--text-base);
+        padding: 0.9rem 0;
+        font-size: 1.05rem;
+        border-bottom: 1px solid var(--line-soft);
       }
 
       .nav-toggle {
         display: block;
       }
 
-      .header-cta--desktop {
-        display: none;
+      .hero-watermark {
+        width: 75vw;
+        right: -32vw;
+        top: 1.5%;
+        opacity: 0.07;
       }
 
-      .pain-grid {
+      .audience-cols {
         grid-template-columns: 1fr;
       }
 
-      .pain-card--lead {
-        grid-row: auto;
+      .results-grid {
+        grid-template-columns: 1fr;
       }
 
-      .metrics-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .hero-facts {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .metric-cell {
+      .hero-facts > div {
         border-right: 0;
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--line-soft);
       }
 
-      .metric-cell:nth-child(odd) {
-        border-right: 1px solid var(--color-border);
+      .hero-facts > div:nth-child(odd) {
+        border-right: 1px solid var(--line-soft);
+        padding-left: 0;
       }
 
-      .metric-cell:nth-last-child(-n + 2) {
+      .hero-facts > div:nth-last-child(-n + 2) {
         border-bottom: 0;
       }
 
-      .pricing-grid {
-        grid-template-columns: 1fr;
+      .practice-gallery {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
+      .practice-gallery .photo-frame:nth-child(n + 6) {
+        display: block;
       }
-    }
 
-    @media (min-width: 769px) {
-      .mobile-sticky {
-        display: none;
+      .practice-gallery .photo-frame:nth-child(5) {
+        display: none; /* 4 фото ровной сеткой 2×2 */
+      }
+
+      .program-trigger {
+        grid-template-columns: 2.5rem 1fr auto;
+        gap: 1rem;
+      }
+
+      .program-panel-inner {
+        padding-left: 0;
+      }
+
+      .format-list > div,
+      .apply-summary > div {
+        grid-template-columns: 7rem 1fr;
+        gap: 1rem;
       }
     }
 
     @media (max-width: 430px) {
-      .hero h1 {
-        font-size: clamp(2.2rem, 9vw, 3rem);
+      .header-cta {
+        padding: 0.55rem 0.9rem;
+        font-size: 0.8125rem;
       }
 
       .hero {
-        padding-bottom: 2rem;
+        padding-top: 1.75rem;
       }
 
-      .hero-copy {
-        max-height: 80vh;
+      .hero-actions .btn {
+        width: 100%;
       }
 
-      .metrics-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .metric-cell,
-      .metric-cell:nth-child(odd) {
-        border-right: 0;
-      }
-
-      .practice-gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .school-card .school-arrow {
+        display: none;
       }
     }
 
+    /* =================== ДВИЖЕНИЕ: УВАЖАЕМ НАСТРОЙКИ =================== */
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1053,13 +1665,86 @@
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
 
+  <!-- Line-иконки и фирменные мотивы (печать, карп) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-seal" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <circle cx="20" cy="20" r="16.5"></circle>
+        <path d="M11 24c4-9 12-11 18-7M14 28c5-4 9-4 12-2"></path>
+      </symbol>
+      <symbol id="i-carp" viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 22c8-11 26-15 40-7 3 1.7 5.5 1.5 9-1l-2.5 8 2.5 8c-3.5-2.5-6-2.7-9-1-14 8-32 4-40-7z"></path>
+        <circle cx="17" cy="20" r="1.4" fill="currentColor" stroke="none"></circle>
+        <path d="M28 13.5c2 3 2 8 0 11M38 12.5c2.5 3.5 2.5 9.5 0 13"></path>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"></path>
+        <path d="M9 12l2 2 4-4"></path>
+      </symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path>
+        <circle cx="12" cy="12" r="3"></circle>
+      </symbol>
+      <symbol id="i-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M3 8h9a3 3 0 1 0-3-3M3 12h13a3 3 0 1 1-3 3M3 16h6"></path>
+      </symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="7" height="7" rx="1.5"></rect>
+        <rect x="13" y="4" width="7" height="7" rx="1.5"></rect>
+        <rect x="4" y="13" width="7" height="7" rx="1.5"></rect>
+        <path d="M13 16.5h7M16.5 13v7"></path>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l9 5-9 5-9-5z"></path>
+        <path d="M3 13l9 5 9-5"></path>
+      </symbol>
+      <symbol id="i-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 2l4 4-4 4"></path>
+        <path d="M3 11V9a4 4 0 0 1 4-4h14M7 22l-4-4 4-4"></path>
+        <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+      </symbol>
+      <symbol id="i-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12h4l2-7 4 14 2-7h6"></path>
+      </symbol>
+      <symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M4 8h10M18 8h2M4 16h4M12 16h8"></path>
+        <circle cx="16" cy="8" r="2"></circle>
+        <circle cx="10" cy="16" r="2"></circle>
+      </symbol>
+      <symbol id="i-medal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="14" r="5"></circle>
+        <path d="M12 12.2l1 2-1.2-.3-1.2.3 1-2zM8.5 9.5L6 3h4l2 5M15.5 9.5L18 3h-4l-1.2 3"></path>
+      </symbol>
+      <symbol id="i-health" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21s-7-4.6-9.2-9A5.4 5.4 0 0 1 12 6.6 5.4 5.4 0 0 1 21.2 12C19 16.4 12 21 12 21z"></path>
+        <path d="M7 12h3l1.2-2.5 1.6 4.5 1.2-2h3"></path>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 6-5.3-3.2L6.7 19l1.4-6-4.6-4 6.1-.5z"></path>
+      </symbol>
+      <symbol id="i-lotus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4c1.8 2.4 1.8 6.6 0 9-1.8-2.4-1.8-6.6 0-9z"></path>
+        <path d="M5 8c3 .4 5.4 2.6 6.4 5.4C8.4 13.8 5.8 11.6 5 8zM19 8c-3 .4-5.4 2.6-6.4 5.4 3 .4 5.6-1.8 6.4-5.4z"></path>
+        <path d="M4 15c2.5 3.5 6 5 8 5s5.5-1.5 8-5"></path>
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M3 12h18M12 3c2.5 2.5 3.8 5.6 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.6-3.8-9S9.5 5.5 12 3z"></path>
+      </symbol>
+      <symbol id="i-sprout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21v-8"></path>
+        <path d="M12 13C12 8 8.5 6 4 6c0 5 3.5 7 8 7zM12 11c0-4 3-6 8-6 0 4.5-3 6.5-8 6.5"></path>
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5.5v13l11-6.5z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
   <header class="site-header" id="header">
     <div class="container header-inner">
       <a class="brand" href="#hero" aria-label="Точка опоры — на главную">
-        <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2">
-          <circle cx="16" cy="16" r="13"></circle>
-          <path d="M16 6v20M10 10c3-2 9-2 12 0M10 22c3 2 9 2 12 0M6 16h20"></path>
-        </svg>
+        <svg class="brand-seal" aria-hidden="true"><use href="#i-seal"></use></svg>
         <span class="brand-name">Точка опоры</span>
       </a>
 
@@ -1075,29 +1760,19 @@
         <a href="#apply">Заявка</a>
       </nav>
 
-      <div class="header-actions">
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тему">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-          </svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"></path>
-          </svg>
-        </button>
-        <a class="btn btn-primary header-cta header-cta--desktop" href="#apply">Оставить заявку</a>
-      </div>
+      <a class="btn btn-primary header-cta" href="#apply">Оставить заявку</a>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero editorial-hero" id="hero" aria-label="Первый экран">
-      <div class="ed-wrap">
-        <div class="ed-hero-grid">
-          <div class="ed-hero-copy hero-copy">
-            <p class="ed-label hero-enter">Авторский курс Ильи Баринова</p>
-            <h1 class="hero-enter">Точка<br>опоры</h1>
-            <p class="hero-subtitle ed-lede hero-enter">Йога для начинающих и практикующих. Курс о том, как практика работает через тело, дыхание и внимание — а не о повторении красивых форм.</p>
+    <section class="hero" id="hero" aria-label="Первый экран">
+      <svg class="hero-watermark" viewBox="0 0 64 40" aria-hidden="true"><use href="#i-carp"></use></svg>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="label hero-enter">Авторский курс Ильи Баринова</p>
+            <h1 class="hero-enter">Точка<br><span class="h1-seal">о</span>поры</h1>
+            <p class="hero-subtitle hero-enter">Йога для начинающих и практикующих. Курс о том, как практика работает через тело, дыхание и внимание — а не о повторении красивых форм.</p>
             <div class="hero-actions hero-enter">
               <a class="btn btn-primary" href="#apply">Оставить заявку</a>
             </div>
@@ -1106,16 +1781,15 @@
               <span class="hero-secondary-sep" aria-hidden="true">·</span>
               <a href="#method">Подход</a>
             </p>
-            <a class="hero-scroll hero-enter" href="#essence">Листать</a>
           </div>
-          <figure class="ed-hero-visual hero-visual">
-            <div class="ed-figure-frame">
-              <img class="hero-photo" src="assets/images/tochka-opory/editorial/ilya-portrait-tang.jpg" alt="Илья Баринов — курс «Точка опоры»" width="900" height="1200" fetchpriority="high" decoding="async">
+          <figure class="hero-visual" style="margin:0">
+            <div class="photo-frame">
+              <img src="assets/images/tochka-opory/editorial/ilya-portrait-tang.jpg" alt="Илья Баринов — курс «Точка опоры»" width="900" height="1200" fetchpriority="high" decoding="async">
             </div>
-            <figcaption class="ed-caption">Илья Баринов · Точка опоры</figcaption>
+            <figcaption class="fig-caption">Илья Баринов · Точка опоры</figcaption>
           </figure>
         </div>
-        <dl class="hero-facts hero-enter" aria-label="Ключевые факты курса">
+        <dl class="hero-facts" aria-label="Ключевые факты курса">
           <div>
             <dt>Старт</dt>
             <dd>20 сентября</dd>
@@ -1137,18 +1811,19 @@
     </section>
 
     <section class="section video-intro" id="welcome-video" hidden>
-      <div class="ed-wrap video-intro-grid" data-reveal>
+      <div class="container video-intro-grid" data-reveal>
         <div class="video-intro-copy">
-          <p class="ed-label">— Слово автора</p>
+          <p class="label">— Слово автора</p>
           <h2>Маршрут<br>из первых уст</h2>
-          <p class="ed-aside-note">Илья — о принципах телесной грамотности, структуре модулей и о том, как практика работает через тело, дыхание и внимание.</p>
+          <p class="aside-note">Илья — о принципах телесной грамотности, структуре модулей и о том, как практика работает через тело, дыхание и внимание.</p>
         </div>
         <div class="video-embed" id="welcome-video-embed" aria-label="Видео-приветствие"></div>
       </div>
     </section>
 
+    <!-- Единственная тёмная «чернильная» пауза на странице -->
     <section class="quote-band" aria-label="Смысл курса">
-      <div class="ed-wrap" data-reveal>
+      <div class="container" data-reveal>
         <blockquote>
           Йога перестаёт быть упражнениями,<br>когда её начинаешь понимать.
         </blockquote>
@@ -1156,21 +1831,19 @@
       </div>
     </section>
 
-    <section class="section section--surface" id="for-whom">
-      <div class="ed-wrap">
-        <div class="ed-grid section-head" data-reveal>
-          <div class="ed-span-6">
-            <p class="ed-label ed-label--chapter">I / Аудитория</p>
+    <section class="section section--alt" id="for-whom">
+      <div class="container">
+        <div class="head-grid" data-reveal>
+          <div>
+            <p class="label label--chapter"><span class="num">I</span> / Аудитория</p>
             <h2>Кому подойдёт<br>курс</h2>
           </div>
-          <div class="ed-span-5-end">
-            <p class="ed-aside-note" style="margin:0">Курс собран и для тех, кто хочет войти в практику грамотно, и для тех, кто уже занимается, но хочет глубже понять, как работает йога.</p>
-          </div>
+          <p class="aside-note">Курс собран и для тех, кто хочет войти в практику грамотно, и для тех, кто уже занимается, но хочет глубже понять, как работает йога.</p>
         </div>
-        <div class="ed-audience-cols" data-reveal>
-          <div class="ed-audience-col">
-            <p class="ed-audience-col-label">— Если вы начинаете с нуля</p>
-            <ul>
+        <div class="audience-cols" data-reveal>
+          <div>
+            <p class="audience-col-label">— Если вы начинаете с нуля</p>
+            <ul class="list-plain list-lined">
               <li>Хотите попробовать йогу, но не знаете, с чего начать.</li>
               <li>Опасаетесь сделать что-то неправильно и навредить себе.</li>
               <li>Не считаете себя гибким или «подготовленным».</li>
@@ -1178,9 +1851,9 @@
               <li>Нужна понятная база, а не случайный набор уроков.</li>
             </ul>
           </div>
-          <div class="ed-audience-col">
-            <p class="ed-audience-col-label">— Если вы уже практикуете</p>
-            <ul>
+          <div>
+            <p class="audience-col-label">— Если вы уже практикуете</p>
+            <ul class="list-plain list-lined">
               <li>Ходили к разным преподавателям и пробовали разные стили.</li>
               <li>Знаете асаны, но не до конца понимаете их логику.</li>
               <li>Не всегда понимаете, что именно происходит в практике.</li>
@@ -1192,77 +1865,71 @@
       </div>
     </section>
 
-    <section class="section intro-band" id="essence">
-      <div class="ed-wrap">
-        <div class="ed-grid" data-reveal>
-          <div class="ed-span-5">
-            <p class="ed-label ed-label--chapter">II / Контекст</p>
+    <section class="section" id="essence">
+      <div class="container">
+        <div class="essence-grid" data-reveal>
+          <div>
+            <p class="label label--chapter"><span class="num">II</span> / Контекст</p>
             <h2>Почему обычных<br>занятий часто<br>недостаточно</h2>
           </div>
-          <div class="ed-span-6-end">
-            <p class="ed-statement">Многие начинают заниматься — и через несколько месяцев упираются в одно и то же: повторяют движения, но не понимают, что именно делают.</p>
-            <ul class="ed-essence-list">
+          <div>
+            <p class="statement">Многие начинают заниматься — и через несколько месяцев упираются в одно и то же: повторяют движения, но не понимают, что именно делают.</p>
+            <ul class="list-plain list-lined">
               <li>Как правильно выстраивать асану и где остановиться.</li>
               <li>Почему болит поясница или шея после практики.</li>
               <li>Зачем нужны дыхательные техники и как их вводить.</li>
               <li>Как медитация связана с телом, а не с эзотерикой.</li>
               <li>Как перенести практику в обычный день.</li>
             </ul>
-            <p class="ed-aside-note" style="margin-top:2rem">Поэтому в курсе фокус не только на упражнениях — а на понимании того, как практика работает.</p>
+            <p class="aside-note" style="margin-top:1.75rem">Поэтому в курсе фокус не только на упражнениях — а на понимании того, как практика работает.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--surface" id="method">
-      <div class="ed-wrap">
-        <div class="section-head ed-grid" data-reveal>
-          <div class="ed-span-6">
-            <p class="ed-label ed-label--chapter">III / Опора</p>
+    <section class="section section--alt" id="method">
+      <div class="container">
+        <div class="head-grid" data-reveal>
+          <div>
+            <p class="label label--chapter"><span class="num">III</span> / Опора</p>
             <h2>Три точки<br>опоры курса</h2>
           </div>
-          <div class="ed-span-5-end">
-            <p class="ed-aside-note" style="margin:0">Каждая опора — отдельный слой практики. Вместе они дают взрослую, безопасную и применимую систему.</p>
-          </div>
+          <p class="aside-note">Каждая опора — отдельный слой практики. Вместе они дают взрослую, безопасную и применимую систему.</p>
         </div>
-        <div class="ed-pillars ed-pillars--three" data-reveal>
-          <div class="ed-pillar">
+        <div class="pillars" data-reveal>
+          <div class="pillar">
             <strong>Тело</strong>
             <span>Базовые асаны и принципы безопасности. Как заниматься без вреда для спины, шеи, суставов и дыхания. Как видеть опору, ось и амплитуду — а не «правильную картинку».</span>
           </div>
-          <div class="ed-pillar">
+          <div class="pillar">
             <strong>Состояние</strong>
             <span>Дыхательные техники и основы медитации. Понятные инструменты для снижения стресса, мягкой регуляции внутреннего напряжения и более быстрого восстановления.</span>
           </div>
-          <div class="ed-pillar">
+          <div class="pillar">
             <strong>Жизнь</strong>
             <span>Йога перестаёт быть отдельной практикой «для галочки» и становится рабочим способом поддерживать самочувствие, внимание и устойчивость каждый день.</span>
           </div>
         </div>
         <div class="practice-gallery" data-reveal aria-label="Фотографии практики с Ильёй Бариновым">
-          <img src="assets/images/tochka-opory/editorial/ilya-practice-twist.jpg" alt="Илья Баринов — скрутка в асане" width="900" height="1200" loading="lazy" decoding="async">
-          <img src="assets/images/tochka-opory/editorial/ilya-practice-crow.jpg" alt="Илья Баринов — баланс на руках" width="900" height="1200" loading="lazy" decoding="async">
-          <img src="assets/images/tochka-opory/editorial/ilya-practice-triangle.jpg" alt="Илья Баринов — треугольник" width="900" height="1200" loading="lazy" decoding="async">
-          <img src="assets/images/tochka-opory/editorial/ilya-practice-balance.jpg" alt="Илья Баринов — баланс стоя" width="900" height="1200" loading="lazy" decoding="async">
-          <img src="assets/images/tochka-opory/editorial/ilya-practice-tiger.jpg" alt="Илья Баринов — углублённая асана" width="900" height="1200" loading="lazy" decoding="async">
-          <img src="assets/images/tochka-opory/editorial/ilya-practice-side-plank.jpg" alt="Илья Баринов — боковая планка" width="900" height="1200" loading="lazy" decoding="async">
-          <img src="assets/images/tochka-opory/editorial/ilya-practice-headstand.jpg" alt="Илья Баринов — работа с перевёрнутыми положениями" width="900" height="1200" loading="lazy" decoding="async">
+          <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-twist.jpg" alt="Илья Баринов — скрутка в асане" width="900" height="1200" loading="lazy" decoding="async"></div>
+          <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-crow.jpg" alt="Илья Баринов — баланс на руках" width="900" height="1200" loading="lazy" decoding="async"></div>
+          <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-triangle.jpg" alt="Илья Баринов — треугольник" width="900" height="1200" loading="lazy" decoding="async"></div>
+          <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-tiger.jpg" alt="Илья Баринов — углублённая асана" width="900" height="1200" loading="lazy" decoding="async"></div>
+          <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-side-plank.jpg" alt="Илья Баринов — боковая планка" width="900" height="1200" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </section>
 
-    <section class="section section--offset" id="requests">
-      <div class="ed-wrap">
-        <div class="ed-grid section-head" data-reveal>
-          <div class="ed-span-5">
-            <p class="ed-label">— Запросы</p>
+    <section class="section" id="requests">
+      <div class="container">
+        <div class="head-grid" data-reveal>
+          <div>
+            <p class="label">— Запросы</p>
             <h2>С чем приходят<br>на курс</h2>
           </div>
-          <div class="ed-span-6-end">
-            <p class="ed-aside-note" style="margin:0">Это типичные формулировки тех, кто оставляет заявку. Если узнаёте себя — курс собран в том числе для вас.</p>
-          </div>
+          <p class="aside-note">Это типичные формулировки тех, кто оставляет заявку. Если узнаёте себя — курс собран в том числе для вас.</p>
         </div>
-        <ul class="ed-requests" data-reveal>
+        <ul class="list-plain list-lined results-grid" style="display:grid" data-reveal>
           <li>Хочу начать, но боюсь сделать что-то неправильно.</li>
           <li>Уже занимаюсь, но не понимаю, как практика работает.</li>
           <li>Есть напряжение в спине, шее, плечах.</li>
@@ -1277,16 +1944,14 @@
       </div>
     </section>
 
-    <section class="section" id="program">
-      <div class="ed-wrap">
-        <div class="ed-grid" data-reveal>
-          <div class="ed-span-5">
-            <p class="ed-label ed-label--chapter">IV / Программа</p>
+    <section class="section section--alt" id="program">
+      <div class="container">
+        <div class="head-grid" data-reveal>
+          <div>
+            <p class="label label--chapter"><span class="num">IV</span> / Программа</p>
             <h2>Что будет<br>внутри</h2>
           </div>
-          <div class="ed-span-6-end">
-            <p class="ed-aside-note">Шесть модулей — от теории и безопасности к самостоятельной практике и ретриту.</p>
-          </div>
+          <p class="aside-note">Шесть модулей — от теории и безопасности к самостоятельной практике и ретриту.</p>
         </div>
         <ul class="program-list">
           <li class="program-item" data-reveal>
@@ -1391,62 +2056,66 @@
       </div>
     </section>
 
-    <section class="section section--offset" id="retreat">
-      <div class="ed-wrap">
-        <div class="retreat-grid">
-          <div class="retreat-copy" data-reveal>
-            <p class="ed-label">— Ретрит</p>
+    <section class="section" id="retreat">
+      <div class="container">
+        <div class="split-grid">
+          <div data-reveal>
+            <p class="label">— Ретрит</p>
             <h2>Тишина<br>как финал</h2>
-            <p class="ed-aside-note">Три-пять дней живой практики на природе. Без сцены, без суеты — только тело, дыхание, тишина.</p>
-            <p class="ed-aside-note" style="margin-top:1.5rem">Поездка — по желанию. Маршрут полноценен и без неё.</p>
+            <p class="aside-note" style="margin-top:1.25rem">Три-пять дней живой практики на природе. Без сцены, без суеты — только тело, дыхание, тишина.</p>
+            <p class="aside-note">Поездка — по желанию. Маршрут полноценен и без неё.</p>
           </div>
-          <figure class="retreat-media" data-reveal>
-            <img src="assets/images/tochka-opory/editorial/ilya-practice-headstand.jpg" alt="Илья Баринов — практика у окна" width="1400" height="933" loading="lazy" decoding="async">
-            <figcaption class="ed-caption">Fig 7.1 — Утренняя практика на ретрите</figcaption>
+          <figure data-reveal>
+            <div class="photo-frame">
+              <img src="assets/images/tochka-opory/practice-1.jpg" alt="Выездная практика на природе с Ильёй Бариновым" width="700" height="440" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="fig-caption">Fig 7.1 — Утренняя практика на ретрите</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section section-ink" id="results">
-      <div class="ed-wrap">
-        <div class="ed-grid" data-reveal>
-          <div class="ed-span-5">
-            <p class="ed-label ed-label--chapter">V / Результат</p>
+    <section class="section section--alt" id="results">
+      <div class="container">
+        <div class="head-grid" data-reveal>
+          <div>
+            <p class="label label--chapter"><span class="num">V</span> / Результат</p>
             <h2>Что изменится<br>после курса</h2>
           </div>
-          <div class="ed-span-6-end">
-            <p class="ed-aside-note">Главный итог — не набор упражнений, а более ясное понимание практики и собственного тела.</p>
-          </div>
+          <p class="aside-note">Главный итог — не набор упражнений, а более ясное понимание практики и собственного тела.</p>
         </div>
-        <ul class="ed-results-list" data-reveal>
-          <li>Вы перестанете бояться, что делаете что-то неправильно.</li>
-          <li>Будете лучше понимать, что происходит в теле во время асан.</li>
-          <li>Разберётесь, как использовать дыхание для регуляции состояния.</li>
-          <li>Перестанете воспринимать йогу как случайный набор упражнений.</li>
-          <li>Получите понятную базу для самостоятельной практики.</li>
-          <li>Сможете практиковать внимательнее, безопаснее и регулярнее.</li>
-          <li>Начнёте лучше замечать напряжение, усталость и ограничения.</li>
-          <li>Поймёте, как адаптировать практику под своё состояние.</li>
+        <p class="results-note" data-reveal>
+          <svg width="20" height="20" aria-hidden="true"><use href="#i-sprout"></use></svg>
+          Первые изменения большинство участников замечают в первые 2–3 недели практики.
+        </p>
+        <ul class="results-grid list-plain" data-reveal>
+          <li><svg width="22" height="22" aria-hidden="true"><use href="#i-shield"></use></svg>Вы перестанете бояться, что делаете что-то неправильно.</li>
+          <li><svg width="22" height="22" aria-hidden="true"><use href="#i-eye"></use></svg>Будете лучше понимать, что происходит в теле во время асан.</li>
+          <li><svg width="22" height="22" aria-hidden="true"><use href="#i-wind"></use></svg>Разберётесь, как использовать дыхание для регуляции состояния.</li>
+          <li><svg width="22" height="22" aria-hidden="true"><use href="#i-grid"></use></svg>Перестанете воспринимать йогу как случайный набор упражнений.</li>
+          <li><svg width="22" height="22" aria-hidden="true"><use href="#i-layers"></use></svg>Получите понятную базу для самостоятельной практики.</li>
+          <li><svg width="22" height="22" aria-hidden="true"><use href="#i-repeat"></use></svg>Сможете практиковать внимательнее, безопаснее и регулярнее.</li>
+          <li><svg width="22" height="22" aria-hidden="true"><use href="#i-pulse"></use></svg>Начнёте лучше замечать напряжение, усталость и ограничения.</li>
+          <li><svg width="22" height="22" aria-hidden="true"><use href="#i-sliders"></use></svg>Поймёте, как адаптировать практику под своё состояние.</li>
         </ul>
       </div>
     </section>
 
     <section class="section" id="about">
-      <div class="ed-wrap">
-        <div class="ed-grid ed-about-grid" data-reveal>
-          <figure class="ed-about-figure ed-span-5" data-reveal>
-            <div class="ed-figure-frame">
-              <img src="assets/images/tochka-opory/editorial/ilya-practice-crow.jpg" alt="Илья Баринов — асана на руках" width="900" height="1200" loading="lazy" decoding="async">
+      <div class="container">
+        <div class="split-grid split-grid--media-first">
+          <figure data-reveal>
+            <div class="photo-frame" style="aspect-ratio:4/3">
+              <img src="assets/images/tochka-opory/editorial/ilya-practice-balance.jpg" alt="Илья Баринов — баланс и внимание в практике" width="1400" height="852" loading="lazy" decoding="async">
             </div>
-            <figcaption class="ed-caption">Fig 8.1 — Авторский формат, живой разбор</figcaption>
+            <figcaption class="fig-caption">Fig 8.1 — Авторский формат, живой разбор</figcaption>
           </figure>
-          <div class="ed-span-6-end ed-about-copy">
-            <p class="ed-label">— О курсе</p>
+          <div data-reveal>
+            <p class="label">— О курсе</p>
             <h2>Авторский<br>маршрут</h2>
-            <p class="ed-lede">«Точка опоры» — курс для тех, кто хочет начать заниматься грамотно или, уже практикуя, глубже понять, как работает йога: через тело, дыхание, внимание и регулярную практику.</p>
-            <p class="ed-aside-note">На курсе разбирают базовые асаны, принципы безопасности, дыхательные техники и основы медитации. Задача — не освоить набор упражнений, а получить понимание практики и научиться использовать её осознанно.</p>
-            <ul class="ed-about-list">
+            <p class="lede" style="margin-top:1.25rem">«Точка опоры» — курс для тех, кто хочет начать заниматься грамотно или, уже практикуя, глубже понять, как работает йога: через тело, дыхание, внимание и регулярную практику.</p>
+            <p class="aside-note" style="margin-top:1.25rem">На курсе разбирают базовые асаны, принципы безопасности, дыхательные техники и основы медитации. Задача — не освоить набор упражнений, а получить понимание практики и научиться использовать её осознанно.</p>
+            <ul class="list-plain list-lined" style="margin-top:1.5rem">
               <li>Теория йоги — простым современным языком</li>
               <li>База по асанам и технике безопасности</li>
               <li>Дыхательные и очистительные техники</li>
@@ -1454,45 +2123,45 @@
               <li>Трёхмесячный последовательный процесс</li>
               <li>Финальный выездной ретрит</li>
             </ul>
-            <p class="ed-aside-note" style="margin-top:2rem">Это не архив уроков и не разовый интенсив, а маршрут, в котором человек постепенно выстраивает опору в теле, состоянии и повседневной жизни.</p>
+            <p class="aside-note" style="margin-top:1.5rem">Это не архив уроков и не разовый интенсив, а маршрут, в котором человек постепенно выстраивает опору в теле, состоянии и повседневной жизни.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--surface" id="format">
-      <div class="ed-wrap">
-        <div class="story-grid">
-          <figure class="story-media" data-reveal>
-            <img src="assets/images/tochka-opory/editorial/ilya-practice-balance.jpg" alt="Илья Баринов — баланс и внимание в практике" width="1400" height="852" loading="lazy" decoding="async">
-            <figcaption class="ed-caption">Fig 9.1 — Живая практика, не архив видео</figcaption>
+    <section class="section section--alt" id="format">
+      <div class="container">
+        <div class="split-grid split-grid--media-first">
+          <figure data-reveal>
+            <div class="photo-frame" style="aspect-ratio:4/3">
+              <img src="assets/images/tochka-opory/editorial/ilya-practice-headstand.jpg" alt="Илья Баринов — работа с перевёрнутыми положениями" width="1400" height="933" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="fig-caption">Fig 9.1 — Живая практика, не архив видео</figcaption>
           </figure>
-          <div class="story-copy" data-reveal>
-            <p class="ed-label">— Формат</p>
+          <div data-reveal>
+            <p class="label">— Формат</p>
             <h2>Как проходит<br>курс</h2>
-            <p class="ed-aside-note">Живой процесс, а не архив видео. Участники проходят путь в одном ритме — с вопросами, разбором и ощущением прогресса.</p>
-            <dl class="ed-format-list">
+            <p class="aside-note" style="margin-top:1.25rem">Живой процесс, а не архив видео. Участники проходят путь в одном ритме — с вопросами, разбором и ощущением прогресса.</p>
+            <dl class="format-list">
               <div><dt>Старт</dt><dd>20 сентября</dd></div>
               <div><dt>Завершение</dt><dd>20 декабря</dd></div>
               <div><dt>Длительность</dt><dd>3 месяца, 30 онлайн-занятий</dd></div>
               <div><dt>Группа</dt><dd>регулярная практика и общение</dd></div>
               <div><dt>Ретрит</dt><dd>финальное углубление</dd></div>
             </dl>
-            <p class="ed-aside-note" style="margin-top:2rem">На курсе важны регулярность, группа, поддержка и общий ритм — так проще не бросить и легче увидеть собственный прогресс.</p>
+            <p class="aside-note" style="margin-top:1.5rem">На курсе важны регулярность, группа, поддержка и общий ритм — так проще не бросить и легче увидеть собственный прогресс.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="difference">
-      <div class="ed-wrap">
-        <div class="ed-grid section-head" data-reveal>
-          <div class="ed-span-6">
-            <p class="ed-label">— Отличие</p>
-            <h2>Почему этот курс<br>отличается</h2>
-          </div>
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="label">— Отличие</p>
+          <h2>Почему этот курс<br>отличается</h2>
         </div>
-        <ul class="ed-difference-list" data-reveal>
+        <ul class="list-plain list-lined" data-reveal style="max-width:62ch">
           <li>Подходит новичкам и тем, кто уже практикует, но хочет больше понимания.</li>
           <li>Фокус не на форме, а на том, как практика работает через тело, дыхание и внимание.</li>
           <li>Большое внимание безопасности: спина, шея, суставы, дыхание, индивидуальные ограничения.</li>
@@ -1503,33 +2172,50 @@
       </div>
     </section>
 
-    <section class="section" id="author">
-      <div class="ed-wrap">
-        <div class="ed-author-grid">
-          <figure class="ed-author-figure" data-reveal>
-            <div class="ed-author-photos">
-              <div class="ed-figure-frame">
-                <img src="assets/images/tochka-opory/editorial/ilya-portrait-studio.jpg" alt="Илья Баринов — преподаватель йоги" width="800" height="1000" loading="lazy" decoding="async">
-              </div>
-              <div class="ed-figure-frame ed-figure-frame--secondary">
-                <img src="assets/images/tochka-opory/editorial/ilya-portrait-seated.jpg" alt="Илья Баринов на практике" width="700" height="900" loading="lazy" decoding="async">
+    <section class="section section--alt" id="author">
+      <div class="container">
+        <div class="author-grid">
+          <figure class="author-figure" data-reveal>
+            <div class="photo-frame">
+              <img src="assets/images/tochka-opory/editorial/ilya-portrait-studio.jpg" alt="Илья Баринов — преподаватель йоги" width="800" height="1000" loading="lazy" decoding="async">
+            </div>
+            <div class="photo-frame photo-frame--secondary">
+              <img src="assets/images/tochka-opory/practice-3.jpg" alt="Илья Баринов — тайцзицюань в горах" width="700" height="700" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="fig-caption">Fig 11.1 — Илья Баринов</figcaption>
+          </figure>
+          <div data-reveal>
+            <p class="label label--chapter"><span class="num">VI</span> / Автор</p>
+            <h2>Почему можно<br>доверять подходу</h2>
+            <p class="lede" style="margin-top:1.25rem"><strong>Илья Баринов</strong> — мастер телесных практик с 20-летним стажем.</p>
+            <ul class="regalia">
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#i-medal"></use></svg><span>Трёхкратный чемпион Европы по тайцзицюань (TCFE 2016: три золотые и серебряная медаль)</span></li>
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#i-health"></use></svg><span>Реабилитолог и кинезиолог, диплом НГУ им. П.Ф. Лесгафта, 10+ лет практики; работал с основным составом ФК «Зенит» (2017–2018)</span></li>
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#i-star"></use></svg><span>Выпускник Академии русского балета им. Вагановой; в прошлом — артист, хореограф, балетмейстер ведущих театров Санкт-Петербурга</span></li>
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#i-lotus"></use></svg><span>Преподаёт йогу, цигун, тайцзицюань и дыхательные техники; готовит инструкторов</span></li>
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#i-globe"></use></svg><span>Проводит семинары и ретриты по всему миру — Непал, Тибет, Бутан, Индия</span></li>
+            </ul>
+            <p class="author-closing">Илья объясняет йогу не как набор поз, а как систему работы с телом, дыханием и вниманием.</p>
+
+            <!-- TODO: вставить видео-приветствие (заменить плейсхолдер на iframe/видео) -->
+            <div class="video-placeholder" role="img" aria-label="Видео-приветствие Ильи Баринова — скоро">
+              <img src="assets/images/tochka-opory/practice-2.jpg" alt="" width="700" height="466" loading="lazy" decoding="async">
+              <div class="video-veil">
+                <span class="video-play"><svg width="28" height="28" aria-hidden="true"><use href="#i-play"></use></svg></span>
               </div>
             </div>
-            <figcaption class="ed-caption">Fig 11.1 — Илья Баринов</figcaption>
-          </figure>
-          <div class="ed-author-copy" data-reveal>
-            <p class="ed-label ed-label--chapter">VI / Автор</p>
-            <h2>Почему можно<br>доверять подходу</h2>
-            <p class="ed-lede">Илья Баринов — преподаватель с большим опытом в йоге, цигун, тайцзицюань и телесных практиках. Его сильная сторона — точное понимание движения и умение объяснять практику через тело, дыхание и безопасность, а не только через внешнюю форму.</p>
-            <ul class="ed-author-points">
-              <li>Многолетний опыт преподавания телесных практик</li>
-              <li>Йога, цигун, тайцзицюань и дыхательные техники</li>
-              <li>Внимание к технике, ограничениям тела и безопасной нагрузке</li>
-              <li>Опыт работы с группами разного уровня подготовки</li>
-              <li>Подход, в котором человек начинает понимать, как работает практика</li>
-            </ul>
-            <p class="ed-aside-note">Илья объясняет йогу не как набор поз, а как систему работы с телом, дыханием и вниманием.</p>
-            <p class="ed-author-link">
+            <p class="video-caption">Видео-приветствие автора — скоро</p>
+
+            <a class="school-card" href="https://barinovdao.ru" target="_blank" rel="noopener noreferrer">
+              <svg width="44" height="28" viewBox="0 0 64 40" aria-hidden="true"><use href="#i-carp"></use></svg>
+              <span>
+                <span class="school-kicker">Также у Ильи</span>
+                <span class="school-title">Курс по цигуну «Путь карпа»</span>
+              </span>
+              <span class="school-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <p class="author-link">
               <a href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Telegram @vsemaya</a>
             </p>
           </div>
@@ -1537,100 +2223,97 @@
       </div>
     </section>
 
-    <section class="section section--offset" id="reviews">
-      <div class="ed-wrap">
-        <div class="ed-grid" data-reveal>
-          <div class="ed-span-5">
-            <p class="ed-label">— Голоса</p>
-            <h2>Тихие<br>изменения</h2>
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="head-grid" data-reveal>
+          <div>
+            <p class="label">— Отзывы</p>
+            <h2>Отзывы<br>участников</h2>
           </div>
-          <div class="ed-span-6-end">
-            <p class="ed-aside-note">Не «чудо за неделю». То, что остаётся в теле.</p>
-          </div>
+          <p class="aside-note">Курс стартует первым потоком — отзывы участников появятся здесь после старта.</p>
         </div>
-        <ol class="ed-voices" data-reveal>
-          <li>
-            <span class="ed-voice-num">i.</span>
-            <blockquote>«Поняла опору в стопе — и боль перестала возвращаться.»</blockquote>
-            <footer><span>Анна, 38</span><span>Москва · офис</span></footer>
-          </li>
-          <li>
-            <span class="ed-voice-num">ii.</span>
-            <blockquote>«Собрал свою последовательность. Перестал гнаться за глубиной формы.»</blockquote>
-            <footer><span>Дмитрий, 42</span><span>Санкт-Петербург · 2 года практики</span></footer>
-          </li>
-          <li>
-            <span class="ed-voice-num">iii.</span>
-            <blockquote>«Точнее вижу компенсации и опору — проще вести своих клиентов.»</blockquote>
-            <footer><span>Мария</span><span>Казань · инструктор ЛФК</span></footer>
-          </li>
-        </ol>
+        <!-- TODO: вставить реальные скриншоты отзывов -->
+        <div class="reviews-grid" data-reveal>
+          <div class="review-slot">Скриншот отзыва</div>
+          <div class="review-slot">Скриншот отзыва</div>
+          <div class="review-slot">Скриншот отзыва</div>
+        </div>
+        <p class="reviews-soon" data-reveal>Отзывы о практике с Ильёй можно посмотреть на сайте школы — <a href="https://barinovdao.ru" target="_blank" rel="noopener noreferrer" style="color:var(--cinnabar-deep)">barinovdao.ru</a>.</p>
       </div>
     </section>
 
-    <section class="section" id="pricing">
-      <div class="ed-wrap">
-        <div class="ed-grid" data-reveal>
-          <div class="ed-span-5">
-            <p class="ed-label ed-label--chapter">VII / Участие</p>
+    <section class="section section--alt" id="pricing">
+      <div class="container">
+        <div class="head-grid" data-reveal>
+          <div>
+            <p class="label label--chapter"><span class="num">VII</span> / Участие</p>
             <h2>Варианты<br>участия</h2>
           </div>
-          <div class="ed-span-6-end">
-            <p class="ed-aside-note">Точная стоимость и условия ранней брони — после заявки.</p>
-          </div>
+          <p class="aside-note">Точная стоимость и условия ранней брони — после заявки.</p>
         </div>
-        <div class="ed-tiers" data-reveal>
-          <article class="ed-tier">
-            <p class="ed-tier-label">i. Базовый</p>
+        <!-- TODO: заменить плейсхолдеры цен на утверждённые суммы -->
+        <div class="tiers" data-reveal>
+          <article class="tier">
+            <p class="tier-label">i. Базовый</p>
             <h3>Онлайн</h3>
-            <ul class="ed-tier-list">
+            <p class="tier-price">XX 900 ₽</p>
+            <p class="tier-installment">или от X XXX ₽/мес в рассрочку</p>
+            <ul>
               <li>30 онлайн-занятий</li>
               <li>Записи в доступе</li>
               <li>Чат потока</li>
             </ul>
-            <p class="ed-tier-note">Ранняя бронь — после заявки</p>
-            <a class="btn" href="#apply">Записаться</a>
+            <p class="tier-note">Ранняя бронь — после заявки</p>
+            <a class="btn btn-primary" href="#apply">Записаться</a>
           </article>
-          <article class="ed-tier ed-tier--featured">
-            <p class="ed-tier-label">ii. Глубина</p>
+          <article class="tier tier--featured">
+            <span class="tier-badge">Рекомендуем</span>
+            <p class="tier-label">ii. Глубина</p>
             <h3>Онлайн + обратная связь</h3>
-            <ul class="ed-tier-list">
+            <p class="tier-price">XX 900 ₽</p>
+            <p class="tier-installment">или от X XXX ₽/мес в рассрочку</p>
+            <ul>
               <li>Всё из базового</li>
               <li>Ответы на вопросы по практике</li>
               <li>Разбор последовательности</li>
             </ul>
-            <p class="ed-tier-note">Ранняя бронь — после заявки</p>
-            <a class="btn" href="#apply">Записаться</a>
+            <p class="tier-note">Ранняя бронь — после заявки</p>
+            <a class="btn btn-primary" href="#apply">Записаться</a>
           </article>
-          <article class="ed-tier">
-            <p class="ed-tier-label">iii. Максимум</p>
+          <article class="tier">
+            <p class="tier-label">iii. Максимум</p>
             <h3>Онлайн + ретрит</h3>
-            <ul class="ed-tier-list">
+            <p class="tier-price">от XX 900 ₽</p>
+            <p class="tier-installment">или от X XXX ₽/мес в рассрочку</p>
+            <ul>
               <li>Всё из расширенного</li>
               <li>Ретрит 3–5 дней</li>
               <li>Живая группа на природе</li>
             </ul>
-            <p class="ed-tier-note">Условия ретрита — отдельно</p>
-            <a class="btn" href="#apply">Обсудить</a>
+            <p class="tier-note">Условия ретрита — отдельно</p>
+            <a class="btn btn-primary" href="#apply">Обсудить</a>
           </article>
         </div>
+        <p class="payment-note" data-reveal>Оплата российскими и зарубежными картами. Рассрочка 3–12 мес.</p>
       </div>
     </section>
 
-    <section class="section early-section" id="early">
-      <div class="ed-wrap early-inner" data-reveal>
-        <p class="ed-label">— Ранняя регистрация</p>
+    <section class="section" id="early">
+      <div class="container early-inner" data-reveal>
+        <p class="label">— Ранняя регистрация</p>
         <h2>Зафиксировать<br>минимальную стоимость</h2>
-        <p class="ed-aside-note">Для тех, кто оставит заявку сейчас, фиксируется минимальная стоимость участия. Если курс вам интересен, лучше оставить заявку заранее — до официального старта продаж.</p>
-        <a class="btn" href="#apply">Оставить заявку</a>
-        <p class="ed-aside-note" style="margin-top:1.5rem;font-size:11px;letter-spacing:0.2em;text-transform:uppercase">После заявки пришлём подробности о старте, формате и условиях участия.</p>
+        <p class="aside-note" style="margin-top:1.25rem;max-width:none">Для тех, кто оставит заявку сейчас, фиксируется минимальная стоимость участия. Если курс вам интересен, лучше оставить заявку заранее — до официального старта продаж.</p>
+        <!-- TODO: уточнить дату окончания ранней цены -->
+        <p class="early-deadline">Ранняя цена действует до 1 сентября.</p>
+        <a class="btn btn-primary" href="#apply">Оставить заявку</a>
+        <p class="early-after">После заявки пришлём подробности о старте, формате и условиях участия.</p>
       </div>
     </section>
 
-    <section class="section section--surface" id="faq">
-      <div class="ed-wrap faq-grid">
+    <section class="section section--alt" id="faq">
+      <div class="container faq-grid">
         <div class="section-head" data-reveal>
-          <p class="ed-label">— Вопросы</p>
+          <p class="label">— Вопросы</p>
           <h2>Частые<br>сомнения</h2>
         </div>
         <div class="faq-list" data-reveal>
@@ -1652,7 +2335,8 @@
           </article>
           <article class="faq-item">
             <button class="faq-question" type="button" aria-expanded="false">Будут ли записи занятий?</button>
-            <div class="faq-answer"><p>Формат записей будет уточнён перед стартом. При предварительной регистрации мы отдельно сообщим условия доступа к материалам курса.</p></div>
+            <!-- TODO: подтвердить у заказчика формулировку про записи -->
+            <div class="faq-answer"><p>Да, записи занятий будут доступны участникам. Сроки доступа зависят от тарифа — подробности пришлём после заявки.</p></div>
           </article>
           <article class="faq-item">
             <button class="faq-question" type="button" aria-expanded="false">Можно ли участвовать без ретрита?</button>
@@ -1666,38 +2350,38 @@
       </div>
     </section>
 
-    <section class="section apply-section" id="apply">
-      <div class="ed-wrap apply-grid">
-        <div class="apply-copy" data-reveal>
-          <p class="ed-label ed-label--chapter">VIII / Заявка</p>
+    <section class="section" id="apply">
+      <div class="container apply-grid">
+        <div data-reveal>
+          <p class="label label--chapter"><span class="num">VIII</span> / Заявка</p>
           <h2>Начать<br>с точки опоры</h2>
-          <p class="ed-aside-note">Если вы давно хотели начать заниматься йогой — или уже практикуете, но хотите глубже понять, как она работает, — этот курс даст вам понятную базу. Без спешки. Без лишней эзотерики. Без механического повторения формы. Через тело, дыхание и внимание.</p>
-          <dl class="ed-apply-summary">
+          <p class="aside-note" style="margin-top:1.25rem">Если вы давно хотели начать заниматься йогой — или уже практикуете, но хотите глубже понять, как она работает, — этот курс даст вам понятную базу. Без спешки. Без лишней эзотерики. Без механического повторения формы. Через тело, дыхание и внимание.</p>
+          <dl class="apply-summary">
             <div><dt>Старт</dt><dd>20 сентября</dd></div>
             <div><dt>Формат</dt><dd>3 месяца, 30 занятий</dd></div>
             <div><dt>Ранняя бронь</dt><dd>фиксирует минимальную стоимость</dd></div>
           </dl>
         </div>
-        <div class="apply-form-wrap" data-reveal>
-        <form class="course-form" id="course-form" novalidate>
-          <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <p class="ed-form-lede">
-            Оставьте заявку, чтобы зафиксировать минимальную стоимость участия. Мы пришлём подробности о старте, формате курса и условиях участия.
-          </p>
-          <label>Ваше имя
-            <input type="text" name="name" required minlength="2" autocomplete="name" placeholder="Имя">
-          </label>
-          <label>Контакт для связи
-            <input type="text" name="contact" required placeholder="Телефон, Telegram или email">
-          </label>
-          <label class="consent"><input type="checkbox" name="consent" required> <span>Согласен(а) на обработку данных — <a href="privacy.html">политика конфиденциальности</a></span></label>
-          <button class="btn btn-primary" type="submit" id="form-submit-btn">Оставить заявку</button>
-          <p class="form-note">После отправки мы свяжемся с вами. Или напрямую — <a href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Telegram</a> · <a href="mailto:info@barinovdao.ru">info@barinovdao.ru</a></p>
-        </form>
-        <div class="form-success" id="form-success" hidden>
-          <h3>Спасибо! Заявка отправлена</h3>
-          <p>Мы свяжемся с вами и пришлём подробности курса. Срочно — <a href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Telegram</a>.</p>
-        </div>
+        <div data-reveal>
+          <form class="course-form" id="course-form" novalidate>
+            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="form-lede">
+              Оставьте заявку, чтобы зафиксировать минимальную стоимость участия. Мы пришлём подробности о старте, формате курса и условиях участия.
+            </p>
+            <label>Ваше имя
+              <input type="text" name="name" required minlength="2" autocomplete="name" placeholder="Имя">
+            </label>
+            <label>Контакт для связи
+              <input type="text" name="contact" required placeholder="Телефон, Telegram или email">
+            </label>
+            <label class="consent"><input type="checkbox" name="consent" required> <span>Согласен(а) на обработку данных — <a href="privacy.html">политика конфиденциальности</a></span></label>
+            <button class="btn btn-primary" type="submit" id="form-submit-btn">Оставить заявку</button>
+            <p class="form-note">После отправки мы свяжемся с вами. Или напрямую — <a href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Telegram</a> · <a href="mailto:info@barinovdao.ru">info@barinovdao.ru</a></p>
+          </form>
+          <div class="form-success" id="form-success" hidden>
+            <h3>Спасибо! Заявка отправлена</h3>
+            <p>Мы свяжемся с вами и пришлём подробности курса. Срочно — <a href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Telegram</a>.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1706,11 +2390,9 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <p><strong>Точка опоры</strong></p>
-        <p style="margin-top: var(--space-2); color: var(--color-text-muted); font-size: var(--text-sm);">
-          Авторский курс Ильи Баринова — движение, дыхание, внимание.
-        </p>
-        <p style="margin-top: var(--space-3); font-size: var(--text-sm);">
+        <p class="footer-brand">Точка опоры</p>
+        <p class="footer-tagline">Авторский курс Ильи Баринова — движение, дыхание, внимание.</p>
+        <p class="footer-contacts">
           <a href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Telegram</a>
           · <a href="mailto:info@barinovdao.ru">info@barinovdao.ru</a>
         </p>
@@ -1720,12 +2402,21 @@
         <a href="privacy.html">Политика конфиденциальности</a>
         <a href="offer.html">Оферта</a>
       </div>
+      <div class="footer-school">
+        <a class="school-card" href="https://barinovdao.ru" target="_blank" rel="noopener noreferrer">
+          <svg width="44" height="28" viewBox="0 0 64 40" aria-hidden="true"><use href="#i-carp"></use></svg>
+          <span>
+            <span class="school-kicker">Также у Ильи</span>
+            <span class="school-title">Курс по цигуну «Путь карпа» → barinovdao.ru</span>
+          </span>
+          <span class="school-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
     <div class="container footer-legal">
       <p>Не является медицинской услугой. © <span id="year"></span> Илья Баринов.</p>
     </div>
   </footer>
-
 
   <script src="tochka-opory-config.js"></script>
   <script src="barinov-yoga.js"></script>
