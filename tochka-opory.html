@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Точка опоры — курс Ильи Баринова по йоге</title>
   <meta name="description" content="Авторский курс «Точка опоры»: 3 месяца, 30 онлайн-занятий, финальный ретрит. Фундаментальная йога и телесная грамотность.">
-  <meta name="theme-color" content="#fbf9f6">
+  <meta name="theme-color" content="#121212">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:title" content="Точка опоры — курс Ильи Баринова">
@@ -57,6 +57,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: clip;
     }
 
     body {
@@ -904,12 +905,11 @@
       }
 
       .hero-visual {
-        order: -1;
         min-height: 240px;
       }
 
       .hero-photo {
-        max-height: 42vh;
+        max-height: none;
       }
 
       .method-aside {
@@ -929,6 +929,9 @@
       .site-nav {
         position: fixed;
         inset: var(--header-h) 0 0 0;
+        /* Шапка с backdrop-filter становится containing block для fixed-панели,
+           поэтому высоту задаём явно — иначе панель схлопывается и фон не рисуется. */
+        height: calc(100dvh - var(--header-h));
         flex-direction: column;
         align-items: stretch;
         padding: var(--space-5);
@@ -949,10 +952,6 @@
 
       .nav-toggle {
         display: block;
-      }
-
-      .nav-desktop-only {
-        display: none;
       }
 
       .header-cta--desktop {
@@ -994,10 +993,6 @@
     }
 
     @media (min-width: 769px) {
-      .nav-mobile-only {
-        display: none;
-      }
-
       .mobile-sticky {
         display: none;
       }
@@ -1073,11 +1068,10 @@
       </button>
 
       <nav class="site-nav" id="site-nav" aria-label="Навигация">
-        <a class="nav-desktop-only" href="#for-whom">Для кого</a>
-        <a class="nav-desktop-only" href="#method">Опора</a>
-        <a class="nav-desktop-only" href="#program">Программа</a>
-        <a class="nav-desktop-only" href="#author">Автор</a>
-        <a class="nav-mobile-only" href="#program">Программа</a>
+        <a href="#for-whom">Для кого</a>
+        <a href="#method">Опора</a>
+        <a href="#program">Программа</a>
+        <a href="#author">Автор</a>
         <a href="#apply">Заявка</a>
       </nav>
 
@@ -1287,7 +1281,7 @@
       <div class="ed-wrap">
         <div class="ed-grid" data-reveal>
           <div class="ed-span-5">
-            <p class="ed-label ed-label--chapter">V / Программа</p>
+            <p class="ed-label ed-label--chapter">IV / Программа</p>
             <h2>Что будет<br>внутри</h2>
           </div>
           <div class="ed-span-6-end">
@@ -1418,7 +1412,7 @@
       <div class="ed-wrap">
         <div class="ed-grid" data-reveal>
           <div class="ed-span-5">
-            <p class="ed-label ed-label--chapter">IV / Результат</p>
+            <p class="ed-label ed-label--chapter">V / Результат</p>
             <h2>Что изменится<br>после курса</h2>
           </div>
           <div class="ed-span-6-end">
