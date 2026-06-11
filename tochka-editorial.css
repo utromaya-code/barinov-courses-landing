@@ -1508,7 +1508,9 @@ html {
 }
 
 .editorial-page .faq-answer {
-  padding: 0 0 1.5rem;
+  /* Отступ держим на <p>: padding на самом .faq-answer не схлопывается
+     при max-height: 0 и из-под свёрнутого ответа выглядывает строка текста. */
+  padding: 0;
   max-width: 50ch;
 }
 
@@ -1517,6 +1519,7 @@ html {
   line-height: 1.6;
   color: var(--ed-ink-soft);
   margin: 0;
+  padding: 0 0 1.5rem;
 }
 
 /* Apply — editorial */

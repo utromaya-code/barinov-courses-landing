@@ -339,9 +339,9 @@ html.mineral-page .header-cta.btn {
 /* Hero secondary inline text links */
 html.mineral-page .hero-secondary a,
 html.mineral-page .hero-secondary .btn--ghost {
-  display: inline !important;
+  display: inline-block !important;
   border: none !important;
-  padding: 0 !important;
+  padding: 0.5rem 0 !important;
   background: transparent !important;
   color: var(--text-muted) !important;
   font-family: var(--font-sans) !important;
@@ -357,6 +357,7 @@ html.mineral-page .hero-secondary .btn--ghost:hover {
 }
 
 html.mineral-page .hero-scroll {
+  padding: 0.5rem 0 !important;
   color: var(--text-muted) !important;
   font-family: var(--font-sans) !important;
   font-size: 10px !important;
@@ -1441,9 +1442,17 @@ html.mineral-page #method .practice-gallery {
     --section-pad: clamp(4rem, 10vh, 7rem);
   }
 
+  html.mineral-page .editorial-hero {
+    padding-top: clamp(4rem, 8vh, 6rem) !important;
+  }
+
   html.mineral-page .ed-hero-copy,
   html.mineral-page .ed-hero-visual {
     grid-column: 1 / -1 !important;
+  }
+
+  html.mineral-page .ed-hero-visual {
+    margin-top: 1rem !important;
   }
 
   html.mineral-page .ed-pillars {
