@@ -71,6 +71,17 @@
       overflow: hidden;
     }
 
+    /* Едва заметная фактура рисовой бумаги */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
     img {
       display: block;
       max-width: 100%;
@@ -426,7 +437,7 @@
 
     .photo-frame {
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 14px;
       overflow: hidden;
       background: var(--paper-2);
       box-shadow: 0 20px 50px rgba(43, 39, 34, 0.10);
@@ -434,14 +445,22 @@
 
     .photo-frame img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto; /* естественные пропорции: позы целиком, без обрезки */
       filter: sepia(0.14) saturate(1.05) contrast(1.01); /* тёплая обработка */
     }
 
+    /* Восточная арка — сигнатурная рамка ключевых фото */
+    .photo-frame--arch {
+      border-radius: 50% 50% 14px 14px / 30% 30% 14px 14px;
+    }
+
     .hero-visual .photo-frame {
-      aspect-ratio: 4 / 5;
-      max-height: min(72vh, 620px);
+      max-width: 430px;
+      margin-inline: auto;
+    }
+
+    .hero-visual .fig-caption {
+      text-align: center;
     }
 
     .hero-facts {
@@ -491,6 +510,10 @@
     .hero-enter:nth-child(3) { animation-delay: 240ms; }
     .hero-enter:nth-child(4) { animation-delay: 360ms; }
     .hero-enter:nth-child(5) { animation-delay: 480ms; }
+
+    .hero-enter.hero-enter--photo {
+      animation-delay: 450ms;
+    }
 
     @keyframes hero-in {
       to {
@@ -563,6 +586,26 @@
       flex-shrink: 0;
     }
 
+    /* Чипы запросов */
+    .chips {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .chip {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.95rem 1.15rem;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+    }
+
     .statement {
       font-family: var(--font-display);
       font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.4rem);
@@ -625,20 +668,38 @@
       line-height: 1.6;
     }
 
-    .practice-gallery {
+    /* Лента асан: горизонтальный скролл, кадры в естественных пропорциях */
+    .asana-strip {
       margin-top: clamp(2.5rem, 5vw, 4rem);
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      display: flex;
       gap: clamp(0.75rem, 1.5vw, 1.25rem);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 0.75rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--ochre) transparent;
     }
 
-    .practice-gallery .photo-frame {
-      aspect-ratio: 3 / 4;
+    .asana-strip figure {
+      margin: 0;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+    }
+
+    .asana-strip .photo-frame {
+      height: clamp(280px, 30vw, 420px);
       box-shadow: none;
     }
 
-    .practice-gallery .photo-frame:nth-child(even) {
-      margin-top: 1.5rem;
+    .asana-strip .photo-frame img {
+      height: 100%;
+      width: auto;
+      transition: transform 0.4s ease;
+    }
+
+    .asana-strip figure:hover img {
+      transform: scale(1.03);
     }
 
     /* =================== ПРОГРАММА =================== */
@@ -752,8 +813,9 @@
       margin: 0;
     }
 
-    .split-grid .photo-frame {
-      aspect-ratio: 3 / 2;
+    .split-grid .photo-frame--portrait {
+      max-width: 430px;
+      margin-inline: auto;
     }
 
     .split-grid .aside-note + .aside-note {
@@ -843,10 +905,6 @@
       top: calc(var(--header-h) + 1.5rem);
     }
 
-    .author-figure .photo-frame {
-      aspect-ratio: 4 / 5;
-    }
-
     .author-figure .photo-frame--secondary {
       width: 68%;
       margin-left: auto;
@@ -884,6 +942,37 @@
       color: var(--cinnabar);
     }
 
+    /* Спойлер «Подробнее об опыте» */
+    .regalia-more {
+      margin-top: 0.85rem;
+      background: none;
+      border: none;
+      padding: 0.5rem 0;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      letter-spacing: 0.08em;
+      color: var(--cinnabar-deep);
+      cursor: pointer;
+    }
+
+    .regalia-more::after {
+      content: " +";
+    }
+
+    .regalia-more[aria-expanded="true"]::after {
+      content: " −";
+    }
+
+    .regalia-extra {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .regalia-extra .regalia {
+      margin-top: 0.25rem;
+    }
+
     .author-closing {
       margin-top: 1.75rem;
       font-family: var(--font-display);
@@ -909,9 +998,9 @@
     .video-placeholder {
       position: relative;
       margin-top: 2rem;
-      border-radius: var(--radius);
+      border-radius: 14px;
       overflow: hidden;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 3 / 2; /* родная пропорция постера — без обрезки фигур */
       border: 1px solid var(--line);
     }
 
@@ -1455,13 +1544,41 @@
     /* =================== SCROLL REVEAL =================== */
     [data-reveal] {
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
     [data-reveal].is-visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Sticky CTA на мобильном */
+    .mobile-sticky {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 90;
+      padding: 0.75rem clamp(1rem, 5vw, 2rem) calc(0.75rem + env(safe-area-inset-bottom, 0px));
+      background: rgba(246, 240, 228, 0.96);
+      border-top: 1px solid var(--line);
+      transform: translateY(110%);
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-sticky.is-visible {
+      transform: translateY(0);
+    }
+
+    .mobile-sticky .btn {
+      width: 100%;
+    }
+
+    @media (min-width: 769px) {
+      .mobile-sticky {
+        display: none;
+      }
     }
 
     /* =================== АДАПТИВ =================== */
@@ -1503,16 +1620,8 @@
         grid-template-columns: 1fr;
       }
 
-      .practice-gallery {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .practice-gallery .photo-frame:nth-child(n + 6) {
-        display: none; /* на планшете 5 фото не делятся на 3 колонки — без дыр */
-      }
-
-      .practice-gallery .photo-frame:nth-child(even) {
-        margin-top: 0;
+      .chips {
+        grid-template-columns: 1fr 1fr;
       }
 
       .tiers {
@@ -1589,18 +1698,6 @@
         border-bottom: 0;
       }
 
-      .practice-gallery {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .practice-gallery .photo-frame:nth-child(n + 6) {
-        display: block;
-      }
-
-      .practice-gallery .photo-frame:nth-child(5) {
-        display: none; /* 4 фото ровной сеткой 2×2 */
-      }
-
       .program-trigger {
         grid-template-columns: 2.5rem 1fr auto;
         gap: 1rem;
@@ -1614,6 +1711,12 @@
       .apply-summary > div {
         grid-template-columns: 7rem 1fr;
         gap: 1rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .chips {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1688,12 +1791,6 @@
       <symbol id="i-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
         <path d="M3 8h9a3 3 0 1 0-3-3M3 12h13a3 3 0 1 1-3 3M3 16h6"></path>
       </symbol>
-      <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="4" y="4" width="7" height="7" rx="1.5"></rect>
-        <rect x="13" y="4" width="7" height="7" rx="1.5"></rect>
-        <rect x="4" y="13" width="7" height="7" rx="1.5"></rect>
-        <path d="M13 16.5h7M16.5 13v7"></path>
-      </symbol>
       <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 3l9 5-9 5-9-5z"></path>
         <path d="M3 13l9 5 9-5"></path>
@@ -1702,9 +1799,6 @@
         <path d="M17 2l4 4-4 4"></path>
         <path d="M3 11V9a4 4 0 0 1 4-4h14M7 22l-4-4 4-4"></path>
         <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-      </symbol>
-      <symbol id="i-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 12h4l2-7 4 14 2-7h6"></path>
       </symbol>
       <symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
         <path d="M4 8h10M18 8h2M4 16h4M12 16h8"></path>
@@ -1782,9 +1876,9 @@
               <a href="#method">Подход</a>
             </p>
           </div>
-          <figure class="hero-visual" style="margin:0">
-            <div class="photo-frame">
-              <img src="assets/images/tochka-opory/editorial/ilya-portrait-tang.jpg" alt="Илья Баринов — курс «Точка опоры»" width="900" height="1200" fetchpriority="high" decoding="async">
+          <figure class="hero-visual hero-enter hero-enter--photo" style="margin:0">
+            <div class="photo-frame photo-frame--arch">
+              <img src="assets/images/tochka-opory/editorial/ilya-portrait-tang.jpg" alt="Илья Баринов — курс «Точка опоры»" width="1129" height="1600" fetchpriority="high" decoding="async">
             </div>
             <figcaption class="fig-caption">Илья Баринов · Точка опоры</figcaption>
           </figure>
@@ -1796,11 +1890,11 @@
           </div>
           <div>
             <dt>Длительность</dt>
-            <dd>3 месяца</dd>
+            <dd><span data-count="3">3</span> месяца</dd>
           </div>
           <div>
             <dt>Занятия</dt>
-            <dd>30 онлайн</dd>
+            <dd><span data-count="30">30</span> онлайн</dd>
           </div>
           <div>
             <dt>Финал</dt>
@@ -1910,12 +2004,27 @@
             <span>Йога перестаёт быть отдельной практикой «для галочки» и становится рабочим способом поддерживать самочувствие, внимание и устойчивость каждый день.</span>
           </div>
         </div>
-        <div class="practice-gallery" data-reveal aria-label="Фотографии практики с Ильёй Бариновым">
-          <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-twist.jpg" alt="Илья Баринов — скрутка в асане" width="900" height="1200" loading="lazy" decoding="async"></div>
-          <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-crow.jpg" alt="Илья Баринов — баланс на руках" width="900" height="1200" loading="lazy" decoding="async"></div>
-          <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-triangle.jpg" alt="Илья Баринов — треугольник" width="900" height="1200" loading="lazy" decoding="async"></div>
-          <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-tiger.jpg" alt="Илья Баринов — углублённая асана" width="900" height="1200" loading="lazy" decoding="async"></div>
-          <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-side-plank.jpg" alt="Илья Баринов — боковая планка" width="900" height="1200" loading="lazy" decoding="async"></div>
+        <div class="asana-strip" data-reveal aria-label="Фотографии практики с Ильёй Бариновым — лента листается">
+          <figure>
+            <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-twist.jpg" alt="Илья Баринов — скрутка в асане" width="1186" height="1600" loading="lazy" decoding="async"></div>
+            <figcaption class="fig-caption">Скрутка</figcaption>
+          </figure>
+          <figure>
+            <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-crow.jpg" alt="Илья Баринов — баланс на руках" width="1278" height="1600" loading="lazy" decoding="async"></div>
+            <figcaption class="fig-caption">Баланс на руках</figcaption>
+          </figure>
+          <figure>
+            <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-triangle.jpg" alt="Илья Баринов — треугольник" width="1092" height="1600" loading="lazy" decoding="async"></div>
+            <figcaption class="fig-caption">Треугольник</figcaption>
+          </figure>
+          <figure>
+            <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-tiger.jpg" alt="Илья Баринов — поза тигра" width="1145" height="1600" loading="lazy" decoding="async"></div>
+            <figcaption class="fig-caption">Поза тигра</figcaption>
+          </figure>
+          <figure>
+            <div class="photo-frame"><img src="assets/images/tochka-opory/editorial/ilya-practice-side-plank.jpg" alt="Илья Баринов — боковая планка" width="1600" height="1134" loading="lazy" decoding="async"></div>
+            <figcaption class="fig-caption">Боковая планка</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -1929,17 +2038,13 @@
           </div>
           <p class="aside-note">Это типичные формулировки тех, кто оставляет заявку. Если узнаёте себя — курс собран в том числе для вас.</p>
         </div>
-        <ul class="list-plain list-lined results-grid" style="display:grid" data-reveal>
-          <li>Хочу начать, но боюсь сделать что-то неправильно.</li>
-          <li>Уже занимаюсь, но не понимаю, как практика работает.</li>
-          <li>Есть напряжение в спине, шее, плечах.</li>
-          <li>Подвижность слабая, тело ощущается «деревянным».</li>
-          <li>Не понимаю, как использовать дыхание.</li>
-          <li>После занятий бывает перегрузка вместо лёгкости.</li>
-          <li>Не получается сделать практику регулярной.</li>
-          <li>Хочется меньше стресса и больше устойчивости.</li>
-          <li>Нужен подход, а не разовый формат нагрузки.</li>
-          <li>Хочу лучше слышать собственное тело.</li>
+        <ul class="chips" data-reveal>
+          <li class="chip">Хочу начать, но боюсь сделать что-то неправильно.</li>
+          <li class="chip">Уже занимаюсь, но не понимаю, как практика работает.</li>
+          <li class="chip">Напряжение в спине, шее, плечах; тело «деревянное».</li>
+          <li class="chip">Не понимаю, как использовать дыхание.</li>
+          <li class="chip">Не получается сделать практику регулярной.</li>
+          <li class="chip">Хочется меньше стресса и больше устойчивости.</li>
         </ul>
       </div>
     </section>
@@ -1995,10 +2100,10 @@
             <div class="program-panel" id="mod-3" role="region" hidden>
               <div class="program-panel-inner">
                 <ul class="program-bullets">
-                  <li>Основные положения тела и принципы отстройки</li>
+                  <li>Принципы отстройки</li>
                   <li>Опора, ось, дыхание</li>
                   <li>Работа со спиной, шеей, тазом, суставами</li>
-                  <li>Адаптации под себя</li>
+                  <li>Адаптация под себя</li>
                 </ul>
               </div>
             </div>
@@ -2012,8 +2117,8 @@
             <div class="program-panel" id="mod-4" role="region" hidden>
               <div class="program-panel-inner">
                 <ul class="program-bullets">
-                  <li>Базовые техники пранаямы</li>
-                  <li>Дыхание как инструмент регуляции состояния</li>
+                  <li>Базовая пранаяма и пранавьяямы</li>
+                  <li>Дыхание как регуляция состояния</li>
                   <li>Связь дыхания, внимания и нервной системы</li>
                 </ul>
               </div>
@@ -2028,9 +2133,9 @@
             <div class="program-panel" id="mod-5" role="region" hidden>
               <div class="program-panel-inner">
                 <ul class="program-bullets">
-                  <li>Медитация в практическом смысле</li>
-                  <li>Работа с вниманием без давления «выключить мысли»</li>
-                  <li>Как встроить медитацию в жизнь</li>
+                  <li>Работа с вниманием без попыток «остановить мысли»</li>
+                  <li>Наблюдение как способ снижать напряжение</li>
+                  <li>Как встроить медитацию в день</li>
                 </ul>
               </div>
             </div>
@@ -2046,8 +2151,7 @@
                 <ul class="program-bullets">
                   <li>Как сделать практику регулярной</li>
                   <li>Йога в повседневной жизни</li>
-                  <li>Финальный выездной ретрит</li>
-                  <li>Углубление понимания практики</li>
+                  <li>Финальный выездной ретрит и корректировка ошибок</li>
                 </ul>
               </div>
             </div>
@@ -2066,8 +2170,8 @@
             <p class="aside-note">Поездка — по желанию. Маршрут полноценен и без неё.</p>
           </div>
           <figure data-reveal>
-            <div class="photo-frame">
-              <img src="assets/images/tochka-opory/practice-1.jpg" alt="Выездная практика на природе с Ильёй Бариновым" width="700" height="440" loading="lazy" decoding="async">
+            <div class="photo-frame photo-frame--arch">
+              <img src="assets/images/tochka-opory/practice-1.jpg" alt="Выездная практика на природе с Ильёй Бариновым" width="1400" height="852" loading="lazy" decoding="async">
             </div>
             <figcaption class="fig-caption">Fig 7.1 — Утренняя практика на ретрите</figcaption>
           </figure>
@@ -2092,10 +2196,8 @@
           <li><svg width="22" height="22" aria-hidden="true"><use href="#i-shield"></use></svg>Вы перестанете бояться, что делаете что-то неправильно.</li>
           <li><svg width="22" height="22" aria-hidden="true"><use href="#i-eye"></use></svg>Будете лучше понимать, что происходит в теле во время асан.</li>
           <li><svg width="22" height="22" aria-hidden="true"><use href="#i-wind"></use></svg>Разберётесь, как использовать дыхание для регуляции состояния.</li>
-          <li><svg width="22" height="22" aria-hidden="true"><use href="#i-grid"></use></svg>Перестанете воспринимать йогу как случайный набор упражнений.</li>
           <li><svg width="22" height="22" aria-hidden="true"><use href="#i-layers"></use></svg>Получите понятную базу для самостоятельной практики.</li>
           <li><svg width="22" height="22" aria-hidden="true"><use href="#i-repeat"></use></svg>Сможете практиковать внимательнее, безопаснее и регулярнее.</li>
-          <li><svg width="22" height="22" aria-hidden="true"><use href="#i-pulse"></use></svg>Начнёте лучше замечать напряжение, усталость и ограничения.</li>
           <li><svg width="22" height="22" aria-hidden="true"><use href="#i-sliders"></use></svg>Поймёте, как адаптировать практику под своё состояние.</li>
         </ul>
       </div>
@@ -2105,8 +2207,8 @@
       <div class="container">
         <div class="split-grid split-grid--media-first">
           <figure data-reveal>
-            <div class="photo-frame" style="aspect-ratio:4/3">
-              <img src="assets/images/tochka-opory/editorial/ilya-practice-balance.jpg" alt="Илья Баринов — баланс и внимание в практике" width="1400" height="852" loading="lazy" decoding="async">
+            <div class="photo-frame photo-frame--portrait">
+              <img src="assets/images/tochka-opory/editorial/ilya-practice-balance.jpg" alt="Илья Баринов — баланс и внимание в практике" width="1065" height="1600" loading="lazy" decoding="async">
             </div>
             <figcaption class="fig-caption">Fig 8.1 — Авторский формат, живой разбор</figcaption>
           </figure>
@@ -2114,7 +2216,6 @@
             <p class="label">— О курсе</p>
             <h2>Авторский<br>маршрут</h2>
             <p class="lede" style="margin-top:1.25rem">«Точка опоры» — курс для тех, кто хочет начать заниматься грамотно или, уже практикуя, глубже понять, как работает йога: через тело, дыхание, внимание и регулярную практику.</p>
-            <p class="aside-note" style="margin-top:1.25rem">На курсе разбирают базовые асаны, принципы безопасности, дыхательные техники и основы медитации. Задача — не освоить набор упражнений, а получить понимание практики и научиться использовать её осознанно.</p>
             <ul class="list-plain list-lined" style="margin-top:1.5rem">
               <li>Теория йоги — простым современным языком</li>
               <li>База по асанам и технике безопасности</li>
@@ -2133,8 +2234,8 @@
       <div class="container">
         <div class="split-grid split-grid--media-first">
           <figure data-reveal>
-            <div class="photo-frame" style="aspect-ratio:4/3">
-              <img src="assets/images/tochka-opory/editorial/ilya-practice-headstand.jpg" alt="Илья Баринов — работа с перевёрнутыми положениями" width="1400" height="933" loading="lazy" decoding="async">
+            <div class="photo-frame photo-frame--portrait">
+              <img src="assets/images/tochka-opory/editorial/ilya-practice-headstand.jpg" alt="Илья Баринов — работа с перевёрнутыми положениями" width="1136" height="1600" loading="lazy" decoding="async">
             </div>
             <figcaption class="fig-caption">Fig 9.1 — Живая практика, не архив видео</figcaption>
           </figure>
@@ -2155,32 +2256,15 @@
       </div>
     </section>
 
-    <section class="section" id="difference">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="label">— Отличие</p>
-          <h2>Почему этот курс<br>отличается</h2>
-        </div>
-        <ul class="list-plain list-lined" data-reveal style="max-width:62ch">
-          <li>Подходит новичкам и тем, кто уже практикует, но хочет больше понимания.</li>
-          <li>Фокус не на форме, а на том, как практика работает через тело, дыхание и внимание.</li>
-          <li>Большое внимание безопасности: спина, шея, суставы, дыхание, индивидуальные ограничения.</li>
-          <li>Асаны, дыхание и медитация — в одной понятной системе.</li>
-          <li>Показывает, как использовать йогу не только на коврике, но и в жизни.</li>
-          <li>Не архив уроков, а трёхмесячный живой процесс с группой и финальным ретритом.</li>
-        </ul>
-      </div>
-    </section>
-
     <section class="section section--alt" id="author">
       <div class="container">
         <div class="author-grid">
           <figure class="author-figure" data-reveal>
-            <div class="photo-frame">
-              <img src="assets/images/tochka-opory/editorial/ilya-portrait-studio.jpg" alt="Илья Баринов — преподаватель йоги" width="800" height="1000" loading="lazy" decoding="async">
+            <div class="photo-frame photo-frame--arch">
+              <img src="assets/images/tochka-opory/editorial/ilya-portrait-studio.jpg" alt="Илья Баринов — преподаватель йоги" width="1065" height="1600" loading="lazy" decoding="async">
             </div>
             <div class="photo-frame photo-frame--secondary">
-              <img src="assets/images/tochka-opory/practice-3.jpg" alt="Илья Баринов — тайцзицюань в горах" width="700" height="700" loading="lazy" decoding="async">
+              <img src="assets/images/tochka-opory/practice-3.jpg" alt="Илья Баринов — тайцзицюань в горах" width="1400" height="1400" loading="lazy" decoding="async">
             </div>
             <figcaption class="fig-caption">Fig 11.1 — Илья Баринов</figcaption>
           </figure>
@@ -2191,15 +2275,21 @@
             <ul class="regalia">
               <li><svg width="24" height="24" aria-hidden="true"><use href="#i-medal"></use></svg><span>Трёхкратный чемпион Европы по тайцзицюань (TCFE 2016: три золотые и серебряная медаль)</span></li>
               <li><svg width="24" height="24" aria-hidden="true"><use href="#i-health"></use></svg><span>Реабилитолог и кинезиолог, диплом НГУ им. П.Ф. Лесгафта, 10+ лет практики; работал с основным составом ФК «Зенит» (2017–2018)</span></li>
-              <li><svg width="24" height="24" aria-hidden="true"><use href="#i-star"></use></svg><span>Выпускник Академии русского балета им. Вагановой; в прошлом — артист, хореограф, балетмейстер ведущих театров Санкт-Петербурга</span></li>
-              <li><svg width="24" height="24" aria-hidden="true"><use href="#i-lotus"></use></svg><span>Преподаёт йогу, цигун, тайцзицюань и дыхательные техники; готовит инструкторов</span></li>
-              <li><svg width="24" height="24" aria-hidden="true"><use href="#i-globe"></use></svg><span>Проводит семинары и ретриты по всему миру — Непал, Тибет, Бутан, Индия</span></li>
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#i-lotus"></use></svg><span>20 лет преподавания йоги, цигун, тайцзицюань и дыхательных техник</span></li>
             </ul>
+            <div class="regalia-extra" id="regalia-extra">
+              <ul class="regalia">
+                <li><svg width="24" height="24" aria-hidden="true"><use href="#i-star"></use></svg><span>Выпускник Академии русского балета им. Вагановой; в прошлом — артист, хореограф, балетмейстер ведущих театров Санкт-Петербурга</span></li>
+                <li><svg width="24" height="24" aria-hidden="true"><use href="#i-layers"></use></svg><span>Готовит инструкторов по телесным практикам</span></li>
+                <li><svg width="24" height="24" aria-hidden="true"><use href="#i-globe"></use></svg><span>Проводит семинары и ретриты по всему миру — Непал, Тибет, Бутан, Индия</span></li>
+              </ul>
+            </div>
+            <button class="regalia-more" id="regalia-more" type="button" aria-expanded="false" aria-controls="regalia-extra">Подробнее об опыте</button>
             <p class="author-closing">Илья объясняет йогу не как набор поз, а как систему работы с телом, дыханием и вниманием.</p>
 
             <!-- TODO: вставить видео-приветствие (заменить плейсхолдер на iframe/видео) -->
             <div class="video-placeholder" role="img" aria-label="Видео-приветствие Ильи Баринова — скоро">
-              <img src="assets/images/tochka-opory/practice-2.jpg" alt="" width="700" height="466" loading="lazy" decoding="async">
+              <img src="assets/images/tochka-opory/practice-2.jpg" alt="" width="1400" height="933" loading="lazy" decoding="async">
               <div class="video-veil">
                 <span class="video-play"><svg width="28" height="28" aria-hidden="true"><use href="#i-play"></use></svg></span>
               </div>
@@ -2418,7 +2508,62 @@
     </div>
   </footer>
 
+  <div class="mobile-sticky" id="mobile-sticky">
+    <a class="btn btn-primary" href="#apply">Оставить заявку</a>
+  </div>
+
   <script src="tochka-opory-config.js"></script>
   <script src="barinov-yoga.js"></script>
+  <script>
+    (function () {
+      var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Count-up цифр формата (один раз, при появлении в вьюпорте)
+      var counters = document.querySelectorAll("[data-count]");
+      if (counters.length && "IntersectionObserver" in window && !reduced) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            io.unobserve(entry.target);
+            var el = entry.target;
+            var target = parseInt(el.getAttribute("data-count"), 10);
+            var t0 = performance.now();
+            var dur = 900;
+            requestAnimationFrame(function tick(now) {
+              var p = Math.min((now - t0) / dur, 1);
+              el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
+              if (p < 1) requestAnimationFrame(tick);
+            });
+          });
+        }, { threshold: 0.6 });
+        counters.forEach(function (el) { io.observe(el); });
+      }
+
+      // Sticky CTA: появляется после hero, прячется на секции формы
+      var sticky = document.getElementById("mobile-sticky");
+      var heroEl = document.getElementById("hero");
+      var applyEl = document.getElementById("apply");
+      if (sticky && heroEl && applyEl && "IntersectionObserver" in window) {
+        var heroVisible = true;
+        var applyVisible = false;
+        var update = function () {
+          sticky.classList.toggle("is-visible", !heroVisible && !applyVisible);
+        };
+        new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }).observe(heroEl);
+        new IntersectionObserver(function (e) { applyVisible = e[0].isIntersecting; update(); }).observe(applyEl);
+      }
+
+      // Спойлер «Подробнее об опыте»
+      var moreBtn = document.getElementById("regalia-more");
+      var extra = document.getElementById("regalia-extra");
+      if (moreBtn && extra) {
+        moreBtn.addEventListener("click", function () {
+          var open = moreBtn.getAttribute("aria-expanded") === "true";
+          moreBtn.setAttribute("aria-expanded", open ? "false" : "true");
+          extra.style.maxHeight = open ? "0px" : extra.scrollHeight + "px";
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
