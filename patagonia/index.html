@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Патагония — авторское путешествие · 3–15 января 2027 · Аргентина и Чили</title>
+  <meta name="description" content="12 дней на краю земли: Фицрой, Торрес-дель-Пайне, ледник Перито-Морено, Ушуая. Треккинги, ледники, авторское сопровождение. Январь 2027.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Патагония. Край земли — авторское путешествие">
+  <meta property="og:description" content="12 дней на краю земли: Фицрой, Торрес-дель-Пайне, ледник Перито-Морено, Ушуая. Треккинги, ледники, авторское сопровождение. Январь 2027.">
+  <meta property="og:image" content="img/hero-fitzroy.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD: путешествие + организаторы -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Патагония. Край земли — авторское путешествие",
+    "description": "12 дней на краю земли: Фицрой, Торрес-дель-Пайне, ледник Перито-Морено, Ушуая. Треккинги, ледники, авторское сопровождение.",
+    "startDate": "2027-01-03",
+    "endDate": "2027-01-15",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Патагония (Аргентина и Чили)",
+      "address": "Аргентина, Чили"
+    },
+    "image": "img/hero-fitzroy.jpg",
+    "offers": {
+      "@type": "Offer",
+      "price": "4500",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    },
+    "organizer": [
+      { "@type": "Person", "name": "Леонид Кутузов" },
+      { "@type": "Person", "name": "Андрей Баранов" }
+    ]
+  }
+  </script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    /* TODO: заменить YM_COUNTER_ID на реальный ID счётчика */
+    ym('YM_COUNTER_ID', 'init', { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/YM_COUNTER_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+
+  <style>
+    :root{
+      --glacier:#3E7C9B;   /* ледниковый синий — основной акцент */
+      --ice:#A9CBD8;       /* светлый лёд */
+      --granite:#2B333A;   /* гранит / тёмный текст */
+      --alpenglow:#E0794F; /* рассветное свечение Фицроя — CTA */
+      --steppe:#C8A24A;    /* золотая патагонская степь — второй акцент */
+      --snow:#F5F2EC;      /* тёплый светлый фон */
+      --ink:#1F2A30;
+
+      --font-head:'Oswald', system-ui, sans-serif;
+      --font-body:'Golos Text', system-ui, sans-serif;
+
+      --maxw:1180px;
+    }
+
+    *,*::before,*::after{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:var(--font-body);
+      color:var(--ink);
+      background:var(--snow);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    img{ max-width:100%; display:block; }
+    a{ color:var(--glacier); }
+
+    h1,h2,h3,h4{
+      font-family:var(--font-head);
+      font-weight:600;
+      line-height:1.08;
+      margin:0;
+      color:var(--granite);
+    }
+    h2{
+      font-size:clamp(1.9rem,4.4vw,3.1rem);
+      text-transform:uppercase;
+      letter-spacing:.02em;
+    }
+    h3{ font-size:clamp(1.25rem,2.4vw,1.6rem); text-transform:uppercase; letter-spacing:.03em; }
+
+    .container{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+    .section{ padding:clamp(56px,8vw,108px) 0; }
+    .eyebrow{
+      font-family:var(--font-head);
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      font-size:.82rem;
+      font-weight:500;
+      color:var(--glacier);
+      margin:0 0 14px;
+    }
+    .lead{ font-size:clamp(1.05rem,1.6vw,1.25rem); }
+
+    /* ── Buttons ───────────────────────────── */
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      font-family:var(--font-head);
+      text-transform:uppercase; letter-spacing:.08em; font-weight:600;
+      font-size:1rem;
+      padding:16px 34px;
+      border-radius:4px;
+      border:2px solid transparent;
+      text-decoration:none;
+      cursor:pointer;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+    }
+    .btn-primary{
+      background:var(--alpenglow);
+      color:#fff;
+      box-shadow:0 8px 24px rgba(224,121,79,.35);
+    }
+    .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(224,121,79,.5); background:#d96b3f; }
+    .btn-ghost{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.7);
+    }
+    .btn-ghost:hover{ background:rgba(255,255,255,.12); border-color:#fff; }
+
+    /* ── Hero ──────────────────────────────── */
+    .hero{
+      position:relative;
+      min-height:100svh;
+      display:flex; align-items:flex-end;
+      color:#fff;
+      background:
+        linear-gradient(180deg, rgba(31,42,48,.35) 0%, rgba(31,42,48,.15) 35%, rgba(31,42,48,.82) 100%),
+        url('img/hero-fitzroy.jpg') center/cover no-repeat;
+    }
+    .hero__inner{ padding-bottom:clamp(48px,8vw,96px); padding-top:120px; }
+    .hero h1{
+      color:#fff;
+      font-size:clamp(2.8rem,8vw,6rem);
+      text-transform:uppercase;
+      letter-spacing:.01em;
+      text-shadow:0 2px 30px rgba(0,0,0,.4);
+    }
+    .hero__sub{
+      max-width:680px;
+      font-size:clamp(1.05rem,2vw,1.4rem);
+      margin:22px 0 26px;
+      text-shadow:0 1px 12px rgba(0,0,0,.5);
+    }
+    .hero__plate{
+      display:inline-block;
+      font-family:var(--font-head);
+      text-transform:uppercase; letter-spacing:.12em;
+      font-size:clamp(.85rem,1.6vw,1.05rem);
+      font-weight:500;
+      background:rgba(62,124,155,.85);
+      padding:10px 18px;
+      border-radius:4px;
+      margin-bottom:30px;
+    }
+    .hero__cta{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+    .hero__org{ font-size:.92rem; opacity:.92; margin:18px 0 0; }
+
+    /* ── Manifesto ─────────────────────────── */
+    .manifesto{ background:var(--granite); color:var(--snow); }
+    .manifesto p{
+      font-family:var(--font-head);
+      font-weight:400;
+      font-size:clamp(1.3rem,2.8vw,2.1rem);
+      line-height:1.4;
+      max-width:920px;
+      margin:0 auto;
+      text-align:center;
+      letter-spacing:.005em;
+    }
+    .manifesto .accent{ color:var(--steppe); }
+
+    /* ── Highlights grid ───────────────────── */
+    .grid-highlights{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-top:42px;
+    }
+    .hcard{
+      position:relative;
+      border-radius:10px;
+      overflow:hidden;
+      min-height:330px;
+      display:flex; align-items:flex-end;
+      color:#fff;
+      box-shadow:0 10px 26px rgba(43,51,58,.14);
+      isolation:isolate;
+    }
+    .hcard img{
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; z-index:-2;
+      transition:transform .6s ease;
+    }
+    .hcard::after{
+      content:""; position:absolute; inset:0; z-index:-1;
+      background:linear-gradient(180deg, rgba(31,42,48,0) 30%, rgba(31,42,48,.9) 100%);
+    }
+    .hcard:hover img{ transform:scale(1.06); }
+    .hcard__body{ padding:24px; }
+    .hcard h3{ color:#fff; margin-bottom:8px; }
+    .hcard p{ margin:0; font-size:.98rem; opacity:.95; }
+
+    /* ── Timeline / route ──────────────────── */
+    .route{ background:#fff; }
+    .loc{
+      border:1px solid #e6e0d4;
+      border-radius:12px;
+      overflow:hidden;
+      margin-bottom:20px;
+      background:var(--snow);
+    }
+    .loc__head{
+      display:grid;
+      grid-template-columns:160px 1fr auto;
+      align-items:center;
+      gap:20px;
+      width:100%;
+      border:0; background:transparent;
+      text-align:left;
+      cursor:pointer;
+      padding:0;
+      font-family:inherit;
+      color:inherit;
+    }
+    .loc__photo{ width:160px; height:130px; object-fit:cover; }
+    .loc__heading{ padding:14px 0; }
+    .loc__days{
+      font-family:var(--font-head);
+      text-transform:uppercase; letter-spacing:.16em;
+      font-size:.78rem; color:var(--glacier); font-weight:600;
+      margin-bottom:4px; display:block;
+    }
+    .loc__title{ font-size:clamp(1.15rem,2.2vw,1.55rem); }
+    .loc__toggle{
+      width:40px; height:40px; margin-right:20px;
+      border-radius:50%;
+      border:2px solid var(--glacier);
+      color:var(--glacier);
+      display:grid; place-items:center;
+      font-size:1.4rem; line-height:1;
+      transition:transform .25s ease, background .25s ease, color .25s ease;
+      flex-shrink:0;
+    }
+    .loc[open] .loc__toggle{ transform:rotate(45deg); background:var(--glacier); color:#fff; }
+    .loc__body{ padding:4px 24px 26px; }
+    .loc__intro{ margin:0 0 16px; color:#41494f; }
+    .loc__list{ list-style:none; margin:0 0 14px; padding:0; display:grid; gap:12px; }
+    .loc__list li{ position:relative; padding-left:30px; }
+    .loc__list li::before{
+      content:""; position:absolute; left:6px; top:.55em;
+      width:9px; height:9px; border-radius:50%;
+      background:var(--alpenglow);
+    }
+    .loc__list strong{ color:var(--granite); }
+    .loc__stay{
+      display:inline-flex; gap:8px; align-items:center;
+      font-size:.92rem; color:var(--glacier);
+      background:rgba(62,124,155,.1);
+      padding:8px 14px; border-radius:6px;
+    }
+    /* details marker reset */
+    .loc summary{ list-style:none; }
+    .loc summary::-webkit-details-marker{ display:none; }
+
+    /* ── Map ───────────────────────────────── */
+    .map{ background:var(--ice); }
+    .map__frame{
+      margin-top:36px;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(43,51,58,.12);
+      background:#fff;
+    }
+    .map__placeholder{
+      aspect-ratio:16/7;
+      display:grid; place-items:center;
+      text-align:center;
+      padding:24px;
+      background:
+        radial-gradient(circle at 22% 30%, rgba(62,124,155,.18), transparent 40%),
+        radial-gradient(circle at 78% 68%, rgba(200,162,74,.18), transparent 42%),
+        repeating-linear-gradient(135deg, rgba(43,51,58,.04) 0 14px, transparent 14px 28px),
+        #fff;
+    }
+    .map__route-line{
+      font-family:var(--font-head);
+      text-transform:uppercase; letter-spacing:.06em;
+      font-size:clamp(.95rem,2vw,1.35rem);
+      color:var(--granite);
+      max-width:760px;
+      line-height:1.7;
+    }
+    .map__route-line span{ color:var(--glacier); white-space:nowrap; }
+    .map__note{ font-size:.85rem; color:#5a636a; margin-top:16px; }
+
+    /* ── Stay ──────────────────────────────── */
+    .stay{ background:var(--snow); }
+    .stay__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:38px; }
+    .stay__card{
+      background:#fff; border-radius:10px; overflow:hidden;
+      border:1px solid #e6e0d4;
+      box-shadow:0 6px 18px rgba(43,51,58,.06);
+    }
+    .stay__card img{ height:170px; width:100%; object-fit:cover; }
+    .stay__card .pad{ padding:18px; }
+    .stay__card h3{ font-size:1.05rem; }
+    .stay__nights{ color:var(--glacier); font-weight:600; font-size:.9rem; }
+    .stay__place{ font-size:.88rem; color:#5a636a; margin-top:4px; }
+
+    /* ── For whom ──────────────────────────── */
+    .level{ background:var(--granite); color:var(--snow); }
+    .level h2{ color:#fff; }
+    .level__lead{ max-width:760px; font-size:clamp(1.05rem,1.7vw,1.25rem); }
+    .level__cols{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:34px; }
+    .level__card{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:10px; padding:26px;
+    }
+    .level__card h3{ color:#fff; margin-bottom:12px; }
+    .level__card.yes h3{ color:var(--ice); }
+    .level__card.no h3{ color:var(--alpenglow); }
+    .level__card p{ margin:0; }
+    .level__note{ margin-top:24px; font-size:.95rem; opacity:.85; }
+
+    /* ── Price ─────────────────────────────── */
+    .price__wrap{ display:grid; grid-template-columns:1.1fr 1fr; gap:26px; margin-top:40px; align-items:start; }
+    .price__card{
+      background:var(--granite); color:#fff;
+      border-radius:14px; padding:34px;
+      box-shadow:0 16px 40px rgba(43,51,58,.2);
+    }
+    .price__big{ font-family:var(--font-head); font-size:clamp(2.6rem,7vw,3.6rem); font-weight:700; color:#fff; }
+    .price__per{ opacity:.85; font-size:1rem; }
+    .price__rows{ margin:24px 0 28px; display:grid; gap:14px; border-top:1px solid rgba(255,255,255,.16); padding-top:22px; }
+    .price__row{ display:flex; justify-content:space-between; gap:16px; font-size:.98rem; }
+    .price__row b{ color:var(--steppe); font-family:var(--font-head); font-weight:600; }
+    .price__card .btn{ width:100%; justify-content:center; }
+    .incl{ display:grid; gap:20px; }
+    .incl__block{ background:#fff; border:1px solid #e6e0d4; border-radius:12px; padding:24px; }
+    .incl__block h3{ font-size:1.1rem; margin-bottom:14px; }
+    .incl__block ul{ list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+    .incl__block li{ position:relative; padding-left:30px; font-size:.96rem; }
+    .incl__block.yes li::before{ content:"✓"; position:absolute; left:0; color:var(--glacier); font-weight:700; }
+    .incl__block.no li::before{ content:"—"; position:absolute; left:2px; color:var(--steppe); font-weight:700; }
+
+    /* ── Organizers ────────────────────────── */
+    .org{ background:var(--ice); }
+    .org__grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:38px; }
+    .org__card{
+      background:#fff; border-radius:12px; padding:28px;
+      display:flex; gap:20px; align-items:flex-start;
+      border:1px solid rgba(43,51,58,.08);
+    }
+    .org__avatar{
+      width:84px; height:84px; flex-shrink:0; border-radius:50%;
+      background:linear-gradient(135deg, var(--glacier), var(--granite));
+      color:#fff; display:grid; place-items:center;
+      font-family:var(--font-head); font-size:1.7rem; font-weight:600;
+    }
+    .org__card h3{ font-size:1.2rem; margin-bottom:8px; }
+    .org__card p{ margin:0; font-size:.96rem; color:#41494f; }
+    .org__todo{ margin-top:18px; font-size:.82rem; color:#5a636a; opacity:.8; }
+
+    /* ── FAQ ───────────────────────────────── */
+    .faq__list{ margin-top:36px; max-width:860px; }
+    .faq__item{ border-bottom:1px solid #ddd6c8; }
+    .faq__q{
+      width:100%; text-align:left; background:none; border:0; cursor:pointer;
+      font-family:var(--font-head); text-transform:uppercase; letter-spacing:.02em;
+      font-size:clamp(1rem,2vw,1.2rem); color:var(--granite);
+      padding:22px 44px 22px 0; position:relative;
+    }
+    .faq__q::after{
+      content:"+"; position:absolute; right:6px; top:50%; transform:translateY(-50%);
+      font-size:1.6rem; color:var(--glacier); transition:transform .25s ease;
+    }
+    .faq__item[open] .faq__q::after{ transform:translateY(-50%) rotate(45deg); }
+    .faq__a{ padding:0 0 22px; color:#41494f; max-width:760px; }
+    .faq__item summary{ list-style:none; }
+    .faq__item summary::-webkit-details-marker{ display:none; }
+
+    /* ── Final CTA ─────────────────────────── */
+    .final{
+      position:relative; color:#fff; text-align:center;
+      background:
+        linear-gradient(180deg, rgba(31,42,48,.78), rgba(31,42,48,.82)),
+        url('img/torres-del-paine.jpg') center/cover fixed no-repeat;
+    }
+    .final h2{ color:#fff; max-width:760px; margin:0 auto 18px; }
+    .final p{ max-width:620px; margin:0 auto 30px; font-size:1.1rem; opacity:.95; }
+
+    /* ── Footer ────────────────────────────── */
+    .footer{ background:var(--ink); color:#c5cdd2; padding:48px 0; }
+    .footer__inner{ display:flex; flex-wrap:wrap; gap:18px 40px; justify-content:space-between; align-items:center; }
+    .footer a{ color:#fff; }
+    .footer__links{ display:flex; flex-wrap:wrap; gap:8px 24px; }
+    .footer small{ color:#8a949b; }
+
+    /* ── Sticky mobile CTA ─────────────────── */
+    .sticky{
+      position:fixed; left:0; right:0; bottom:0; z-index:40;
+      display:none;
+      padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+      background:rgba(31,42,48,.96);
+      box-shadow:0 -6px 20px rgba(0,0,0,.25);
+    }
+    .sticky .btn{ width:100%; justify-content:center; }
+
+    /* ── Reveal on scroll ──────────────────── */
+    .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.in{ opacity:1; transform:none; }
+    @media (prefers-reduced-motion:reduce){
+      html{ scroll-behavior:auto; }
+      .reveal{ opacity:1; transform:none; transition:none; }
+    }
+
+    /* ── Responsive ────────────────────────── */
+    @media (max-width:900px){
+      .grid-highlights{ grid-template-columns:repeat(2,1fr); }
+      .stay__grid{ grid-template-columns:repeat(2,1fr); }
+      .price__wrap{ grid-template-columns:1fr; }
+      .level__cols{ grid-template-columns:1fr; }
+      .org__grid{ grid-template-columns:1fr; }
+      .final{ background-attachment:scroll; }
+    }
+    @media (max-width:620px){
+      .grid-highlights{ grid-template-columns:1fr; }
+      .stay__grid{ grid-template-columns:1fr; }
+      .loc__head{ grid-template-columns:96px 1fr auto; gap:14px; }
+      .loc__photo{ width:96px; height:96px; }
+      .loc__toggle{ margin-right:14px; width:34px; height:34px; font-size:1.2rem; }
+      .loc__body{ padding-left:16px; padding-right:16px; }
+      .hero{ background-attachment:scroll; }
+      .sticky{ display:block; }
+      body{ padding-bottom:74px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <header class="hero">
+    <div class="container hero__inner reveal">
+      <h1>Патагония.<br>Край земли</h1>
+      <p class="hero__sub">Авторское путешествие по самому югу планеты — от гранитных игл Фицроя до ледников Чили и «конца света» в Ушуае</p>
+      <div class="hero__plate">3–15 января 2027 · 12 дней / 11 ночей · Аргентина + Чили</div>
+      <div class="hero__cta">
+        <a class="btn btn-primary" href="https://t.me/USERNAME" target="_blank" rel="noopener" data-tg>Забронировать место</a>
+        <a class="btn btn-ghost" href="#route">Смотреть маршрут</a>
+      </div>
+      <p class="hero__org">Организаторы — Леонид Кутузов и Андрей Баранов</p>
+    </div>
+  </header>
+
+  <!-- ═══ МАНИФЕСТ ═══ -->
+  <section class="section manifesto">
+    <div class="container reveal">
+      <p>Есть места, до которых добираются только мечта и хорошие ботинки. Патагония — одно из них. Здесь ветер сбивает с ног на смотровых площадках, гранитные башни вырастают прямо из бирюзовых озёр, а ледники с грохотом обрушиваются в воду размером с дом. Мы пройдём её насквозь — от знаменитого Фицроя в Аргентине через чилийский Торрес-дель-Пайне к Ушуае, последнему городу перед Антарктидой. <span class="accent">Двенадцать дней треккингов, ледников и тишины, какой нет больше нигде на Земле.</span></p>
+    </div>
+  </section>
+
+  <!-- ═══ ЧТО ВАС ЖДЁТ ═══ -->
+  <section class="section" id="highlights">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Что вас ждёт</p>
+        <h2>Шесть причин ехать на край земли</h2>
+      </div>
+      <div class="grid-highlights">
+        <article class="hcard reveal">
+          <img src="img/laguna-de-los-tres.jpg" alt="Гранитные иглы Фицроя и Серро-Торре на рассвете">
+          <div class="hcard__body"><h3>Фицрой и Серро-Торре</h3><p>Два самых дерзких силуэта планеты и знаменитое розовое свечение на рассвете.</p></div>
+        </article>
+        <article class="hcard reveal">
+          <img src="img/torres-del-paine.jpg" alt="Три гранитные башни Торрес-дель-Пайне над озером">
+          <div class="hcard__body"><h3>Торрес-дель-Пайне</h3><p>Три гранитные башни Чили, вырастающие из ледникового озера.</p></div>
+        </article>
+        <article class="hcard reveal">
+          <img src="img/perito-moreno.jpg" alt="Синяя стена ледника Перито-Морено">
+          <div class="hcard__body"><h3>Ледник Перито-Морено</h3><p>Один из немногих «живых» ледников мира; навигация к синей стене льда вплотную.</p></div>
+        </article>
+        <article class="hcard reveal">
+          <img src="img/grey-glacier.jpg" alt="Голубые айсберги ледника Грей">
+          <div class="hcard__body"><h3>Ледник Грей</h3><p>Голубые айсберги, плавающие в озере, и долина Британико.</p></div>
+        </article>
+        <article class="hcard reveal">
+          <img src="img/beagle-penguins.jpg" alt="Пингвины на берегу канала Бигль">
+          <div class="hcard__body"><h3>Канал Бигль и пингвины</h3><p>Водная экскурсия от Ушуаи к колонии пингвинов и маяку на краю света.</p></div>
+        </article>
+        <article class="hcard reveal">
+          <img src="img/ushuaia-fin-del-mundo.jpg" alt="Ушуая — самый южный город планеты">
+          <div class="hcard__body"><h3>Ушуая — Fin del Mundo</h3><p>Самый южный город планеты и легендарный ужин с королевским крабом.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ МАРШРУТ ПО ДНЯМ ═══ -->
+  <section class="section route" id="route">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Маршрут по дням</p>
+        <h2>Двенадцать дней с юга на юг</h2>
+        <p class="lead" style="max-width:760px;margin-top:14px;color:#41494f;">Нажмите на локацию, чтобы раскрыть программу хайков и экскурсий.</p>
+      </div>
+
+      <div style="margin-top:38px;">
+
+        <details class="loc reveal">
+          <summary class="loc__head">
+            <img class="loc__photo" src="img/ushuaia-fin-del-mundo.jpg" alt="Буэнос-Айрес — прилёт">
+            <span class="loc__heading">
+              <span class="loc__days">Прилёт · 3 января</span>
+              <span class="loc__title loc__title--h">Буэнос-Айрес</span>
+            </span>
+            <span class="loc__toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="loc__body">
+            <p class="loc__intro">Приземление в Эзейзе (EZE) вечером. Ночь в городе / зале ожидания перед утренним перелётом на юг.</p>
+          </div>
+        </details>
+
+        <details class="loc reveal" open>
+          <summary class="loc__head">
+            <img class="loc__photo" src="img/laguna-de-los-tres.jpg" alt="Эль-Чальтен и Фицрой">
+            <span class="loc__heading">
+              <span class="loc__days">Дни 1–3</span>
+              <span class="loc__title">Эль-Чальтен — столица треккинга Аргентины</span>
+            </span>
+            <span class="loc__toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="loc__body">
+            <p class="loc__intro">Утренний перелёт в Эль-Калафате и переезд в Эль-Чальтен — деревню у подножия Фицроя, в национальном парке Лос-Гласьярес. Над ней висят два легендарных силуэта: гранитная игла Серро-Торре и трёхтысячник Фицрой, чьи стены на рассвете на пару минут загораются розово-оранжевым.</p>
+            <ul class="loc__list">
+              <li><strong>Хайк к лагуне Торре</strong> (18 км) — зеркало ледниковой лагуны с видом на Серро-Торре.</li>
+              <li><strong>Треккинг к лагуне Де-Лос-Трес</strong> (21 км) — та самая открыточная точка, где Фицрой отражается в бирюзовой воде у самого подножия.</li>
+            </ul>
+            <span class="loc__stay">🏡 Живём на эстансии La Quinta — настоящем патагонском ранчо</span>
+          </div>
+        </details>
+
+        <details class="loc reveal">
+          <summary class="loc__head">
+            <img class="loc__photo" src="img/torres-del-paine.jpg" alt="Торрес-дель-Пайне в Чили">
+            <span class="loc__heading">
+              <span class="loc__days">Дни 4–6</span>
+              <span class="loc__title">Торрес-дель-Пайне (Чили)</span>
+            </span>
+            <span class="loc__toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="loc__body">
+            <p class="loc__intro">Переезжаем через границу в Чили, в один из самых знаменитых нацпарков мира.</p>
+            <ul class="loc__list">
+              <li><strong>Хайк к подножию Las Torres</strong> (18–22 км, ~900 м набора) — к трём вертикальным башням над бирюзовым озером.</li>
+              <li><strong>Паром + треккинг к Mirador Británico и леднику Грей</strong> — голубые айсберги в озере и панорама долины.</li>
+            </ul>
+            <span class="loc__stay">🏡 Живём у входа в парк, на эстансии El Ovejero Patagónico</span>
+          </div>
+        </details>
+
+        <details class="loc reveal">
+          <summary class="loc__head">
+            <img class="loc__photo" src="img/perito-moreno.jpg" alt="Ледник Перито-Морено">
+            <span class="loc__heading">
+              <span class="loc__days">Дни 7–8</span>
+              <span class="loc__title">Эль-Калафате и ледник Перито-Морено</span>
+            </span>
+            <span class="loc__toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="loc__body">
+            <ul class="loc__list">
+              <li><strong>Экскурсия и навигация к Перито-Морено</strong> — 70 метров льда, обрывающихся в озеро. Время от времени с грохотом, как выстрел, в воду падают глыбы размером с дом. Лодка подведёт нас к синей стене вплотную.</li>
+            </ul>
+            <span class="loc__stay">🏨 Отель Terraza Coirones 3*</span>
+          </div>
+        </details>
+
+        <details class="loc reveal">
+          <summary class="loc__head">
+            <img class="loc__photo" src="img/beagle-penguins.jpg" alt="Ушуая и канал Бигль">
+            <span class="loc__heading">
+              <span class="loc__days">Дни 9–12</span>
+              <span class="loc__title">Ушуая — край земли</span>
+            </span>
+            <span class="loc__toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="loc__body">
+            <p class="loc__intro">Перелёт в Ушуаю — самый южный город планеты, дальше только Антарктида. Отсюда уходили экспедиции к полюсу.</p>
+            <ul class="loc__list">
+              <li><strong>Водная экскурсия по каналу Бигль</strong> — к колонии пингвинов и маяку на краю света.</li>
+              <li><strong>Хайк к леднику Охо-дель-Альбино</strong> мимо горы Пять Братьев (9 км, ~800 м набора).</li>
+              <li><strong>Ужин с патагонским королевским крабом</strong> (king crab), которого ловят прямо в проливе.</li>
+            </ul>
+            <span class="loc__stay">🏨 Отель Lennox Ushuaia 4* · 15 января — перелёт обратно в Буэнос-Айрес</span>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ КАРТА МАРШРУТА ═══ -->
+  <section class="section map" id="map">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Карта маршрута</p>
+        <h2>Как мы движемся</h2>
+      </div>
+      <div class="map__frame reveal">
+        <div class="map__placeholder">
+          <div>
+            <p class="map__route-line">
+              <span>Буэнос-Айрес</span> ✈ <span>Эль-Калафате</span> → <span>Эль-Чальтен</span> → <span>Торрес-дель-Пайне</span> → <span>Эль-Калафате</span> ✈ <span>Ушуая</span> ✈ <span>Буэнос-Айрес</span>
+            </p>
+            <p class="map__note">Схема перелётов и переездов — плейсхолдер. Финальную карту-картинку добавит Андрей.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ГДЕ ЖИВЁМ ═══ -->
+  <section class="section stay" id="stay">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Где живём</p>
+        <h2>Эстансии и отели с завтраками</h2>
+      </div>
+      <div class="stay__grid">
+        <article class="stay__card reveal">
+          <img src="img/estancia.jpg" alt="Эстансия La Quinta">
+          <div class="pad"><h3>La Quinta</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Эль-Чальтен · эстансия</p></div>
+        </article>
+        <article class="stay__card reveal">
+          <img src="img/torres-del-paine.jpg" alt="Эстансия El Ovejero Patagónico">
+          <div class="pad"><h3>El Ovejero Patagónico</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Торрес-дель-Пайне, Чили · эстансия</p></div>
+        </article>
+        <article class="stay__card reveal">
+          <img src="img/perito-moreno.jpg" alt="Отель Terraza Coirones">
+          <div class="pad"><h3>Terraza Coirones 3*</h3><p class="stay__nights">2 ночи</p><p class="stay__place">Эль-Калафате · отель</p></div>
+        </article>
+        <article class="stay__card reveal">
+          <img src="img/ushuaia-fin-del-mundo.jpg" alt="Отель Lennox Ushuaia">
+          <div class="pad"><h3>Lennox Ushuaia 4*</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Ушуая · отель</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ДЛЯ КОГО / УРОВЕНЬ ═══ -->
+  <section class="section level" id="level">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow" style="color:var(--ice)">Для кого</p>
+        <h2>Честно про уровень сложности</h2>
+        <p class="level__lead" style="margin-top:16px;">Это <strong>активное приключение</strong>, а не расслабленный отдых. В программе несколько больших хайков по 18–22 км с наборами высоты до 900 метров и переменчивой патагонской погодой (ветер, дождь, солнце — всё за один день).</p>
+      </div>
+      <div class="level__cols">
+        <div class="level__card yes reveal">
+          <h3>Подойдёт</h3>
+          <p>Тем, кто в нормальной форме, любит ходить пешком и готов к длинным дням на ногах.</p>
+        </div>
+        <div class="level__card no reveal">
+          <h3>Не подойдёт</h3>
+          <p>Тем, кто ищет пляжный или экскурсионный отдых без нагрузок.</p>
+        </div>
+      </div>
+      <p class="level__note reveal">Базовая физическая подготовка обязательна; специальный альпинистский опыт — не нужен.</p>
+    </div>
+  </section>
+
+  <!-- ═══ СТОИМОСТЬ ═══ -->
+  <section class="section" id="price">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Стоимость</p>
+        <h2>Сколько стоит путешествие</h2>
+      </div>
+      <div class="price__wrap">
+        <div class="price__card reveal">
+          <div class="price__big">€4 500</div>
+          <div class="price__per">с человека · при двухместном размещении</div>
+          <div class="price__rows">
+            <div class="price__row"><span>Доплата за одноместное размещение</span><b>+€1 000</b></div>
+            <div class="price__row"><span>Предоплата для брони</span><b>€2 000</b></div>
+            <div class="price__row"><span>Остаток</span><b>за месяц до старта</b></div>
+          </div>
+          <a class="btn btn-primary" href="https://t.me/USERNAME" target="_blank" rel="noopener" data-tg>Забронировать место</a>
+        </div>
+        <div class="incl">
+          <div class="incl__block yes reveal">
+            <h3>Включено</h3>
+            <ul>
+              <li>Все треккинги и хайкинги по программе + входы в национальные парки.</li>
+              <li>Все экскурсии: навигация к леднику Перито-Морено, водная экскурсия по каналу Бигль с пингвинами и др.</li>
+              <li>Трансферы между точками маршрута по программе.</li>
+              <li>Проживание 11 ночей в отелях и на эстансиях с завтраками.</li>
+              <li>Сопровождение организаторами на всём маршруте.</li>
+            </ul>
+          </div>
+          <div class="incl__block no reveal">
+            <h3>Оплачивается отдельно</h3>
+            <ul>
+              <li>Авиаперелёты — международные и внутренние перелёты по Аргентине (Буэнос-Айрес ↔ Эль-Калафате, Эль-Калафате → Ушуая, Ушуая → Буэнос-Айрес).</li>
+              <li>Ужины (завтраки включены; ужины — в городе / на эстансии / краб-ресторан в Ушуае).</li>
+              <li>Страховка.</li>
+              <li>Личные расходы.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ОРГАНИЗАТОРЫ ═══ -->
+  <section class="section org" id="org">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Организаторы</p>
+        <h2>С кем вы идёте</h2>
+      </div>
+      <div class="org__grid">
+        <div class="org__card reveal">
+          <div class="org__avatar">ЛК</div>
+          <div>
+            <h3>Леонид Кутузов</h3>
+            <p>Нейрофизиолог, преподаватель йоги и медитации, президент Федерации йоги Санкт-Петербурга; автор путешествий.</p>
+          </div>
+        </div>
+        <div class="org__card reveal">
+          <div class="org__avatar">АБ</div>
+          <div>
+            <h3>Андрей Баранов</h3>
+            <p>Организатор активных авторских путешествий и приключений.</p>
+          </div>
+        </div>
+      </div>
+      <p class="org__todo reveal">TODO: добавить короткие фото обоих и 2–3 строки про опыт совместных поездок.</p>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Вопросы и ответы</p>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq__list">
+        <details class="faq__item reveal">
+          <summary class="faq__q">Нужна ли виза?</summary>
+          <div class="faq__a">Для граждан РФ въезд в Аргентину и Чили на короткий срок, как правило, безвизовый. Точные требования и сроки нужно актуализировать непосредственно перед поездкой — визовые правила меняются. <em>(Уточняется перед запуском.)</em></div>
+        </details>
+        <details class="faq__item reveal">
+          <summary class="faq__q">Входят ли перелёты в стоимость?</summary>
+          <div class="faq__a">Нет. Авиабилеты — и международные, и внутренние перелёты по Аргентине — оплачиваются отдельно. Мы помогаем с подбором удобных стыковок и расписанием.</div>
+        </details>
+        <details class="faq__item reveal">
+          <summary class="faq__q">Насколько тяжёлые хайки?</summary>
+          <div class="faq__a">В программе несколько больших хайков по 18–22 км с наборами высоты до 900 метров. Нужна базовая физическая подготовка и привычка к длинным дням на ногах; альпинистский опыт не требуется. Подробнее — в блоке «Для кого».</div>
+        </details>
+        <details class="faq__item reveal">
+          <summary class="faq__q">Какая погода в январе?</summary>
+          <div class="faq__a">Январь — патагонское лето. Дни длинные и часто солнечные, но погода очень переменчива и ветрена: ветер, дождь и солнце могут смениться за один день. Берём одежду слоями и хорошую непромокаемую куртку.</div>
+        </details>
+        <details class="faq__item reveal">
+          <summary class="faq__q">Нужна ли страховка?</summary>
+          <div class="faq__a">Да, страховка обязательна и оплачивается отдельно. Рекомендуем полис, покрывающий активный отдых и треккинг.</div>
+        </details>
+        <details class="faq__item reveal">
+          <summary class="faq__q">Как оплатить и забронировать?</summary>
+          <div class="faq__a">Для брони — предоплата €2 000, остаток вносится за месяц до старта путешествия. Запись и все детали — через Telegram.</div>
+        </details>
+        <details class="faq__item reveal">
+          <summary class="faq__q">Еду один — как с размещением?</summary>
+          <div class="faq__a">По умолчанию размещение двухместное. Одноместное размещение возможно за доплату €1 000 за всю поездку.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ФИНАЛЬНЫЙ CTA ═══ -->
+  <section class="section final" id="book">
+    <div class="container reveal">
+      <h2>Двенадцать дней на краю земли</h2>
+      <p>Мест немного — путешествие маленькой группой. Напишите нам в Telegram, чтобы забронировать.</p>
+      <a class="btn btn-primary" href="https://t.me/USERNAME" target="_blank" rel="noopener" data-tg>Написать в Telegram</a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div style="font-family:var(--font-head);text-transform:uppercase;letter-spacing:.1em;color:#fff;font-size:1.1rem;">Патагония · Край земли</div>
+        <small>Авторское путешествие · 3–15 января 2027</small>
+      </div>
+      <div class="footer__links">
+        <a href="oferta.html">Оферта</a>
+        <a href="https://t.me/USERNAME" target="_blank" rel="noopener" data-tg>Telegram</a>
+        <a href="#route">Маршрут</a>
+        <a href="#price">Стоимость</a>
+      </div>
+      <small>© 2026–2027 · Леонид Кутузов и Андрей Баранов</small>
+    </div>
+  </footer>
+
+  <!-- ═══ STICKY MOBILE CTA ═══ -->
+  <div class="sticky">
+    <a class="btn btn-primary" href="https://t.me/USERNAME" target="_blank" rel="noopener" data-tg>Написать в Telegram</a>
+  </div>
+
+  <script>
+    // Reveal on scroll
+    (function(){
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, { rootMargin:'0px 0px -10% 0px', threshold:0.08 });
+      els.forEach(function(e){ io.observe(e); });
+    })();
+
+    // Telegram click goal → Yandex.Metrika
+    document.querySelectorAll('[data-tg]').forEach(function(a){
+      a.addEventListener('click', function(){
+        if (typeof ym === 'function') { ym('YM_COUNTER_ID', 'reachGoal', 'click_telegram'); }
+      });
+    });
+  </script>
+</body>
+</html>
