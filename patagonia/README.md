@@ -53,9 +53,19 @@ https://utromaya-code.github.io/barinov-courses-landing/patagonia/
 
 ### Источники фото
 
-- **Личные фото авторов** (Фицрой, Серро-Торре, лагуны): `hero-fitzroy.jpg`,
-  `laguna-de-los-tres.jpg`, `fitzroy-peaks.jpg`, `fitzroy-waterfall.jpg`, `laguna-torre.jpg`.
+- **Pexels** (лицензия Pexels, бесплатно для коммерции, атрибуция не требуется) —
+  пейзажи маршрута: `hero-fitzroy-sunrise.jpg`, `fitzroy-cerro-torre.jpg`,
+  `el-chalten-fitzroy.jpg`, `torres-del-paine.jpg`, `torres-base.jpg`,
+  `perito-moreno.jpg`, `perito-moreno-boat.jpg`, `grey-glacier.jpg`,
+  `beagle-penguins.jpg`, `ushuaia-town.jpg`, `ushuaia-beagle.jpg`,
+  `guanaco-steppe.jpg`, `king-crab-dinner.jpg`, `buenos-aires.jpg`.
+- **Официальные сайты отелей** — `hotel-weskar-lodge.jpg` (weskar.cl),
+  `hotel-terraza-coirones.jpg` (terrazacoirones.com),
+  `hotel-las-hayas.jpg` (lashayas.com.ar),
+  `estancia-la-quinta.jpg` (estancialaquinta.com.ar).
 - **Портреты организаторов** (`leonid-kutuzov.jpg`, `andrey-baranov.jpg`) — с leo-japan.ru.
-- **Pexels** (лицензия Pexels, бесплатно для коммерческого использования):
-  Торрес-дель-Пайне, ледник Перито-Морено, ледник Грей, маяк и колония птиц
-  на канале Бигль, Ушуая, гуанако в степи, Буэнос-Айрес.
+- **Финальный экран** (`laguna-torre.jpg`) — личное фото авторов.
+
+> В `img/` остаются неиспользуемые личные фото авторов (`hero-fitzroy.jpg`,
+> `laguna-de-los-tres.jpg`, `fitzroy-peaks.jpg`, `fitzroy-waterfall.jpg`) — их
+> можно вернуть в любой слот вместо стокового фото, если так предпочтительнее.

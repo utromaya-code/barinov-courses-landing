@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Патагония — авторское путешествие · 3–15 января 2027 · Аргентина и Чили</title>
-  <meta name="description" content="12 дней на краю земли: Фицрой, Торрес-дель-Пайне, ледник Перито-Морено, Ушуая. Треккинги, ледники, авторское сопровождение. Январь 2027.">
+  <meta name="description" content="12 дней на краю земли: Фицрой, Торрес-дель-Пайне, ледник Перито-Морено, Ушуая. Треккинги, ледники, авторское сопровождение с Леонидом Кутузовым. Январь 2027.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Патагония. Край земли — авторское путешествие">
-  <meta property="og:description" content="12 дней на краю земли: Фицрой, Торрес-дель-Пайне, ледник Перито-Морено, Ушуая. Треккинги, ледники, авторское сопровождение. Январь 2027.">
-  <meta property="og:image" content="img/hero-fitzroy.jpg">
+  <meta property="og:description" content="12 дней на краю земли: Фицрой, Торрес-дель-Пайне, ледник Перито-Морено, Ушуая. Треккинги, ледники, авторское сопровождение с Леонидом Кутузовым. Январь 2027.">
+  <meta property="og:image" content="img/hero-fitzroy-sunrise.jpg">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
 
@@ -33,7 +33,7 @@
       "name": "Патагония (Аргентина и Чили)",
       "address": "Аргентина, Чили"
     },
-    "image": "img/hero-fitzroy.jpg",
+    "image": "img/hero-fitzroy-sunrise.jpg",
     "offers": {
       "@type": "Offer",
       "price": "4500",
@@ -153,7 +153,7 @@
     }
     .hero::before{
       content:""; position:absolute; inset:0; z-index:0;
-      background:url('img/hero-fitzroy.jpg') center 30%/cover no-repeat;
+      background:url('img/hero-fitzroy-sunrise.jpg') center 30%/cover no-repeat;
       transform:scale(1.04);
       animation:heroZoom 24s ease-out forwards;
     }
@@ -292,6 +292,10 @@
       font-size:.92rem; color:var(--glacier);
       background:rgba(62,124,155,.1);
       padding:8px 14px; border-radius:6px;
+    }
+    .loc__img{
+      width:100%; max-height:280px; object-fit:cover;
+      border-radius:10px; margin:4px 0 16px;
     }
     /* details marker reset */
     .loc summary{ list-style:none; }
@@ -560,7 +564,7 @@
         <a class="btn btn-primary" href="https://t.me/vsemaya" target="_blank" rel="noopener" data-tg>Забронировать место</a>
         <a class="btn btn-ghost" href="#route">Смотреть маршрут</a>
       </div>
-      <p class="hero__org">Организаторы — Леонид Кутузов и Андрей Баранов</p>
+      <p class="hero__org">Идём с Леонидом Кутузовым и Андреем Барановым</p>
     </div>
   </header>
 
@@ -599,7 +603,7 @@
       </div>
       <div class="grid-highlights">
         <article class="hcard reveal">
-          <img src="img/laguna-de-los-tres.jpg" alt="Гранитные иглы Фицроя и Серро-Торре на рассвете">
+          <img src="img/fitzroy-cerro-torre.jpg" alt="Гранитные иглы Фицроя и Серро-Торре на рассвете">
           <div class="hcard__body"><h3>Фицрой и Серро-Торре</h3><p>Два самых дерзких силуэта планеты и знаменитое розовое свечение на рассвете.</p></div>
         </article>
         <article class="hcard reveal">
@@ -619,7 +623,7 @@
           <div class="hcard__body"><h3>Канал Бигль и пингвины</h3><p>Водная экскурсия от Ушуаи к колонии пингвинов и маяку на краю света.</p></div>
         </article>
         <article class="hcard reveal">
-          <img src="img/ushuaia-fin-del-mundo.jpg" alt="Ушуая — самый южный город планеты">
+          <img src="img/ushuaia-town.jpg" alt="Ушуая — самый южный город планеты">
           <div class="hcard__body"><h3>Ушуая — Fin del Mundo</h3><p>Самый южный город планеты и легендарный ужин с королевским крабом.</p></div>
         </article>
       </div>
@@ -636,11 +640,11 @@
         <div class="reveal">
           <p class="eyebrow">Почему именно с ним</p>
           <h2>С Леонидом Кутузовым</h2>
+          <p class="lead" style="margin-top:16px;color:#41494f;">Это не сборный тур из каталога. Это авторское путешествие с Леонидом Кутузовым — нейрофизиологом, преподавателем йоги и медитации, президентом Федерации йоги Санкт-Петербурга, автором путешествий. Редкий человек, в котором сошлись учёный и опытный путешественник: с ним эти места читаются иначе — не просто «посмотреть», а прожить.</p>
           <ul class="why__list">
-            <li><strong>Не турфирма, а автор.</strong> Маршрут собран лично под небольшую группу — без касс, больших автобусов и галочек, с настоящим погружением в место.</li>
-            <li><strong>Опыт авторских экспедиций.</strong> За плечами — собственные путешествия по Японии и другим непростым направлениям; логистика на стыке Аргентины и Чили продумана до мелочей.</li>
             <li><strong>Маленькая группа.</strong> Идём камерным составом: все успевают, никто не теряется, остаётся время на тишину и кадр без толпы.</li>
-            <li><strong>Внимание к человеку.</strong> Нейрофизиолог по образованию — держит темп и состояние группы так, чтобы длинные хайки давались в радость, а не на пределе.</li>
+            <li><strong>Авторское сопровождение.</strong> Леонид и Андрей Баранов рядом на всём маршруте — от логистики на стыке двух стран до настроения в группе.</li>
+            <li><strong>Насыщенный пеший маршрут.</strong> Программа продумана без пустых дней — каждый день что-то новое: хайк, ледник, вода или новый горизонт.</li>
           </ul>
         </div>
       </div>
@@ -674,7 +678,7 @@
 
         <details class="loc reveal" open>
           <summary class="loc__head">
-            <img class="loc__photo" src="img/fitzroy-peaks.jpg" alt="Эль-Чальтен и Фицрой">
+            <img class="loc__photo" src="img/el-chalten-fitzroy.jpg" alt="Эль-Чальтен и Фицрой">
             <span class="loc__heading">
               <span class="loc__days">Дни 1–3</span>
               <span class="loc__title">Эль-Чальтен — столица треккинга Аргентины</span>
@@ -693,7 +697,7 @@
 
         <details class="loc reveal">
           <summary class="loc__head">
-            <img class="loc__photo" src="img/torres-del-paine.jpg" alt="Торрес-дель-Пайне в Чили">
+            <img class="loc__photo" src="img/torres-base.jpg" alt="Торрес-дель-Пайне в Чили">
             <span class="loc__heading">
               <span class="loc__days">Дни 4–6</span>
               <span class="loc__title">Торрес-дель-Пайне (Чили)</span>
@@ -706,13 +710,13 @@
               <li><strong>Хайк к подножию Las Torres</strong> (18–22 км, ~900 м набора) — к трём вертикальным башням над бирюзовым озером.</li>
               <li><strong>Паром + треккинг к Mirador Británico и леднику Грей</strong> — голубые айсберги в озере и панорама долины.</li>
             </ul>
-            <span class="loc__stay">🏡 Живём у входа в парк, на эстансии El Ovejero Patagónico</span>
+            <span class="loc__stay">🏡 Живём в Weskar Lodge 4* на берегу фьорда в Пуэрто-Наталес</span>
           </div>
         </details>
 
         <details class="loc reveal">
           <summary class="loc__head">
-            <img class="loc__photo" src="img/perito-moreno.jpg" alt="Ледник Перито-Морено">
+            <img class="loc__photo" src="img/perito-moreno-boat.jpg" alt="Ледник Перито-Морено">
             <span class="loc__heading">
               <span class="loc__days">Дни 7–8</span>
               <span class="loc__title">Эль-Калафате и ледник Перито-Морено</span>
@@ -729,7 +733,7 @@
 
         <details class="loc reveal">
           <summary class="loc__head">
-            <img class="loc__photo" src="img/beagle-penguins.jpg" alt="Ушуая и канал Бигль">
+            <img class="loc__photo" src="img/ushuaia-beagle.jpg" alt="Ушуая и канал Бигль">
             <span class="loc__heading">
               <span class="loc__days">Дни 9–12</span>
               <span class="loc__title">Ушуая — край земли</span>
@@ -743,7 +747,8 @@
               <li><strong>Хайк к леднику Охо-дель-Альбино</strong> мимо горы Пять Братьев (9 км, ~800 м набора).</li>
               <li><strong>Ужин с патагонским королевским крабом</strong> (king crab), которого ловят прямо в проливе.</li>
             </ul>
-            <span class="loc__stay">🏨 Отель Lennox Ushuaia 4* · 15 января — перелёт обратно в Буэнос-Айрес</span>
+            <img class="loc__img" src="img/king-crab-dinner.jpg" alt="Патагонский королевский краб — подача в ресторане Ушуаи">
+            <span class="loc__stay">🏨 Отель Las Hayas Ushuaia Resort 5* · 15 января — перелёт обратно в Буэнос-Айрес</span>
           </div>
         </details>
 
@@ -809,20 +814,20 @@
       </div>
       <div class="stay__grid">
         <article class="stay__card reveal">
-          <img src="img/fitzroy-waterfall.jpg" alt="Фицрой над Эль-Чальтеном — эстансия La Quinta">
-          <div class="pad"><h3>La Quinta</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Эль-Чальтен · эстансия</p></div>
+          <img src="img/estancia-la-quinta.jpg" alt="Эстансия La Quinta у подножия Фицроя в Эль-Чальтене">
+          <div class="pad"><h3>La Quinta</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Эль-Чальтен · эстансия у подножия Фицроя</p></div>
         </article>
         <article class="stay__card reveal">
-          <img src="img/torres-del-paine.jpg" alt="Эстансия El Ovejero Patagónico">
-          <div class="pad"><h3>El Ovejero Patagónico</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Торрес-дель-Пайне, Чили · эстансия</p></div>
+          <img src="img/hotel-weskar-lodge.jpg" alt="Weskar Lodge на берегу фьорда в Пуэрто-Наталес">
+          <div class="pad"><h3>Weskar Lodge 4*</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Пуэрто-Наталес, Чили · лодж на берегу фьорда</p></div>
         </article>
         <article class="stay__card reveal">
-          <img src="img/perito-moreno.jpg" alt="Отель Terraza Coirones">
-          <div class="pad"><h3>Terraza Coirones 3*</h3><p class="stay__nights">2 ночи</p><p class="stay__place">Эль-Калафате · отель</p></div>
+          <img src="img/hotel-terraza-coirones.jpg" alt="Отель Terraza Coirones с видом на озеро Архентино">
+          <div class="pad"><h3>Terraza Coirones 3*</h3><p class="stay__nights">2 ночи</p><p class="stay__place">Эль-Калафате · вид на озеро Архентино</p></div>
         </article>
         <article class="stay__card reveal">
-          <img src="img/ushuaia-fin-del-mundo.jpg" alt="Отель Lennox Ushuaia">
-          <div class="pad"><h3>Lennox Ushuaia 4*</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Ушуая · отель</p></div>
+          <img src="img/hotel-las-hayas.jpg" alt="Las Hayas Ushuaia Resort над каналом Бигль">
+          <div class="pad"><h3>Las Hayas Ushuaia Resort 5*</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Ушуая · горный резорт над каналом Бигль</p></div>
         </article>
       </div>
     </div>
@@ -905,7 +910,7 @@
           <img class="org__avatar" src="img/leonid-kutuzov.jpg" alt="Леонид Кутузов">
           <div>
             <h3>Леонид Кутузов</h3>
-            <p>Нейрофизиолог по образованию и автор экспедиционных путешествий. Водит небольшие группы по непростым направлениям — от Японии до края Южной Америки.</p>
+            <p>Нейрофизиолог, преподаватель йоги и медитации, президент Федерации йоги Санкт-Петербурга; автор путешествий. Водит небольшие группы по непростым направлениям — от Японии до края Южной Америки.</p>
           </div>
         </div>
         <div class="org__card reveal">
