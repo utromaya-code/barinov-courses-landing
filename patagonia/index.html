@@ -10,7 +10,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Патагония. Край земли — авторское путешествие">
   <meta property="og:description" content="12 дней на краю земли: Фицрой, Торрес-дель-Пайне, ледник Перито-Морено, Ушуая. Треккинги, ледники, авторское сопровождение с Леонидом Кутузовым. Январь 2027.">
-  <meta property="og:image" content="img/hero-fitzroy-sunrise.jpg">
+  <meta property="og:image" content="https://patagonya.ru/img/hero-fitzroy-sunrise.jpg">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
 
@@ -33,7 +33,7 @@
       "name": "Патагония (Аргентина и Чили)",
       "address": "Аргентина, Чили"
     },
-    "image": "img/hero-fitzroy-sunrise.jpg",
+    "image": "https://patagonya.ru/img/hero-fitzroy-sunrise.jpg",
     "offers": {
       "@type": "Offer",
       "price": "4500",
@@ -328,11 +328,12 @@
       border-radius:14px; padding:34px;
       box-shadow:0 16px 40px rgba(43,51,58,.2);
     }
-    .price__big{ font-family:var(--font-head); font-size:clamp(2.6rem,7vw,3.6rem); font-weight:700; color:#fff; }
+    .price__big{ font-family:var(--font-head); font-size:clamp(2.6rem,7vw,3.6rem); font-weight:700; color:#fff; white-space:nowrap; }
     .price__per{ opacity:.85; font-size:1rem; }
     .price__rows{ margin:24px 0 28px; display:grid; gap:14px; border-top:1px solid rgba(255,255,255,.16); padding-top:22px; }
     .price__row{ display:flex; justify-content:space-between; gap:16px; font-size:.98rem; }
-    .price__row b{ color:var(--steppe); font-family:var(--font-head); font-weight:600; }
+    .price__row span{ min-width:0; }
+    .price__row b{ color:var(--steppe); font-family:var(--font-head); font-weight:600; white-space:nowrap; flex-shrink:0; }
     .price__card .btn{ width:100%; justify-content:center; }
     .incl{ display:grid; gap:20px; }
     .incl__block{ background:#fff; border:1px solid #e6e0d4; border-radius:12px; padding:24px; }
@@ -657,7 +658,7 @@
         <div class="stats__sep"></div>
         <div class="stats__item"><span class="stats__num">3</span><span class="stats__label">ледника</span></div>
         <div class="stats__sep"></div>
-        <div class="stats__item"><span class="stats__num">№1</span><span class="stats__label">южный город планеты</span></div>
+        <div class="stats__item"><span class="stats__num">Ушуая</span><span class="stats__label">самый южный город планеты</span></div>
         <div class="stats__sep"></div>
         <div class="stats__item"><span class="stats__num">12</span><span class="stats__label">дней</span></div>
       </div>
@@ -768,7 +769,7 @@
             <span class="loc__toggle" aria-hidden="true">+</span>
           </summary>
           <div class="loc__body">
-            <p class="loc__intro">Приземление в Эзейзе (EZE) вечером. Ночь в городе / зале ожидания перед утренним перелётом на юг.</p>
+            <p class="loc__intro">Приземление в Эзейзе (EZE) вечером. Короткая ночь перед утренним перелётом на юг.</p>
           </div>
         </details>
 
@@ -806,7 +807,7 @@
               <li><strong>Хайк к подножию Las Torres</strong> (18–22 км, ~900 м набора) — к трём вертикальным башням над бирюзовым озером.</li>
               <li><strong>Паром + треккинг к Mirador Británico и леднику Грей</strong> — голубые айсберги в озере и панорама долины.</li>
             </ul>
-            <span class="loc__stay">Weskar Lodge 4* на берегу фьорда в Пуэрто-Наталес</span>
+            <span class="loc__stay">Weskar Lodge на берегу фьорда в Пуэрто-Наталес</span>
           </div>
         </details>
 
@@ -823,7 +824,7 @@
             <ul class="loc__list">
               <li><strong>Экскурсия и навигация к Перито-Морено</strong> — 70 метров льда, обрывающихся в озеро. Время от времени с грохотом, как выстрел, в воду падают глыбы размером с дом. Лодка подведёт нас к синей стене вплотную.</li>
             </ul>
-            <span class="loc__stay">Отель Terraza Coirones 3* с видом на озеро Архентино</span>
+            <span class="loc__stay">Отель Terraza Coirones с видом на озеро Архентино</span>
           </div>
         </details>
 
@@ -844,7 +845,7 @@
               <li><strong>Ужин с патагонским королевским крабом</strong> (king crab), которого ловят прямо в проливе.</li>
             </ul>
             <img class="loc__img" src="img/king-crab-dinner.jpg" alt="Патагонский королевский краб — подача в ресторане Ушуаи">
-            <span class="loc__stay">Las Hayas Ushuaia Resort 5* · 15 января — перелёт обратно в Буэнос-Айрес</span>
+            <span class="loc__stay">Las Hayas Ushuaia Resort · 15 января — перелёт обратно в Буэнос-Айрес</span>
           </div>
         </details>
 
@@ -991,15 +992,15 @@
         </article>
         <article class="stay__card reveal">
           <img src="img/hotel-weskar-lodge.jpg" alt="Weskar Lodge на берегу фьорда в Пуэрто-Наталес">
-          <div class="pad"><h3>Weskar Lodge 4*</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Пуэрто-Наталес, Чили · лодж на берегу фьорда</p></div>
+          <div class="pad"><h3>Weskar Lodge</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Пуэрто-Наталес, Чили · лодж на берегу фьорда</p></div>
         </article>
         <article class="stay__card reveal">
           <img src="img/hotel-terraza-coirones.jpg" alt="Отель Terraza Coirones с видом на озеро Архентино">
-          <div class="pad"><h3>Terraza Coirones 3*</h3><p class="stay__nights">2 ночи</p><p class="stay__place">Эль-Калафате · вид на озеро Архентино</p></div>
+          <div class="pad"><h3>Terraza Coirones</h3><p class="stay__nights">2 ночи</p><p class="stay__place">Эль-Калафате · вид на озеро Архентино</p></div>
         </article>
         <article class="stay__card reveal">
           <img src="img/hotel-las-hayas.jpg" alt="Las Hayas Ushuaia Resort над каналом Бигль">
-          <div class="pad"><h3>Las Hayas Ushuaia Resort 5*</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Ушуая · горный резорт над каналом Бигль</p></div>
+          <div class="pad"><h3>Las Hayas Ushuaia Resort</h3><p class="stay__nights">3 ночи</p><p class="stay__place">Ушуая · горный резорт над каналом Бигль</p></div>
         </article>
       </div>
     </div>
@@ -1036,11 +1037,11 @@
       </div>
       <div class="price__wrap">
         <div class="price__card reveal">
-          <div class="price__big">€4 500</div>
+          <div class="price__big">€4&nbsp;500</div>
           <div class="price__per">с человека · при двухместном размещении</div>
           <div class="price__rows">
-            <div class="price__row"><span>Доплата за одноместное размещение</span><b>+€1 000</b></div>
-            <div class="price__row"><span>Предоплата для брони</span><b>€2 000</b></div>
+            <div class="price__row"><span>Доплата за одноместное размещение</span><b>+€1&nbsp;000</b></div>
+            <div class="price__row"><span>Предоплата для брони</span><b>€2&nbsp;000</b></div>
             <div class="price__row"><span>Остаток</span><b>за месяц до старта</b></div>
           </div>
           <a class="btn btn-primary" href="https://t.me/vsemaya" target="_blank" rel="noopener" data-tg>Забронировать место</a>
