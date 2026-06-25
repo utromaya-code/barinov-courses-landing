@@ -16,6 +16,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/jpeg" href="assets/brand/karp-mark-red.jpg">
   <link rel="apple-touch-icon" href="assets/brand/karp-mark-red.jpg">
+  <script>(function(){if(window.matchMedia("(prefers-color-scheme:dark)").matches){document.documentElement.setAttribute("data-theme","dark");var m=document.querySelector("meta[name='theme-color']");if(m)m.content="#1A1714";}})()</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800;900&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -58,6 +59,7 @@
       line-height: 1.6;
       color: var(--ink);
       background: var(--paper);
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     body.nav-open { overflow: hidden; }
@@ -216,6 +218,7 @@
       background: var(--paper);
       isolation: isolate;
       border-bottom: 1px solid var(--line);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
     .site-header.is-scrolled { box-shadow: 0 6px 20px rgba(42, 37, 34, 0.05); }
 
@@ -265,6 +268,21 @@
       padding: 0;
     }
     .nav-toggle span { display: block; width: 18px; height: 2px; margin: 4px auto; background: var(--ink); }
+
+    /* =================== ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ =================== */
+    .theme-toggle {
+      background: none; border: none; cursor: pointer;
+      font-family: var(--font-mono); font-size: 0.7rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--charcoal); padding: 0.35rem 0.2rem;
+      display: inline-flex; align-items: center; gap: 0.1rem;
+      min-height: 44px; line-height: 1; white-space: nowrap;
+    }
+    .theme-toggle:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 3px; }
+    .theme-label-light, .theme-label-dark { transition: color 0.2s ease; }
+    .theme-sep { opacity: 0.4; }
+    :root:not([data-theme="dark"]) .theme-label-light { color: var(--cinnabar); }
+    :root[data-theme="dark"] .theme-label-dark { color: var(--cinnabar); }
 
     /* =================== HERO =================== */
     .hero { position: relative; overflow: hidden; padding: clamp(2rem, 5vw, 4rem) 0 clamp(3rem, 6vw, 5rem); }
@@ -858,9 +876,10 @@
       .sec-aside { grid-column: 1 / -1; align-self: start; }
       .hero-visual { order: -1; }
       .hero-visual .photo-frame { aspect-ratio: 16 / 10; max-width: 560px; }
+      .hero-visual .photo-frame img { object-position: center 15%; }
       .author-figure, .faq-grid .sec-head { position: static; }
       .pillars li { grid-template-columns: minmax(3rem, 4rem) 1fr; }
-      .pillars li > div:last-child { grid-column: 2; }
+      .pillars li > p { grid-column: 2; }
       .reviews-grid { grid-template-columns: 1fr; }
       .tiers { grid-template-columns: 1fr; }
       .tier { border-right: 0; border-bottom: 1px solid var(--line); }
@@ -900,6 +919,38 @@
       html { scroll-behavior: auto; }
       [data-reveal] { opacity: 1; transform: none; }
     }
+
+    /* =================== ТЁМНАЯ ТЕМА =================== */
+    :root[data-theme="dark"] {
+      --paper:       #1A1714;
+      --paper-2:     #232019;
+      --ink:         #EDE6D8;
+      --cinnabar:    #D85A4A;
+      --ember:       #E08572;
+      --charcoal:    #B5ADA0;
+      --line:        rgba(237, 230, 216, 0.20);
+      --line-strong: rgba(237, 230, 216, 0.32);
+      --mute:        #8A8175;
+    }
+
+    :root[data-theme="dark"] body::after { opacity: 0.02; }
+    :root[data-theme="dark"] .site-header.is-scrolled { box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+    :root[data-theme="dark"] .mobile-sticky { transition: background-color 0.3s ease; }
+
+    /* Карпы: на тёмном фоне multiply → screen (белый фон светится, цвета мягко накладываются) */
+    :root[data-theme="dark"] .karp-mark { mix-blend-mode: screen; }
+    :root[data-theme="dark"] .hero-watermark { mix-blend-mode: screen; opacity: 0.18; }
+
+    /* Тёмные блоки: используем --paper-2 вместо charcoal */
+    :root[data-theme="dark"] .section--ink,
+    :root[data-theme="dark"] .author-mission,
+    :root[data-theme="dark"] .video-placeholder { background: var(--paper-2); }
+
+    /* Quote cite цвет */
+    :root[data-theme="dark"] .quote-band cite { color: var(--charcoal); opacity: 1; }
+
+    /* Featured tier */
+    :root[data-theme="dark"] .tier--featured { background: rgba(216, 90, 74, 0.10); }
   </style>
 </head>
 <body>
@@ -908,9 +959,12 @@
   <header class="site-header" id="header">
     <div class="container header-inner">
       <a class="brand" href="#hero" aria-label="Точка опоры — на главную">
-        <img class="brand-seal karp-mark" src="assets/brand/karp-mark-red.jpg" alt="" width="30" height="30" decoding="async">
         <span class="brand-name">Точка опоры</span>
       </a>
+
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тему">
+        <span class="theme-label-light">Light</span><span class="theme-sep" aria-hidden="true">&thinsp;/&thinsp;</span><span class="theme-label-dark">Dark</span>
+      </button>
 
       <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
         <span></span><span></span>
@@ -1199,35 +1253,13 @@
               <div class="program-panel-inner">
                 <ul class="program-bullets">
                   <li>Итоговый выездной ретрит, который соединяет все темы вместе</li>
-                  <li>Подробнее — в разделе «Тишина как финал» ниже</li>
+                  <li>Живая практика на природе — тело, дыхание, тишина</li>
+                  <li>Три–пять дней. Поездка по желанию, основная часть курса полноценна без неё</li>
                 </ul>
               </div>
             </div>
           </li>
         </ul>
-      </div>
-    </section>
-
-    <div class="karp-divider" aria-hidden="true" data-reveal>
-      <img class="karp-mark" src="assets/brand/karp-mark-red-grey.jpg" alt="" width="110" height="110" loading="lazy" decoding="async">
-    </div>
-
-    <section class="section" id="retreat">
-      <div class="container">
-        <div class="split-grid">
-          <div data-reveal>
-            <p class="label">(Ретрит)</p>
-            <h2 style="margin-top:1rem;font-size:clamp(1.9rem,1.2rem+3vw,3.5rem)">Тишина как финал</h2>
-            <p class="aside-note" style="margin-top:1.25rem">Три–пять дней живой практики на природе. Только тело, дыхание, тишина.</p>
-            <p class="aside-note" style="margin-top:1rem">Поездка — по желанию, основная часть курса полноценна и без неё.</p>
-          </div>
-          <figure data-reveal>
-            <!-- TODO: фото с летнего йога-фестиваля, с практики; НЕ цигун -->
-            <div class="photo-frame photo-frame--wide">
-              <img src="assets/images/tochka-opory/practice-2.jpg" alt="Летняя практика йоги на природе" width="1400" height="933" loading="lazy" decoding="async">
-            </div>
-          </figure>
-        </div>
       </div>
     </section>
 
@@ -1590,6 +1622,13 @@
         }, { threshold: 0.6 });
         counters.forEach(function (el) { io.observe(el); });
       }
+
+      // Синхронизация meta theme-color при смене темы
+      new MutationObserver(function() {
+        var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        var meta = document.querySelector("meta[name='theme-color']");
+        if (meta) meta.content = isDark ? "#1A1714" : "#F4F1EA";
+      }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
       // Sticky CTA: появляется после hero, прячется на секции формы
       var sticky = document.getElementById("mobile-sticky");
