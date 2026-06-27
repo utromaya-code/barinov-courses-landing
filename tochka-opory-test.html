@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Точка опоры — курс Ильи Баринова по йоге</title>
   <meta name="description" content="Авторский курс «Точка опоры»: 3 месяца, 30 онлайн-занятий, финальный ретрит. Знания и навыки, позволяющие безопасно и глубоко погрузиться в практику йоги.">
-  <meta name="theme-color" content="#F4F1EA">
+  <meta name="theme-color" content="#F9F8F6">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:title" content="Точка опоры — курс Ильи Баринова">
@@ -19,7 +19,7 @@
   <script>(function(){if(window.matchMedia("(prefers-color-scheme:dark)").matches){document.documentElement.setAttribute("data-theme","dark");var m=document.querySelector("meta[name='theme-color']");if(m)m.content="#1A1714";}})()</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800;900&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/images/tochka-opory/editorial/ilya-portrait-tang.webp" imagesrcset="assets/images/tochka-opory/editorial/ilya-portrait-tang-768.webp 768w, assets/images/tochka-opory/editorial/ilya-portrait-tang.webp 1129w" imagesizes="(max-width: 1024px) 92vw, 45vw">
   <style>
     /* =====================================================
@@ -28,18 +28,19 @@
        ===================================================== */
 
     :root {
-      --paper:    #F4F1EA;
-      --ink:      #2A2522;
-      --cinnabar: #A23A33; /* тёмно-красный карп — главный акцент, CTA, номера */
-      --ember:    #C56B5C; /* светлая часть набрызга — hover */
-      --charcoal: #5A5550; /* серый карп — второй акцент, лейблы, ink-блоки */
-      --mute:     #8A8175; /* микро-лейблы, декор */
-      --line:     rgba(42, 37, 34, 0.16);
-      --line-strong: rgba(42, 37, 34, 0.32);
+      --paper:    #F9F8F6; /* тёплый молочный фон */
+      --bg-accent:#EFECE6; /* светлый песочный — акцентные секции */
+      --ink:      #2C2B29; /* глубокий графит, мягче чёрного */
+      --cinnabar: #9B6A53; /* терракота/глина — CTA, маркеры, акцент */
+      --ember:    #855845; /* терракота темнее — hover */
+      --charcoal: #3B443D; /* тёмный шалфей — блок цитаты + второй текст */
+      --mute:     #8C8A82; /* микро-лейблы, декор */
+      --line:     rgba(44, 43, 41, 0.14);
+      --line-strong: rgba(44, 43, 41, 0.28);
 
-      --font-head: "Inter Tight", system-ui, sans-serif;
+      --font-head: "Playfair Display", Georgia, serif;
       --font-body: "Inter", system-ui, -apple-system, sans-serif;
-      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+      --font-mono: "Inter", system-ui, sans-serif;
 
       --container: 1280px;
       --header-h: 60px;
@@ -1038,6 +1039,131 @@
       .facts li:nth-last-child(-n+2) { border-bottom: 0; }
       .audience-cols { gap: 1.25rem; }
     }
+
+    /* =====================================================
+       VISUAL LAYER (v-test-2): earthy премиум — Playfair + Inter,
+       арки, карточки, природная палитра
+       ===================================================== */
+
+    :root { --card: #FFFFFF; }
+    :root[data-theme="dark"] { --card: #232019; --cinnabar: #C2876A; --ember: #D6A081; }
+
+    /* Заголовки — сериф Playfair, без капса */
+    h1, h2 { text-transform: none; letter-spacing: -0.01em; }
+    .facts .v, .format-list dd, .apply-summary dd { text-transform: none; }
+    .hero h1 { letter-spacing: -0.01em; line-height: 0.96; }
+
+    /* Кнопки — мягкие, с подъёмом на hover */
+    .btn {
+      border-radius: 999px; font-family: var(--font-body); letter-spacing: 0.04em;
+      transition: transform .3s ease, background .3s ease, box-shadow .3s ease, color .3s ease, border-color .3s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(44, 43, 41, 0.16); }
+    .btn-ghost:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(44, 43, 41, 0.08); }
+
+    /* Скругление фото; галерея — крупнее радиус, отступ для «выглядывания» */
+    .photo-frame { border-radius: 14px; }
+    .asana-strip .photo-frame { border-radius: 16px; }
+    .asana-strip { scroll-padding-left: clamp(1rem, 5vw, 2rem); }
+
+    /* Hero — фото в арке (без обрезки лица) */
+    .hero-visual .photo-frame { border-radius: 999px 999px 16px 16px; aspect-ratio: 0.72; }
+    .hero-visual .photo-frame img { object-position: center 18%; }
+    @media (max-width: 1024px) { .hero-visual .photo-frame { aspect-ratio: 0.72; max-width: 420px; margin-inline: auto; } }
+    @media (max-width: 768px) { .hero-visual .photo-frame { max-width: 300px; } }
+
+    /* Факты — карточки с матовым стеклом */
+    .facts { border-top: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; margin-top: clamp(1.5rem, 3vw, 2.25rem); }
+    .facts li {
+      display: block; border: 1px solid var(--line); border-radius: 14px;
+      padding: 1rem 1.15rem; background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 6px 20px rgba(44, 43, 41, 0.05);
+    }
+    .facts li .dot { display: none; }
+    .facts .k { display: block; margin-bottom: 0.35rem; }
+    .facts .v { display: block; font-family: var(--font-head); font-size: 1.2rem; }
+    :root[data-theme="dark"] .facts li { background: rgba(35, 32, 25, 0.55); }
+    @media (max-width: 768px) { .facts { grid-template-columns: 1fr 1fr; } .facts li:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); } }
+
+    /* Цитата — тёмный шалфей, сериф-курсив, молочный текст (цвет наследуется от .section--ink) */
+    .quote-band blockquote {
+      font-family: var(--font-head); font-style: italic; font-weight: 500;
+      text-transform: none; letter-spacing: 0;
+      font-size: clamp(1.8rem, 1rem + 3.6vw, 3.4rem); line-height: 1.16; max-width: 22ch;
+    }
+    .quote-band blockquote::before { font-family: var(--font-head); font-style: italic; }
+
+    /* Карточки аудитории — на белом, мягкие углы */
+    .audience-cols > div {
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(44, 43, 41, 0.05);
+    }
+    :root[data-theme="dark"] .audience-cols > div { background: var(--paper-2); box-shadow: none; }
+
+    /* Списки — галочки в кружках терракоты */
+    .list-dotted, .results-grid { border-top: 0; }
+    .list-dotted li, .results-grid li { grid-template-columns: 1.6rem 1fr; gap: 0.85rem; align-items: start; }
+    .list-dotted li::before, .results-grid li::before {
+      content: "\2713"; display: inline-grid; place-items: center;
+      width: 1.5rem; height: 1.5rem; border-radius: 50%;
+      background: var(--cinnabar); color: #fff;
+      font-size: 0.78rem; font-weight: 700; line-height: 1; margin-top: 0.1rem;
+    }
+
+    /* Три опоры — 3 колонки, крупная полупрозрачная сериф-цифра */
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.25rem, 3vw, 2rem); border-top: 0; counter-reset: p; }
+    .pillars li {
+      counter-increment: p; position: relative; display: block; min-width: 0;
+      border: 1px solid var(--line); border-radius: 16px; background: var(--card);
+      padding: clamp(1.6rem, 3vw, 2.5rem); overflow: hidden;
+      box-shadow: 0 6px 24px rgba(44, 43, 41, 0.04);
+    }
+    .pillars li::before {
+      content: counter(p); position: absolute; top: -0.18em; right: 0.08em; z-index: 0;
+      font-family: var(--font-head); font-weight: 800;
+      font-size: clamp(5rem, 4rem + 6vw, 9rem); line-height: 1;
+      color: var(--cinnabar); opacity: 0.10;
+    }
+    .pillars li > div, .pillars li > p { position: relative; z-index: 1; }
+    .pillars li > div { margin-bottom: 0.85rem; }
+    .pillars h3 { font-size: clamp(1.4rem, 1rem + 1vw, 1.9rem); }
+    .pillars p { color: var(--charcoal); }
+    :root[data-theme="dark"] .pillars li { background: var(--paper-2); box-shadow: none; }
+    @media (max-width: 900px) { .pillars { grid-template-columns: 1fr; } }
+
+    /* Программа — нативный аккордеон details: тонкие линии + плюс/минус */
+    .program-list { border-top: 1px solid var(--line); }
+    .program-item { border-bottom: 1px solid var(--line); }
+    .program-item summary {
+      list-style: none; cursor: pointer; display: grid;
+      grid-template-columns: 3rem 1fr 1.5rem; gap: 1.25rem; align-items: center;
+      padding: clamp(1.1rem, 2vw, 1.6rem) 0; min-height: 44px;
+    }
+    .program-item summary::-webkit-details-marker { display: none; }
+    .program-week { font-family: var(--font-body); font-size: 0.85rem; letter-spacing: 0.04em; color: var(--cinnabar); }
+    .program-title { font-family: var(--font-head); font-size: clamp(1.15rem, 1rem + 0.8vw, 1.6rem); line-height: 1.2; }
+    .program-title strong {
+      display: block; font-family: var(--font-body); font-weight: 500;
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--mute); margin-bottom: 0.35rem;
+    }
+    .program-plus { position: relative; width: 16px; height: 16px; justify-self: end; }
+    .program-plus::before, .program-plus::after {
+      content: ""; position: absolute; background: var(--cinnabar);
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    .program-plus::before { top: 7px; left: 0; width: 16px; height: 2px; }
+    .program-plus::after { left: 7px; top: 0; width: 2px; height: 16px; }
+    .program-item[open] .program-plus::after { transform: rotate(90deg); opacity: 0; }
+    .program-panel-inner { padding: 0 0 1.75rem calc(3rem + 1.25rem); max-width: 64ch; }
+    @media (max-width: 768px) {
+      .program-item summary { grid-template-columns: 2.5rem 1fr 1.25rem; gap: 0.85rem; }
+      .program-panel-inner { padding-left: 0; }
+    }
+
+    /* Чуть больше воздуха */
+    .section { padding: clamp(4.5rem, 10vw, 9rem) 0; }
   </style>
 </head>
 <body>
@@ -1250,107 +1376,95 @@
           <p class="sec-aside">Формат воркшопа — темы ведутся параллельно и раскрываются по мере задач группы.</p>
         </div>
         <p class="program-intro" data-reveal>Пять основных тем переплетены в обучении и раскрываются по мере задач группы. Шестая — итоговый ретрит, который собирает всё вместе.</p>
-        <ul class="program-list">
-          <li class="program-item" data-reveal>
-            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="mod-1">
+        <div class="program-list">
+          <details class="program-item" data-reveal>
+            <summary>
               <span class="program-week">01</span>
-              <span><h3><strong>Тема 1</strong>Теория йоги без лишней эзотерики</h3></span>
-              <span class="program-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="program-panel" id="mod-1" role="region" hidden>
-              <div class="program-panel-inner">
-                <ul class="program-bullets">
-                  <li>Цели и задачи йоги</li>
-                  <li>Система Патанджали как пошаговая инструкция к практике</li>
-                  <li>Как практика влияет на тело, ум, внимание, нервную систему и т.д.</li>
-                </ul>
-              </div>
+              <span class="program-title"><strong>Тема 1</strong>Теория йоги без лишней эзотерики</span>
+              <span class="program-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="program-panel-inner">
+              <ul class="program-bullets">
+                <li>Цели и задачи йоги</li>
+                <li>Система Патанджали как пошаговая инструкция к практике</li>
+                <li>Как практика влияет на тело, ум, внимание, нервную систему и т.д.</li>
+              </ul>
             </div>
-          </li>
-          <li class="program-item" data-reveal>
-            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="mod-2">
+          </details>
+          <details class="program-item" data-reveal>
+            <summary>
               <span class="program-week">02</span>
-              <span><h3><strong>Тема 2</strong>Безопасность в практике</h3></span>
-              <span class="program-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="program-panel" id="mod-2" role="region" hidden>
-              <div class="program-panel-inner">
-                <ul class="program-bullets">
-                  <li>Техника безопасности в асанах и пранаяме</li>
-                  <li>Как учитывать ограничения тела</li>
-                  <li>Типичные ошибки начинающих</li>
-                </ul>
-              </div>
+              <span class="program-title"><strong>Тема 2</strong>Безопасность в практике</span>
+              <span class="program-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="program-panel-inner">
+              <ul class="program-bullets">
+                <li>Техника безопасности в асанах и пранаяме</li>
+                <li>Как учитывать ограничения тела</li>
+                <li>Типичные ошибки начинающих</li>
+              </ul>
             </div>
-          </li>
-          <li class="program-item" data-reveal>
-            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="mod-3">
+          </details>
+          <details class="program-item" data-reveal>
+            <summary>
               <span class="program-week">03</span>
-              <span><h3><strong>Тема 3</strong>Базовые асаны</h3></span>
-              <span class="program-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="program-panel" id="mod-3" role="region" hidden>
-              <div class="program-panel-inner">
-                <ul class="program-bullets">
-                  <li>Ось, опора, амплитуда</li>
-                  <li>Верное понимание индивидуального выполнения асан</li>
-                  <li>Принцип построения индивидуальной практики</li>
-                  <li>Направление внимания в асане</li>
-                  <li>Умение слушать, слышать и понимать сигналы тела</li>
-                </ul>
-              </div>
+              <span class="program-title"><strong>Тема 3</strong>Базовые асаны</span>
+              <span class="program-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="program-panel-inner">
+              <ul class="program-bullets">
+                <li>Ось, опора, амплитуда</li>
+                <li>Верное понимание индивидуального выполнения асан</li>
+                <li>Принцип построения индивидуальной практики</li>
+                <li>Направление внимания в асане</li>
+                <li>Умение слушать, слышать и понимать сигналы тела</li>
+              </ul>
             </div>
-          </li>
-          <li class="program-item" data-reveal>
-            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="mod-4">
+          </details>
+          <details class="program-item" data-reveal>
+            <summary>
               <span class="program-week">04</span>
-              <span><h3><strong>Тема 4</strong>Дыхательные техники</h3></span>
-              <span class="program-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="program-panel" id="mod-4" role="region" hidden>
-              <div class="program-panel-inner">
-                <ul class="program-bullets">
-                  <li>Техника выполнения и безопасности базовых дыхательных упражнений йоги (пранавьямы) и брюшных манипуляций</li>
-                  <li>Дыхание в асанах</li>
-                  <li>Дыхание как система саморегуляции</li>
-                </ul>
-              </div>
+              <span class="program-title"><strong>Тема 4</strong>Дыхательные техники</span>
+              <span class="program-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="program-panel-inner">
+              <ul class="program-bullets">
+                <li>Техника выполнения и безопасности базовых дыхательных упражнений йоги (пранавьямы) и брюшных манипуляций</li>
+                <li>Дыхание в асанах</li>
+                <li>Дыхание как система саморегуляции</li>
+              </ul>
             </div>
-          </li>
-          <li class="program-item" data-reveal>
-            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="mod-5">
+          </details>
+          <details class="program-item" data-reveal>
+            <summary>
               <span class="program-week">05</span>
-              <span><h3><strong>Тема 5</strong>Основы медитации</h3></span>
-              <span class="program-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="program-panel" id="mod-5" role="region" hidden>
-              <div class="program-panel-inner">
-                <ul class="program-bullets">
-                  <li>Работа с вниманием: куда и зачем его направлять</li>
-                  <li>Техники концентрации как способ снизить напряжение</li>
-                  <li>Как встроить медитацию в жизнь</li>
-                  <li>Различные типы медитаций</li>
-                  <li>Как избежать ощущения, что «у тебя не получается»</li>
-                </ul>
-              </div>
+              <span class="program-title"><strong>Тема 5</strong>Основы медитации</span>
+              <span class="program-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="program-panel-inner">
+              <ul class="program-bullets">
+                <li>Работа с вниманием: куда и зачем его направлять</li>
+                <li>Техники концентрации как способ снизить напряжение</li>
+                <li>Как встроить медитацию в жизнь</li>
+                <li>Различные типы медитаций</li>
+                <li>Как избежать ощущения, что «у тебя не получается»</li>
+              </ul>
             </div>
-          </li>
-          <li class="program-item" data-reveal>
-            <button class="program-trigger" type="button" aria-expanded="false" aria-controls="mod-6">
+          </details>
+          <details class="program-item" data-reveal>
+            <summary>
               <span class="program-week">06</span>
-              <span><h3><strong>Тема 6</strong>Ретрит</h3></span>
-              <span class="program-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="program-panel" id="mod-6" role="region" hidden>
-              <div class="program-panel-inner">
-                <ul class="program-bullets">
-                  <li>Итоговый выездной ретрит, который соединяет все темы вместе</li>
-                </ul>
-                <p style="margin-top:1rem;color:var(--charcoal)">Ретрит — финальный аккорд в структуре курса. Поле преподавателя — это всегда мощное вовлечение в глубину практики. Возможность живьём пройти по всему материалу и сделать финальные отстройки — как идеальная настройка музыкального инструмента, звучащего в унисон со Вселенной. Приобретённые навык и опыт станут помощниками в дальнейшей самостоятельной практике.</p>
-              </div>
+              <span class="program-title"><strong>Тема 6</strong>Ретрит</span>
+              <span class="program-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="program-panel-inner">
+              <ul class="program-bullets">
+                <li>Итоговый выездной ретрит, который соединяет все темы вместе</li>
+              </ul>
+              <p style="margin-top:1rem;color:var(--charcoal)">Ретрит — финальный аккорд в структуре курса. Поле преподавателя — это всегда мощное вовлечение в глубину практики. Возможность живьём пройти по всему материалу и сделать финальные отстройки — как идеальная настройка музыкального инструмента, звучащего в унисон со Вселенной. Приобретённые навык и опыт станут помощниками в дальнейшей самостоятельной практике.</p>
             </div>
-          </li>
-        </ul>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -1727,7 +1841,7 @@
       new MutationObserver(function() {
         var isDark = document.documentElement.getAttribute("data-theme") === "dark";
         var meta = document.querySelector("meta[name='theme-color']");
-        if (meta) meta.content = isDark ? "#1A1714" : "#F4F1EA";
+        if (meta) meta.content = isDark ? "#1A1714" : "#F9F8F6";
       }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
       // Галерея асан: стрелки (десктоп) + прогресс-бар (мобильный)
