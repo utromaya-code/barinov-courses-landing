@@ -213,9 +213,10 @@
     .gallery-arrow:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
     .gallery-arrow--prev { left: -8px; }
     .gallery-arrow--next { right: -8px; }
-    .gallery-progress { height: 2px; background: var(--line); margin-top: 1.25rem; }
-    .gallery-progress span { display: block; height: 100%; width: 20%; background: var(--accent); transition: margin-left 0.12s linear, width 0.2s ease; }
-    @media (min-width: 769px) { .gallery-progress { display: none; } }
+    .gallery-dots { display: none; }
+    .gallery-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--line-strong); transition: background 0.25s ease, transform 0.25s ease; }
+    .gallery-dots span.is-active { background: var(--accent); transform: scale(1.3); }
+    @media (max-width: 768px) { .gallery-dots { display: flex; justify-content: center; gap: 0.55rem; margin-top: 1.1rem; } }
     @media (max-width: 768px) { .gallery-arrow { display: none; } }
 
     /* программа — details */
@@ -384,9 +385,12 @@
       .pillars li { border-left: 0; border-top: 1px solid var(--line); }
       .pillars li:first-child { border-top: 0; }
       .reviews-grid { grid-template-columns: 1fr; }
-      .tiers { grid-template-columns: 1fr; }
-      .tier { border-right: 0; border-bottom: 1px solid var(--line); }
-      .tier:last-child { border-bottom: 0; }
+      .trust-strip { grid-template-columns: 1fr 1fr; }
+      .trust-item:nth-child(odd) { border-left: 0; }
+      .trust-item:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .tiers { display: flex; overflow: visible; overflow-x: auto; scroll-snap-type: x mandatory; border: 0; border-radius: 0; gap: 0.9rem; scrollbar-width: none; padding-bottom: 0.5rem; -webkit-overflow-scrolling: touch; }
+      .tiers::-webkit-scrollbar { display: none; }
+      .tier { flex: 0 0 min(84%, 330px); scroll-snap-align: center; border: 1px solid var(--line); border-radius: 8px; }
     }
     @media (max-width: 768px) {
       .site-nav { position: fixed; top: var(--header-h); left: 0; right: 0; height: calc(100dvh - var(--header-h)); flex-direction: column; align-items: stretch; padding: 2rem clamp(1rem, 5vw, 2rem); background: var(--bg); border-top: 1px solid var(--line); transform: translateX(100%); transition: transform 0.35s ease; z-index: 99; }
@@ -409,6 +413,49 @@
       [data-reveal] { opacity: 1; transform: none; }
       .kb img { animation: none !important; transform: none !important; }
     }
+    /* бейдж срочности */
+    .early-badge { display: inline-block; align-self: flex-start; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); border-radius: 2px; padding: 0.45rem 0.8rem; margin: 0; }
+
+    /* короткая полоса доверия под hero */
+    .hero-trust { border-bottom: 1px solid var(--line); background: var(--bg-2); }
+    .hero-trust-inner { display: flex; flex-wrap: wrap; gap: 0.5rem clamp(1.5rem, 4vw, 3rem); padding-block: 0.9rem; }
+    .hero-trust-inner span { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); }
+
+    /* полоса доверия (вместо отзывов) */
+    .trust-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid var(--line); }
+    .trust-item { display: flex; flex-direction: column; gap: 0.6rem; padding: clamp(1.5rem, 2.5vw, 2.25rem) clamp(1rem, 2vw, 1.75rem); border-left: 1px solid var(--line); min-width: 0; }
+    .trust-item:first-child { border-left: 0; }
+    .trust-num { font-family: var(--serif); font-weight: 600; font-size: clamp(1.8rem, 1.2rem + 1.8vw, 2.8rem); line-height: 1; color: var(--accent); }
+    .trust-text { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); line-height: 1.6; }
+
+    /* рассрочка на карточке */
+    .tier-installment { font-size: 0.82rem; color: var(--dim); margin-top: -0.5rem; }
+
+    /* сертификат в Проф */
+    .tier ul li.li-cert { color: var(--text); }
+    .tier ul li.li-cert::before { background: var(--accent); height: 2px; }
+    .li-cert strong { font-weight: 600; }
+    .li-cert-sub { display: block; font-weight: 400; font-size: 0.78rem; color: var(--dim); margin-top: 0.25rem; }
+    .li-cert-link { display: inline-block; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); margin-top: 0.5rem; padding-bottom: 1px; }
+
+    /* мини-блок о Федерации */
+    .cert-card { border: 1px solid var(--line); border-radius: 8px; background: var(--bg-2); padding: clamp(1.75rem, 4vw, 3rem); max-width: 56rem; }
+    .cert-title { font-size: clamp(1.5rem, 1rem + 1.8vw, 2.4rem); margin-top: 1rem; }
+    .cert-text { color: var(--dim); margin-top: 1rem; max-width: 60ch; }
+    .cert-link { margin-top: 1.5rem; }
+
+    /* видео-плейсхолдер с кадром */
+    .video-placeholder { overflow: hidden; }
+    .video-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: var(--scene-filter); }
+    .video-placeholder::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, var(--scrim-strong), transparent 65%); }
+    .video-play, .video-caption { position: relative; z-index: 2; }
+    .video-caption { color: var(--text); }
+
+    /* микро-доверие и оферта */
+    .form-trust { margin-top: 0.9rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; color: var(--dim); }
+    .form-trust a { color: var(--accent); }
+    .payment-note a { color: var(--accent); }
+
     /* переключатель темы */
     .theme-switch { background: none; border: none; cursor: pointer; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); min-height: 44px; padding: 0.35rem 0.4rem; display: inline-flex; align-items: center; gap: 0.3rem; white-space: nowrap; }
     .theme-switch:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -467,6 +514,7 @@
           <a class="btn btn-ghost" href="#program">Посмотреть программу</a>
           <a class="link-cta hero-early" href="#apply">Ранняя цена</a>
         </div>
+        <p class="early-badge" data-reveal>Ранняя цена до 1 августа</p>
       </div>
       <div class="container cine-hero-foot">
         <ul class="cine-facts" aria-label="Ключевые факты курса">
@@ -478,6 +526,14 @@
         <a class="cine-scroll" href="#for-whom" aria-label="Листать вниз"><span></span></a>
       </div>
     </section>
+
+    <div class="hero-trust" data-reveal>
+      <div class="container hero-trust-inner">
+        <span>Практика с 2004 · преподавание с 2008</span>
+        <span>Реабилитолог ФК «Зенит» 2017–2018</span>
+        <span>Ретриты и мастер-классы с 2013</span>
+      </div>
+    </div>
 
     <section class="section video-intro" id="welcome-video" hidden>
       <div class="container video-intro-grid" data-reveal>
@@ -594,7 +650,7 @@
             <figure><div class="photo-frame"><picture><source type="image/webp" srcset="assets/images/tochka-opory/editorial/ilya-practice-side-plank-768.webp 768w, assets/images/tochka-opory/editorial/ilya-practice-side-plank.webp 1600w" sizes="(max-width: 1024px) 92vw, 45vw"><img src="assets/images/tochka-opory/editorial/ilya-practice-side-plank.jpg" alt="Илья Баринов — боковая планка" width="1600" height="1134" loading="lazy" decoding="async"></picture></div></figure>
           </div>
           <button class="gallery-arrow gallery-arrow--next" type="button" aria-label="Следующее фото">›</button>
-          <div class="gallery-progress" aria-hidden="true"><span id="gallery-progress-bar"></span></div>
+          <div class="gallery-dots" id="gallery-dots" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -809,7 +865,9 @@
             <p class="author-mission">Моя задача простая и сложная одновременно. Максимально просто и ясно донести цели и задачи йоги. Объяснить, как в этой системе работает практика асан, дыхательных упражнений и медитаций. Дать знания о безопасном и глубоком воздействии на тело через практику и опыт. Показать, как эти практики могут качественно улучшить жизнь обычного и необычного человека.</p>
 
             <!-- TODO: вставить видео-приветствие (заменить плейсхолдер на iframe/видео) -->
+            <!-- TODO: вставить видео-приветствие (заменить плейсхолдер на iframe/видео) -->
             <div class="video-placeholder" role="img" aria-label="Видео-приветствие Ильи Баринова — скоро">
+              <img class="video-poster" src="assets/images/tochka-opory/editorial/ilya-portrait-seated.jpg" alt="" width="1078" height="1600" loading="lazy" decoding="async">
               <span class="video-play"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></span>
               <span class="video-caption">Видео-приветствие — скоро</span>
             </div>
@@ -832,16 +890,14 @@
         <div class="sec-head" data-reveal>
           <span class="sec-num">09</span>
           <div>
-            <p class="label">(Отзывы)</p>
-            <h2>Отзывы участников</h2>
+            <p class="label">(Доверие)</p>
           </div>
-          <p class="sec-aside">Курс стартует первым потоком — отзывы участников появятся здесь после старта.</p>
         </div>
-        <!-- TODO: вставить реальные скриншоты отзывов -->
-        <div class="reviews-grid" data-reveal>
-          <div class="review-slot">Скриншот отзыва</div>
-          <div class="review-slot">Скриншот отзыва</div>
-          <div class="review-slot">Скриншот отзыва</div>
+        <div class="trust-strip" data-reveal>
+          <div class="trust-item"><span class="trust-num">2004</span><span class="trust-text">Практика с 2004 · преподавание с 2008</span></div>
+          <div class="trust-item"><span class="trust-num">«Зенит»</span><span class="trust-text">Реабилитолог ФК «Зенит» 2017–2018</span></div>
+          <div class="trust-item"><span class="trust-num">Федерация</span><span class="trust-text">Сертификат Федерации йоги и медитации СПб — на тарифах Проф и выше</span></div>
+          <div class="trust-item"><span class="trust-num">2013</span><span class="trust-text">Ретриты и мастер-классы с 2013</span></div>
         </div>
         <p class="reviews-soon" data-reveal>Отзывы о практике с Ильёй можно посмотреть на сайте школы — <a href="https://barinovdao.ru" target="_blank" rel="noopener noreferrer">barinovdao.ru</a>.</p>
       </div>
@@ -857,11 +913,13 @@
           </div>
           <p class="sec-aside">Промокоды появятся позже.</p>
         </div>
+        <p class="early-badge" data-reveal style="margin:0 0 1.5rem">Ранняя цена до 1 августа</p>
         <div class="tiers" data-reveal>
           <article class="tier">
             <p class="tier-label">i. Базовый</p>
             <h3>Онлайн</h3>
             <p class="tier-price">79 000 ₽</p>
+            <p class="tier-installment">или от 6 600 ₽/мес в рассрочку</p>
             <ul>
               <li>Доступ 2 месяца</li>
               <li>Все материалы курса</li>
@@ -874,12 +932,13 @@
             <p class="tier-label">ii. Проф</p>
             <h3>Онлайн + обратная связь</h3>
             <p class="tier-price">99 000 ₽</p>
+            <p class="tier-installment">или от 8 250 ₽/мес в рассрочку</p>
             <ul>
               <li>Доступ 6 месяцев</li>
               <li>Чат потока</li>
               <li>Обратная связь</li>
+              <li class="li-cert"><div><strong>Сертификат Федерации йоги СПб</strong><span class="li-cert-sub">Сообщество профессиональных преподавателей йоги и медитации</span><a class="li-cert-link" href="#certificate">Что это даёт →</a></div></li>
               <li>Выездной ретрит</li>
-              <li>Сертификат Федерации йоги СПб</li>
             </ul>
             <a class="btn" href="#apply">Записаться</a>
           </article>
@@ -887,6 +946,7 @@
             <p class="tier-label">iii. Комбо</p>
             <h3>Проф Цигун + Проф Точка опоры</h3>
             <p class="tier-price">119 000 ₽</p>
+            <p class="tier-installment">или от 9 900 ₽/мес в рассрочку</p>
             <p class="tier-note">Два курса в одном</p>
             <ul>
               <li>Доступ 6 месяцев к обоим курсам</li>
@@ -898,6 +958,7 @@
             <p class="tier-label">iv. VIP</p>
             <h3>Проф + индивидуальные занятия</h3>
             <p class="tier-price">199 000 ₽</p>
+            <p class="tier-installment">или от 16 600 ₽/мес в рассрочку</p>
             <ul>
               <li>Всё из тарифа Проф</li>
               <li>10 индивидуальных занятий с Ильёй</li>
@@ -905,10 +966,22 @@
             <a class="btn" href="#apply">Записаться</a>
           </article>
         </div>
-        <p class="payment-note" data-reveal>Оплата российскими и зарубежными картами. Рассрочка 3–12 мес.</p>
+        <p class="payment-note" data-reveal>Оплата российскими и зарубежными картами. Рассрочка 3–12 мес. <a href="offer.html">Оферта</a></p>
+        <!-- TODO: условия возврата/гарантии — согласовать с Ильёй -->
       </div>
     </section>
 
+    <section class="section section--line" id="certificate">
+      <div class="container">
+        <div class="cert-card" data-reveal>
+          <p class="label">(Сертификат)</p>
+          <h2 class="cert-title">Сертификат Федерации йоги и медитации Санкт-Петербурга</h2>
+          <p class="cert-text">Участники тарифов «Проф», «Комбо» и «VIP» по завершении курса получают сертификат Федерации йоги и медитации Санкт-Петербурга — сообщества профессиональных преподавателей йоги и медитации.</p>
+          <p class="cert-text">Сертификат подтверждает, что вы прошли структурированное обучение практике у сертифицированного преподавателя — и станет опорой, если решите углублять практику или двигаться в сторону преподавания.</p>
+          <p class="cert-link"><a class="link-cta" href="https://yoga-federation.pro" target="_blank" rel="noopener noreferrer">О Федерации → yoga-federation.pro</a></p>
+        </div>
+      </div>
+    </section>
 
     <section class="section section--line" id="faq">
       <div class="container faq-grid">
@@ -946,6 +1019,10 @@
             <button class="faq-question" type="button" aria-expanded="false">Сколько времени нужно на практику?</button>
             <div class="faq-answer"><p>Курс рассчитан на регулярное участие в течение трёх месяцев. Точный ритм занятий будет сообщён перед стартом.</p></div>
           </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Что за сертификат Федерации?</button>
+            <div class="faq-answer"><p>Федерация йоги и медитации Санкт-Петербурга — сообщество профессиональных преподавателей йоги и медитации. Сертификат выдаётся участникам тарифов «Проф», «Комбо» и «VIP» по завершении курса и подтверждает пройденное структурированное обучение.</p></div>
+          </article>
         </div>
       </div>
     </section>
@@ -962,6 +1039,8 @@
             <div><dt>Формат</dt><dd>3 месяца, 30 занятий</dd></div>
             <div><dt>Ранняя бронь</dt><dd>минимальная стоимость</dd></div>
           </dl>
+          <p class="payment-note" style="margin-top:1.5rem">Оплата российскими и зарубежными картами · Рассрочка 3–12 мес · <a href="offer.html">Оферта</a></p>
+          <!-- TODO: условия возврата/гарантии — согласовать с Ильёй -->
         </div>
         <div data-reveal>
           <form class="course-form" id="course-form" novalidate>
@@ -977,6 +1056,7 @@
             </label>
             <label class="consent"><input type="checkbox" name="consent" required> <span>Согласен(а) на обработку данных — <a href="privacy.html">политика конфиденциальности</a></span></label>
             <button class="btn" type="submit" id="form-submit-btn">Оставить заявку</button>
+            <p class="form-trust">Ответим в Telegram или на почту · Данные защищены — <a href="privacy.html">политика конфиденциальности</a></p>
             <p class="form-note">После отправки мы свяжемся с вами. Или напрямую — <a href="https://t.me/vsemaya" target="_blank" rel="noopener noreferrer">Telegram</a> · <a href="mailto:info@barinovdao.ru">info@barinovdao.ru</a></p>
           </form>
           <div class="form-success" id="form-success" hidden>
@@ -1071,18 +1151,24 @@
         var behavior = reduced ? "auto" : "smooth";
         if (prevBtn) prevBtn.addEventListener("click", function () { strip.scrollBy({ left: -step(), behavior: behavior }); });
         if (nextBtn) nextBtn.addEventListener("click", function () { strip.scrollBy({ left: step(), behavior: behavior }); });
-        var bar = document.getElementById("gallery-progress-bar");
-        var updateBar = function () {
-          if (!bar) return;
-          var max = strip.scrollWidth - strip.clientWidth;
-          var ratio = max > 0 ? strip.scrollLeft / max : 0;
-          var visPct = Math.max(strip.clientWidth / strip.scrollWidth * 100, 14);
-          bar.style.width = visPct + "%";
-          bar.style.marginLeft = ratio * (100 - visPct) + "%";
-        };
-        strip.addEventListener("scroll", updateBar, { passive: true });
-        window.addEventListener("resize", updateBar);
-        updateBar();
+        var dotsWrap = document.getElementById("gallery-dots");
+        if (dotsWrap) {
+          var figs = Array.prototype.slice.call(strip.querySelectorAll("figure"));
+          figs.forEach(function () { dotsWrap.appendChild(document.createElement("span")); });
+          var dots = dotsWrap.children;
+          var updateDots = function () {
+            var center = strip.scrollLeft + strip.clientWidth / 2;
+            var idx = 0, best = Infinity;
+            figs.forEach(function (f, i) {
+              var d = Math.abs(f.offsetLeft + f.offsetWidth / 2 - center);
+              if (d < best) { best = d; idx = i; }
+            });
+            for (var i = 0; i < dots.length; i++) dots[i].classList.toggle("is-active", i === idx);
+          };
+          strip.addEventListener("scroll", updateDots, { passive: true });
+          window.addEventListener("resize", updateDots);
+          updateDots();
+        }
       }
 
       // Sticky CTA: появляется после hero, прячется на секции формы
